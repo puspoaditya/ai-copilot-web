@@ -1,50 +1,65 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt = 'AI Interview Copilot';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default function OGImage() {
+export default async function Image() {
   return new ImageResponse(
     (
       <div
         style={{
           width: '1200px',
           height: '630px',
-          background: '#0d0d14',
+          backgroundColor: '#0d0d14',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
           padding: '80px',
-          fontFamily: 'system-ui, sans-serif',
           position: 'relative',
-          overflow: 'hidden',
         }}
       >
-        {/* Background orb left */}
+        {/* Top accent bar */}
         <div
           style={{
             position: 'absolute',
-            top: '-150px',
-            left: '-150px',
-            width: '600px',
-            height: '600px',
-            borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(91,141,238,0.25) 0%, transparent 70%)',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '4px',
+            background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)',
+            display: 'flex',
           }}
         />
-        {/* Background orb right */}
+
+        {/* Left glow */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '-80px',
+            left: '-80px',
+            width: '400px',
+            height: '400px',
+            borderRadius: '50%',
+            backgroundColor: '#5b8dee',
+            opacity: 0.07,
+            display: 'flex',
+          }}
+        />
+
+        {/* Right glow */}
         <div
           style={{
             position: 'absolute',
             bottom: '-100px',
-            right: '-100px',
-            width: '500px',
-            height: '500px',
+            right: '-80px',
+            width: '350px',
+            height: '350px',
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, transparent 70%)',
+            backgroundColor: '#8b5cf6',
+            opacity: 0.07,
+            display: 'flex',
           }}
         />
 
@@ -53,81 +68,99 @@ export default function OGImage() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            background: 'rgba(91,141,238,0.12)',
+            backgroundColor: 'rgba(91,141,238,0.15)',
             border: '1px solid rgba(91,141,238,0.3)',
             borderRadius: '999px',
-            padding: '6px 16px',
-            marginBottom: '28px',
+            padding: '8px 20px',
+            marginBottom: '32px',
           }}
         >
-          <span style={{ color: '#5b8dee', fontSize: '14px', fontWeight: 600 }}>
-            Real-time AI · Windows App
+          <span style={{ color: '#5b8dee', fontSize: '16px', fontWeight: 600 }}>
+            Real-time AI Assistant · Windows App
           </span>
         </div>
 
-        {/* Headline */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            fontSize: '58px',
-            fontWeight: 700,
-            color: '#ffffff',
-            lineHeight: 1.15,
-            marginBottom: '24px',
-            maxWidth: '800px',
-            gap: '4px',
-          }}
-        >
-          <div>
-            Jawab interview{' '}
-            <span style={{ color: '#5b8dee' }}>dengan AI</span>
-          </div>
-          <div>secara real-time</div>
+        {/* Headline line 1 */}
+        <div style={{ display: 'flex', flexDirection: 'row', marginBottom: '8px' }}>
+          <span style={{ fontSize: '58px', fontWeight: 700, color: '#ffffff', lineHeight: 1.15 }}>
+            Jawab interview dengan{' '}
+          </span>
+          <span style={{ fontSize: '58px', fontWeight: 700, color: '#5b8dee', lineHeight: 1.15 }}>
+            AI
+          </span>
+        </div>
+
+        {/* Headline line 2 */}
+        <div style={{ display: 'flex', marginBottom: '28px' }}>
+          <span style={{ fontSize: '58px', fontWeight: 700, color: '#ffffff', lineHeight: 1.15 }}>
+            secara real-time
+          </span>
         </div>
 
         {/* Subtext */}
-        <div
-          style={{
-            fontSize: '22px',
-            color: 'rgba(255,255,255,0.45)',
-            maxWidth: '680px',
-            lineHeight: 1.5,
-            marginBottom: '40px',
-          }}
-        >
-          Transkripsi otomatis + jawaban AI instan. Tidak terlihat saat screen share.
+        <div style={{ display: 'flex', marginBottom: '44px' }}>
+          <span style={{ fontSize: '22px', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+            Transkripsi otomatis + jawaban AI instan. Tidak terlihat saat screen share.
+          </span>
         </div>
 
-        {/* Features row */}
-        <div style={{ display: 'flex', gap: '24px' }}>
-          {['🎙 Real-time Transcription', '🤖 AI Answers', '🛡 Invisible in Screen Share'].map((f) => (
-            <div
-              key={f}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                borderRadius: '8px',
-                padding: '10px 18px',
-                color: 'rgba(255,255,255,0.65)',
-                fontSize: '15px',
-              }}
-            >
-              {f}
-            </div>
-          ))}
+        {/* Feature chips */}
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px',
+              padding: '12px 20px',
+              color: 'rgba(255,255,255,0.6)',
+              fontSize: '15px',
+              marginRight: '16px',
+            }}
+          >
+            Deepgram Transcription
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px',
+              padding: '12px 20px',
+              color: 'rgba(255,255,255,0.6)',
+              fontSize: '15px',
+              marginRight: '16px',
+            }}
+          >
+            Gemini AI Answers
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px',
+              padding: '12px 20px',
+              color: 'rgba(255,255,255,0.6)',
+              fontSize: '15px',
+            }}
+          >
+            Invisible in Screen Share
+          </div>
         </div>
 
         {/* Domain */}
         <div
           style={{
             position: 'absolute',
-            bottom: '40px',
+            bottom: '36px',
             right: '80px',
-            color: 'rgba(255,255,255,0.2)',
-            fontSize: '16px',
+            display: 'flex',
+            color: 'rgba(255,255,255,0.18)',
+            fontSize: '15px',
           }}
         >
           ai-copilot-web.vercel.app
