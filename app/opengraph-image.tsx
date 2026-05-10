@@ -68,17 +68,22 @@ export default function OGImage() {
         {/* Headline */}
         <div
           style={{
+            display: 'flex',
+            flexDirection: 'column',
             fontSize: '58px',
             fontWeight: 700,
             color: '#ffffff',
             lineHeight: 1.15,
             marginBottom: '24px',
             maxWidth: '800px',
+            gap: '4px',
           }}
         >
-          Jawab interview{' '}
-          <span style={{ color: '#5b8dee' }}>dengan AI</span>
-          {'\n'}secara real-time
+          <div>
+            Jawab interview{' '}
+            <span style={{ color: '#5b8dee' }}>dengan AI</span>
+          </div>
+          <div>secara real-time</div>
         </div>
 
         {/* Subtext */}
