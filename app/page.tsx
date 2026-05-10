@@ -1,6 +1,67 @@
 'use client';
 import { useState } from 'react';
 
+function TrialForm() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState('');
+
+  async function handleTrial() {
+    if (!email) return;
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch('/api/trial', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        setError(data.error ?? 'Terjadi kesalahan. Coba lagi.');
+      } else {
+        setDone(true);
+      }
+    } catch {
+      setError('Terjadi kesalahan. Coba lagi.');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  if (done) {
+    return (
+      <div className="text-center py-3">
+        <div className="text-3xl mb-3">📬</div>
+        <p className="font-semibold text-white mb-1">Cek emailmu!</p>
+        <p className="text-white/50 text-sm">License key trial sudah dikirim ke <span className="text-white/80">{email}</span></p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
+      <input
+        type="email"
+        placeholder="email@kamu.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && handleTrial()}
+        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
+      />
+      <button
+        onClick={handleTrial}
+        disabled={loading || !email}
+        className="bg-white text-[#5b8dee] font-semibold px-5 py-2.5 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
+      >
+        {loading ? 'Memproses...' : 'Coba Gratis →'}
+      </button>
+      {error && <p className="text-red-300 text-xs mt-1 w-full">{error}</p>}
+    </div>
+  );
+}
+
 declare global {
   interface Window {
     snap: {
@@ -136,11 +197,19 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a href="#pricing" className="bg-[#5b8dee] hover:bg-[#4a7de0] text-white font-semibold px-7 py-3.5 rounded-lg transition text-base">
-                Coba Sekarang →
+                Subscribe Sekarang →
               </a>
               <a href="#how" className="bg-white/5 hover:bg-white/8 text-white/70 hover:text-white font-medium px-7 py-3.5 rounded-lg transition text-base border border-white/8">
                 Lihat Cara Kerja
               </a>
+            </div>
+
+            {/* Trial CTA */}
+            <div className="mt-5 p-4 bg-white/4 border border-white/8 rounded-xl">
+              <p className="text-sm text-white/50 mb-3 text-center lg:text-left">
+                Belum yakin? <span className="text-white/80 font-medium">Coba gratis 3 hari</span> — tidak perlu kartu kredit.
+              </p>
+              <TrialForm />
             </div>
             {/* Social proof */}
             <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start">
@@ -233,7 +302,7 @@ export default function Home() {
             { step: '04', icon: '✨', title: 'Interview!', desc: 'Tekan Start dan jawaban AI muncul otomatis saat interviewer selesai bicara.' },
           ].map((s) => (
             <div key={s.step} className="flex flex-col items-center text-center relative">
-              <div className="w-16 h-16 rounded-full bg-[#5b8dee]/10 border border-[#5b8dee]/20 flex items-center justify-center text-2xl mb-4 relative z-10 bg-[#0d0d14]">
+              <div className="w-16 h-16 rounded-full bg-[#0d0d14] border border-[#5b8dee]/25 flex items-center justify-center text-2xl mb-4 relative z-10">
                 {s.icon}
               </div>
               <div className="text-[10px] font-bold text-[#5b8dee]/60 mb-1 tracking-widest">{s.step}</div>

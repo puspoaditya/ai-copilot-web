@@ -13,12 +13,19 @@ export async function POST(req: NextRequest) {
 
   const { data: license, error } = await supabase
     .from('licenses')
-    .select('status')
+    .select('status, plan, expires_at')
     .eq('key', normalizedKey)
     .single();
 
   if (error || !license || license.status !== 'active') {
     return NextResponse.json({ ok: false, error: 'License tidak aktif' }, { status: 401 });
+  }
+
+  // Check trial expiry
+  if (license.plan === 'trial' && license.expires_at) {
+    if (new Date(license.expires_at) < new Date()) {
+      return NextResponse.json({ ok: false, error: 'Trial 3 hari kamu sudah habis. Subscribe di ai-copilot-web.vercel.app untuk melanjutkan.' });
+    }
   }
 
   const today = new Date().toISOString().slice(0, 10);

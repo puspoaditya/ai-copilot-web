@@ -10,17 +10,24 @@ export async function POST(req: NextRequest) {
 
   const { data, error } = await supabase
     .from('licenses')
-    .select('status, email')
+    .select('status, email, plan, expires_at')
     .eq('key', key.toUpperCase().trim())
     .single();
 
   if (error || !data) {
-    return NextResponse.json({ valid: false, error: 'License key not found' });
+    return NextResponse.json({ valid: false, error: 'License key tidak ditemukan' });
   }
 
   if (data.status !== 'active') {
-    return NextResponse.json({ valid: false, error: 'Subscription inactive' });
+    return NextResponse.json({ valid: false, error: 'Subscription tidak aktif' });
   }
 
-  return NextResponse.json({ valid: true, email: data.email });
+  // Check trial expiry
+  if (data.plan === 'trial' && data.expires_at) {
+    if (new Date(data.expires_at) < new Date()) {
+      return NextResponse.json({ valid: false, error: 'Trial 3 hari kamu sudah habis. Silakan subscribe untuk melanjutkan.' });
+    }
+  }
+
+  return NextResponse.json({ valid: true, email: data.email, plan: data.plan, expiresAt: data.expires_at });
 }
