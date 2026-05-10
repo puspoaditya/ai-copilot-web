@@ -187,11 +187,11 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <section className="relative z-10 w-full max-w-[1400px] mx-auto px-6 pt-16 pb-8">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
 
           {/* Left: copy */}
-          <div className="flex-none w-full lg:w-[460px] text-center lg:text-left">
+          <div className="flex-none w-full lg:w-[420px] text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
               <span className="text-[#5b8dee]">✦</span>
@@ -200,8 +200,10 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="font-extrabold leading-none mb-5">
-              <span className="block text-6xl lg:text-7xl text-white">AI</span>
-              <span className="block text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
+              <div className="flex flex-wrap items-baseline gap-x-4">
+                <span className="text-6xl lg:text-7xl text-white">AI</span>
+                <span className="text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
+              </div>
               <span className="block text-6xl lg:text-7xl text-white">Copilot</span>
             </h1>
 
