@@ -3,6 +3,23 @@ import { supabase } from '@/lib/supabase';
 import { generateLicenseKey } from '@/lib/license';
 import { sendTrialEmail } from '@/lib/resend';
 
+const DISPOSABLE_DOMAINS = new Set([
+  'mailinator.com','guerrillamail.com','tempmail.com','throwam.com',
+  'sharklasers.com','guerrillamailblock.com','grr.la','guerrillamail.info',
+  'yopmail.com','trashmail.com','dispostable.com','maildrop.cc',
+  'spamgourmet.com','spamgourmet.net','fakeinbox.com','mailnull.com',
+  'spamherelots.com','spamhereplease.com','tempinbox.com','throwam.com',
+  'discard.email','spamfree24.org','mailexpire.com','trashmail.at',
+  'trashmail.io','trashmail.me','trashmail.xyz','mailnesia.com',
+  'mailnull.com','spamevader.com','spamgob.com','tempr.email',
+  'burnermail.io','getairmail.com','tempail.com','emailondeck.com',
+]);
+
+function isDisposableEmail(email: string): boolean {
+  const domain = email.split('@')[1]?.toLowerCase();
+  return domain ? DISPOSABLE_DOMAINS.has(domain) : false;
+}
+
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
 
@@ -11,6 +28,10 @@ export async function POST(req: NextRequest) {
   }
 
   const normalizedEmail = email.trim().toLowerCase();
+
+  if (isDisposableEmail(normalizedEmail)) {
+    return NextResponse.json({ error: 'Gunakan email utama kamu (bukan email sementara).' }, { status: 400 });
+  }
 
   // One trial per email
   const { data: existing } = await supabase
