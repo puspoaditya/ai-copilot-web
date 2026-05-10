@@ -187,66 +187,86 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-8">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+      <section className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
 
           {/* Left: copy */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-block bg-[#5b8dee]/10 text-[#5b8dee] text-xs font-semibold px-3 py-1 rounded-full mb-6 border border-[#5b8dee]/20">
-              Real-time AI assistant · Windows
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5">
-              Jawab pertanyaan interview{' '}
-              <span className="text-[#5b8dee]">secara real-time</span>{' '}
-              dengan bantuan AI
-            </h1>
-            <p className="text-white/50 text-lg mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              Aplikasi mendengarkan interviewer, lalu langsung menghasilkan jawaban cerdas yang personal — tanpa terlihat saat screen share.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a href="#pricing" className="bg-[#5b8dee] hover:bg-[#4a7de0] text-white font-semibold px-7 py-3.5 rounded-lg transition text-base">
-                Subscribe Sekarang →
-              </a>
-              <a href="#how" className="bg-white/5 hover:bg-white/8 text-white/70 hover:text-white font-medium px-7 py-3.5 rounded-lg transition text-base border border-white/8">
-                Lihat Cara Kerja
-              </a>
+          <div className="flex-none w-full lg:w-[460px] text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
+              <span className="text-[#5b8dee]">✦</span>
+              Realtime AI Assistance
             </div>
 
-            {/* Trial CTA */}
-            <div className="mt-5 p-4 bg-white/4 border border-white/8 rounded-xl">
-              <p className="text-sm text-white/50 mb-3 text-center lg:text-left">
-                Belum yakin? <span className="text-white/80 font-medium">Coba gratis 3 hari</span> — tidak perlu kartu kredit.
-              </p>
-              <TrialForm />
+            {/* Headline */}
+            <h1 className="font-extrabold leading-none mb-5">
+              <span className="block text-6xl lg:text-7xl text-white">AI</span>
+              <span className="block text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
+              <span className="block text-6xl lg:text-7xl text-white">Copilot</span>
+            </h1>
+
+            {/* Underline accent */}
+            <div className="w-16 h-0.5 mb-6 mx-auto lg:mx-0" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)' }} />
+
+            {/* Subtitle */}
+            <p className="text-white/60 text-base mb-8 leading-relaxed">
+              Bantu Kamu Jawab Pertanyaan Saat Interview<br />
+              Dengan Bantuan AI Secara{' '}
+              <span className="text-[#5b8dee] font-semibold">Real Time</span>
+              {' '}& <span className="text-[#8b5cf6] font-semibold">Tidak Terlihat</span>
+            </p>
+
+            {/* Feature pills */}
+            <div className="grid grid-cols-2 gap-3 mb-8">
+              {[
+                { icon: '⚡', title: 'Jawaban Instan', sub: '& Relevan' },
+                { icon: '🙈', title: 'Tidak Terlihat', sub: 'di Layar' },
+                { icon: '🧠', title: 'AI Cerdas', sub: '& Akurat' },
+                { icon: '🛡', title: 'Aman &', sub: 'Privasi Terjaga' },
+              ].map((f) => (
+                <div key={f.title} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                  <div className="w-9 h-9 rounded-full bg-[#5b8dee]/15 border border-[#5b8dee]/20 flex items-center justify-center text-base flex-shrink-0">
+                    {f.icon}
+                  </div>
+                  <div className="text-left">
+                    <div className="text-white text-xs font-semibold leading-tight">{f.title}</div>
+                    <div className="text-white/40 text-xs leading-tight">{f.sub}</div>
+                  </div>
+                </div>
+              ))}
             </div>
-            {/* Social proof */}
-            <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">500+</div>
-                <div className="text-xs text-white/35 mt-0.5">Interview dibantu</div>
-              </div>
-              <div className="w-px h-8 bg-white/10" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">&lt; 2s</div>
-                <div className="text-xs text-white/35 mt-0.5">Latency AI answer</div>
-              </div>
-              <div className="w-px h-8 bg-white/10" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">100%</div>
-                <div className="text-xs text-white/35 mt-0.5">Tidak terlihat</div>
-              </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#pricing"
+                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
+              >
+                🚀 Coba Gratis Sekarang →
+              </a>
+              <a
+                href="#how"
+                className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
+              >
+                ✓ Siap Hadapi Interview
+              </a>
             </div>
           </div>
 
           {/* Right: app screenshot */}
-          <div className="flex-1 w-full max-w-2xl">
+          <div className="flex-1 w-full min-w-0">
             <div className="relative">
-              <div className="absolute inset-0 bg-[#5b8dee]/20 blur-3xl rounded-3xl scale-90" />
-              <img
-                src="/hero.webp"
-                alt="AI Interview Copilot app screenshot"
-                className="relative w-full rounded-2xl shadow-2xl border border-white/10"
-              />
+              {/* Outer glow */}
+              <div className="absolute -inset-4 rounded-3xl blur-2xl opacity-40" style={{ background: 'linear-gradient(135deg, #5b8dee40, #8b5cf640)' }} />
+              {/* Border glow frame */}
+              <div className="relative p-px rounded-2xl" style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}>
+                <img
+                  src="/hero.webp"
+                  alt="AI Interview Copilot app screenshot"
+                  className="w-full rounded-2xl block"
+                />
+              </div>
             </div>
           </div>
 
