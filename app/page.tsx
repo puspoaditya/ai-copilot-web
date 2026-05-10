@@ -238,56 +238,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: app mockup */}
-          <div className="flex-1 w-full max-w-md">
+          {/* Right: app screenshot */}
+          <div className="flex-1 w-full max-w-2xl">
             <div className="relative">
-              {/* Glow */}
               <div className="absolute inset-0 bg-[#5b8dee]/20 blur-3xl rounded-3xl scale-90" />
-              {/* App window */}
-              <div className="relative bg-[#0f0f1a]/90 border border-white/10 rounded-xl overflow-hidden shadow-2xl text-xs">
-                {/* Titlebar */}
-                <div className="flex items-center justify-between px-3 py-2 bg-[#191926] border-b border-white/8">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                    <span className="text-white/60 font-semibold text-[11px]">AI Copilot · Listening…</span>
-                  </div>
-                  <div className="flex gap-2 text-white/30">
-                    <span>🛡</span><span>⚙</span><span>—</span><span>✕</span>
-                  </div>
-                </div>
-                {/* Source bar */}
-                <div className="px-3 py-2 bg-[#14141f] border-b border-white/5 flex gap-2 items-center">
-                  <div className="flex-1 bg-white/5 border border-white/8 rounded px-2 py-1 text-white/40">Screen 1</div>
-                  <div className="bg-white/5 border border-white/8 rounded px-2 py-1 text-white/40">↺</div>
-                </div>
-                {/* Content */}
-                <div className="grid grid-cols-2 divide-x divide-white/5">
-                  {/* Transcript */}
-                  <div className="p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-2">Transcript</div>
-                    <div className="space-y-2">
-                      <div>
-                        <span className="text-[#5b8dee] font-bold text-[10px] mr-1">INTERVIEWER</span>
-                        <span className="text-white/50">Can you tell me about yourself and your experience?</span>
-                      </div>
-                      <div className="text-white/25 italic text-[10px]">Mendengarkan...</div>
-                    </div>
-                  </div>
-                  {/* Answer */}
-                  <div className="p-3">
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-white/30 mb-2">AI Answer</div>
-                    <div className="bg-[#5b8dee]/8 border-l-2 border-[#5b8dee]/40 rounded px-2 py-1.5 text-white/70 leading-relaxed">
-                      I&apos;m a software engineer with 3 years of experience building scalable web apps. I&apos;ve led projects at a fintech startup using React and Node.js, and I&apos;m passionate about clean architecture...
-                    </div>
-                  </div>
-                </div>
-                {/* Hint bar */}
-                <div className="flex justify-between px-3 py-1.5 bg-[#191926] border-t border-white/5 text-[9px] text-white/20">
-                  <span>Ctrl+Shift+H — toggle</span>
-                  <span>Ctrl+Shift+A — ask now</span>
-                  <span>v1.0.8</span>
-                </div>
-              </div>
+              <img
+                src="/hero.webp"
+                alt="AI Interview Copilot app screenshot"
+                className="relative w-full rounded-2xl shadow-2xl border border-white/10"
+              />
             </div>
           </div>
 
