@@ -12,9 +12,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = 'https://ai-copilot-web.vercel.app';
+
 export const metadata: Metadata = {
   title: "AI Interview Copilot — Jawab Interview dengan Bantuan AI Real-time",
   description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+  metadataBase: new URL(BASE_URL),
+  openGraph: {
+    title: "AI Interview Copilot — Jawab Interview dengan Bantuan AI Real-time",
+    description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+    url: BASE_URL,
+    siteName: "AI Interview Copilot",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Interview Copilot — Jawab Interview dengan Bantuan AI Real-time",
+    description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+  },
 };
 
 export default function RootLayout({
