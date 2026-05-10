@@ -162,10 +162,18 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-[#0d0d14] text-white">
+    <main className="min-h-screen bg-dot-pattern text-white overflow-x-hidden">
+
+      {/* Background orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="orb orb-blue w-[700px] h-[700px] -top-40 -left-40" />
+        <div className="orb orb-purple w-[500px] h-[500px] top-1/3 -right-32" />
+        <div className="orb orb-cyan w-[400px] h-[400px] bottom-1/4 left-1/4" />
+        <div className="orb orb-blue w-[400px] h-[400px] bottom-0 right-1/4 opacity-50" />
+      </div>
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/5 bg-[#0d0d14]/90 backdrop-blur">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/5 bg-[#0d0d14]/80 backdrop-blur">
         <span className="font-bold text-lg tracking-tight">
           <span className="text-[#5b8dee]">AI</span> Interview Copilot
         </span>
@@ -179,7 +187,7 @@ export default function Home() {
       </nav>
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 pt-20 pb-8">
+      <section className="relative z-10 max-w-6xl mx-auto px-6 pt-20 pb-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
 
           {/* Left: copy */}
@@ -287,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section id="how" className="max-w-4xl mx-auto px-6 py-20">
+      <section id="how" className="relative z-10 max-w-4xl mx-auto px-6 py-20">
         <div className="text-center mb-14">
           <h2 className="text-3xl font-bold mb-3">Cara Kerja</h2>
           <p className="text-white/40">Siap pakai dalam hitungan menit</p>
@@ -314,7 +322,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="max-w-5xl mx-auto px-6 py-8">
+      <section className="relative z-10 max-w-5xl mx-auto px-6 py-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Fitur Lengkap</h2>
           <p className="text-white/40">Semua yang kamu butuhkan untuk interview percaya diri</p>
@@ -338,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
+      <section className="relative z-10 max-w-5xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Apa Kata Mereka</h2>
           <p className="text-white/40">Dari pengguna nyata yang sudah merasakannya</p>
@@ -381,7 +389,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="max-w-lg mx-auto px-6 py-8">
+      <section id="pricing" className="relative z-10 max-w-lg mx-auto px-6 py-8">
         <h2 className="text-3xl font-bold text-center mb-3">Pilih Paket</h2>
         <p className="text-white/40 text-center mb-10">Batal kapan saja. Tidak ada kontrak panjang.</p>
 
@@ -455,7 +463,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="max-w-2xl mx-auto px-6 py-20">
+      <section className="relative z-10 max-w-2xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold text-center mb-10">Pertanyaan Umum</h2>
         <div className="divide-y divide-white/8 border-t border-white/8">
           {faqs.map((f) => (
@@ -465,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="max-w-2xl mx-auto px-6 py-16 text-center">
+      <section className="relative z-10 max-w-2xl mx-auto px-6 py-16 text-center">
         <div className="bg-[#5b8dee]/8 border border-[#5b8dee]/20 rounded-2xl p-10">
           <h2 className="text-3xl font-bold mb-4">Siap untuk interview berikutnya?</h2>
           <p className="text-white/50 mb-7">Mulai dalam 5 menit. Tidak perlu setup yang rumit.</p>
@@ -475,7 +483,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="text-center py-8 text-white/20 text-sm border-t border-white/5">
+      <footer className="relative z-10 text-center py-8 text-white/20 text-sm border-t border-white/5">
         © 2025 AI Interview Copilot · Dibuat dengan ❤️ di Indonesia
       </footer>
     </main>
