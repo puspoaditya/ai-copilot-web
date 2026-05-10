@@ -18,9 +18,6 @@ export const metadata: Metadata = {
   title: "AI Interview Copilot — Bantuan AI Real-time saat Interview",
   description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
   metadataBase: new URL(BASE_URL),
-  icons: {
-    icon: '/icon.ico',
-  },
   openGraph: {
     title: "AI Interview Copilot — Bantuan AI Real-time saat Interview",
     description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
