@@ -2,6 +2,17 @@ import { Resend } from 'resend';
 
 export const resend = new Resend(process.env.RESEND_API_KEY!);
 
+const OWNER_EMAIL = process.env.OWNER_EMAIL ?? 'puspo.aditya@gmail.com';
+
+export async function notifyOwner(subject: string, body: string) {
+  await resend.emails.send({
+    from: 'IntervAI <noreply@intervai.my.id>',
+    to: OWNER_EMAIL,
+    subject,
+    html: `<div style="font-family:sans-serif;padding:24px;max-width:480px">${body}</div>`,
+  });
+}
+
 export async function sendTrialEmail(email: string, licenseKey: string) {
   const downloadUrl = process.env.APP_DOWNLOAD_URL ?? '#';
 

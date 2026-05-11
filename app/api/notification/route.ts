@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifySignature } from '@/lib/midtrans';
 import { supabase } from '@/lib/supabase';
 import { generateLicenseKey } from '@/lib/license';
-import { sendLicenseEmail } from '@/lib/resend';
+import { sendLicenseEmail, notifyOwner } from '@/lib/resend';
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -43,6 +43,10 @@ export async function POST(req: NextRequest) {
       status: 'active',
     });
     await sendLicenseEmail(email, key);
+    notifyOwner(
+      '💰 Subscriber baru — IntervAI',
+      `<p><strong>Email:</strong> ${email}</p><p><strong>Order ID:</strong> ${order_id}</p><p><strong>Amount:</strong> Rp ${Number(gross_amount).toLocaleString('id-ID')}</p><p><strong>License Key:</strong> <code>${key}</code></p><p><strong>Waktu:</strong> ${new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })} WIB</p>`
+    ).catch(() => {});
   }
 
   return NextResponse.json({ ok: true });

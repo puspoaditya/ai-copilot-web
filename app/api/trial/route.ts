@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 import { generateLicenseKey } from '@/lib/license';
-import { sendTrialEmail } from '@/lib/resend';
+import { sendTrialEmail, notifyOwner } from '@/lib/resend';
 
 const DISPOSABLE_DOMAINS = new Set([
   'mailinator.com','guerrillamail.com','tempmail.com','throwam.com',
@@ -65,6 +65,10 @@ export async function POST(req: NextRequest) {
 
   try {
     await sendTrialEmail(normalizedEmail, key);
+    notifyOwner(
+      '🆕 Trial baru — IntervAI',
+      `<p><strong>Email:</strong> ${normalizedEmail}</p><p><strong>License Key:</strong> <code>${key}</code></p><p><strong>Waktu:</strong> ${new Date().toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' })} WIB</p>`
+    ).catch(() => {});
   } catch (_) {
     // Don't fail if email fails — key is already created
   }
