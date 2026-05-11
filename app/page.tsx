@@ -161,20 +161,12 @@ export default function Home() {
 
       await loadSnapScript();
       const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      const unlockScroll = () => {
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, scrollY);
-      };
+      const restoreScroll = () => setTimeout(() => window.scrollTo({ top: scrollY, behavior: 'instant' as ScrollBehavior }), 50);
       window.snap.pay(token, {
-        onSuccess: () => { unlockScroll(); window.location.href = '/success'; },
-        onPending: () => { unlockScroll(); setLoading(false); },
-        onError: () => { unlockScroll(); setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); },
-        onClose: () => { unlockScroll(); setLoading(false); },
+        onSuccess: () => { window.location.href = '/success'; },
+        onPending: () => { setLoading(false); restoreScroll(); },
+        onError: () => { setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); restoreScroll(); },
+        onClose: () => { setLoading(false); restoreScroll(); },
       });
     } catch (err: unknown) {
       setLoading(false);
