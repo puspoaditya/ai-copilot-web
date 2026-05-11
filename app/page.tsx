@@ -135,6 +135,7 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
+  const [showTrialModal, setShowTrialModal] = useState(false);
 
   async function handleCheckout() {
     if (!email) return;
@@ -186,12 +187,25 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Trial Modal */}
+      {showTrialModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={() => setShowTrialModal(false)}>
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+          <div className="relative bg-[#0f0f1a] border border-white/10 rounded-2xl p-8 w-full max-w-md shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setShowTrialModal(false)} className="absolute top-4 right-4 text-white/30 hover:text-white text-xl leading-none">✕</button>
+            <div className="text-2xl mb-1 font-bold">Coba Gratis 3 Hari</div>
+            <p className="text-white/50 text-sm mb-6">Tidak perlu kartu kredit. License key dikirim ke emailmu.</p>
+            <TrialForm />
+          </div>
+        </div>
+      )}
+
       {/* Hero */}
-      <section className="relative z-10 w-full max-w-[1400px] mx-auto px-6 pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+      <section className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
 
           {/* Left: copy */}
-          <div className="flex-none w-full lg:w-[420px] text-center lg:text-left">
+          <div className="flex-1 w-full text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
               <span className="text-[#5b8dee]">✦</span>
@@ -200,15 +214,15 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="font-extrabold leading-none mb-5">
-              <div className="flex flex-wrap items-baseline gap-x-4">
-                <span className="text-6xl lg:text-7xl text-white">AI</span>
-                <span className="text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
+              <div className="flex flex-wrap items-baseline gap-x-3">
+                <span className="text-5xl lg:text-6xl text-white">AI</span>
+                <span className="text-5xl lg:text-6xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
               </div>
-              <span className="block text-6xl lg:text-7xl text-white">Copilot</span>
+              <span className="block text-5xl lg:text-6xl text-white mt-1">Copilot</span>
             </h1>
 
             {/* Underline accent */}
-            <div className="w-16 h-0.5 mb-6 mx-auto lg:mx-0" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)' }} />
+            <div className="w-14 h-0.5 mb-6 mx-auto lg:mx-0" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)' }} />
 
             {/* Subtitle */}
             <p className="text-white/60 text-base mb-8 leading-relaxed">
@@ -227,7 +241,7 @@ export default function Home() {
                 { icon: '🛡', title: 'Aman &', sub: 'Privasi Terjaga' },
               ].map((f) => (
                 <div key={f.title} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-                  <div className="w-9 h-9 rounded-full bg-[#5b8dee]/15 border border-[#5b8dee]/20 flex items-center justify-center text-base flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-[#5b8dee]/15 border border-[#5b8dee]/20 flex items-center justify-center text-base shrink-0">
                     {f.icon}
                   </div>
                   <div className="text-left">
@@ -239,28 +253,20 @@ export default function Home() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-5">
-              <a
-                href="#trial"
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => setShowTrialModal(true)}
                 className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
               >
                 🚀 Coba Gratis Sekarang →
-              </a>
+              </button>
               <a
                 href="#pricing"
                 className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
               >
                 ✓ Siap Hadapi Interview
               </a>
-            </div>
-
-            {/* Trial form */}
-            <div id="trial" className="p-4 bg-white/4 border border-white/8 rounded-xl">
-              <p className="text-sm text-white/50 mb-3 text-center lg:text-left">
-                Belum yakin? <span className="text-white/80 font-medium">Coba gratis 3 hari</span> — tidak perlu kartu kredit.
-              </p>
-              <TrialForm />
             </div>
           </div>
 
