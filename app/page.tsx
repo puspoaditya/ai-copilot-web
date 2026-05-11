@@ -143,7 +143,6 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
-  const [showTrialForm, setShowTrialForm] = useState(false);
 
   async function handleCheckout() {
     if (!email) return;
@@ -249,28 +248,20 @@ export default function Home() {
             </div>
 
             {/* CTAs */}
-            <div className="relative">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={() => setShowTrialForm((v) => !v)}
-                  className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
-                  style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
-                >
-                  🚀 Coba Gratis Sekarang →
-                </button>
-                <a
-                  href="#pricing"
-                  className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
-                >
-                  ✓ Siap Hadapi Interview
-                </a>
-              </div>
-              {showTrialForm && (
-                <div className="absolute top-full left-0 right-0 mt-2 z-20 bg-[#0f0f1a] border border-white/10 rounded-xl p-4 shadow-2xl">
-                  <p className="text-white/50 text-xs mb-3">Tidak perlu kartu kredit · License key dikirim ke emailmu</p>
-                  <TrialForm onDone={() => setShowTrialForm(false)} />
-                </div>
-              )}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href="#pricing"
+                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
+              >
+                🚀 Coba Gratis Sekarang →
+              </a>
+              <a
+                href="#pricing"
+                className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
+              >
+                ✓ Siap Hadapi Interview
+              </a>
             </div>
           </div>
 
@@ -382,76 +373,101 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="relative z-10 max-w-lg mx-auto px-6 py-8">
+      <section id="pricing" className="relative z-10 max-w-4xl mx-auto px-6 py-8">
         <h2 className="text-3xl font-bold text-center mb-3">Pilih Paket</h2>
-        <p className="text-white/40 text-center mb-10">Batal kapan saja. Tidak ada kontrak panjang.</p>
+        <p className="text-white/40 text-center mb-10">Mulai gratis, upgrade kapan saja.</p>
 
-        <div className="flex justify-center mb-8">
-          <div className="bg-white/5 rounded-lg p-1 flex gap-1">
-            {(['monthly', 'yearly'] as const).map((p) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+
+          {/* Free Trial Card */}
+          <div className="bg-white/4 border border-white/10 rounded-2xl p-7 flex flex-col gap-5">
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#5b8dee] mb-2">Coba Gratis</div>
+              <div className="text-4xl font-bold mb-1">3 Hari</div>
+              <p className="text-white/40 text-sm">Tidak perlu kartu kredit</p>
+            </div>
+            <ul className="space-y-2.5 text-sm text-white/60">
+              {[
+                'Semua fitur lengkap',
+                'Real-time transcription',
+                'AI answers',
+                'Invisible saat screen share',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="text-[#5b8dee]">✓</span>{item}
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-white/8 pt-5">
+              <p className="text-white/40 text-xs mb-3">Masukkan email untuk dapat license key trial:</p>
+              <TrialForm />
+            </div>
+          </div>
+
+          {/* Paid Card */}
+          <div className="bg-white/4 border border-[#5b8dee]/30 rounded-2xl p-7 relative overflow-hidden flex flex-col gap-5">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-[#5b8dee]/60 blur-sm rounded-full" />
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-[#5b8dee] mb-2">Full Access</div>
+              <div className="flex justify-start mb-4">
+                <div className="bg-white/5 rounded-lg p-1 flex gap-1">
+                  {(['monthly', 'yearly'] as const).map((p) => (
+                    <button
+                      key={p}
+                      onClick={() => setPlan(p)}
+                      className={`px-4 py-1.5 rounded-md text-xs font-medium transition ${
+                        plan === p ? 'bg-[#5b8dee] text-white' : 'text-white/40 hover:text-white'
+                      }`}
+                    >
+                      {p === 'monthly' ? 'Bulanan' : 'Tahunan'}
+                      {p === 'yearly' && (
+                        <span className="ml-1.5 bg-green-500/20 text-green-400 text-[9px] px-1 py-0.5 rounded-full">-30%</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="flex items-end gap-2 mb-1">
+                <span className="text-4xl font-bold">{plan === 'monthly' ? PRICE_MONTHLY : PRICE_YEARLY}</span>
+                <span className="text-white/40 mb-1 text-sm">/{plan === 'monthly' ? 'bulan' : 'tahun'}</span>
+              </div>
+              {plan === 'yearly' && <p className="text-green-400 text-xs">~Rp 124.900/bulan, ditagih tahunan</p>}
+            </div>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              {[
+                'Real-time transcription (Deepgram Nova-3)',
+                'AI answers (Gemini 2.0 Flash)',
+                'Invisible saat screen share',
+                'Jawaban personal dari CV kamu',
+                'Aplikasi Windows always-on-top',
+                'Auto-update gratis selamanya',
+                'Hingga 4 jam listening per hari',
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="text-[#5b8dee] shrink-0">✓</span>{item}
+                </li>
+              ))}
+            </ul>
+            <div className="border-t border-white/8 pt-5">
+              <input
+                type="email"
+                placeholder="email@kamu.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleCheckout()}
+                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm mb-3 outline-none focus:border-[#5b8dee] transition"
+              />
               <button
-                key={p}
-                onClick={() => setPlan(p)}
-                className={`px-5 py-2 rounded-md text-sm font-medium transition ${
-                  plan === p ? 'bg-[#5b8dee] text-white' : 'text-white/40 hover:text-white'
-                }`}
+                onClick={handleCheckout}
+                disabled={loading || !email}
+                className="w-full bg-[#5b8dee] hover:bg-[#4a7de0] disabled:opacity-40 text-white font-semibold py-3 rounded-lg transition text-sm"
               >
-                {p === 'monthly' ? 'Bulanan' : 'Tahunan'}
-                {p === 'yearly' && (
-                  <span className="ml-2 bg-green-500/20 text-green-400 text-[10px] px-1.5 py-0.5 rounded-full">Hemat 30%</span>
-                )}
+                {loading ? 'Memproses...' : 'Subscribe Sekarang'}
               </button>
-            ))}
+              <p className="text-white/25 text-xs text-center mt-3">🔒 Pembayaran aman via Midtrans</p>
+            </div>
           </div>
-        </div>
 
-        <div className="bg-white/4 border border-white/10 rounded-2xl p-8 relative overflow-hidden">
-          {/* Subtle glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-[#5b8dee]/60 blur-sm rounded-full" />
-
-          <div className="flex items-end gap-2 mb-1">
-            <span className="text-5xl font-bold">{plan === 'monthly' ? PRICE_MONTHLY : PRICE_YEARLY}</span>
-            <span className="text-white/40 mb-2">/{plan === 'monthly' ? 'bulan' : 'tahun'}</span>
-          </div>
-          {plan === 'yearly' && (
-            <p className="text-green-400 text-sm mb-4">~Rp 124.900/bulan, ditagih tahunan</p>
-          )}
-
-          <ul className="space-y-3 my-7 text-sm text-white/70">
-            {[
-              'Real-time transcription (Deepgram Nova-3)',
-              'AI answers (Gemini 2.0 Flash)',
-              'Invisible saat screen share',
-              'Jawaban personal dari CV kamu',
-              'Aplikasi Windows always-on-top',
-              'Auto-update gratis selamanya',
-              'Hingga 4 jam listening per hari',
-            ].map((item) => (
-              <li key={item} className="flex items-center gap-3">
-                <span className="text-[#5b8dee] flex-shrink-0">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <input
-            type="email"
-            placeholder="email@kamu.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleCheckout()}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm mb-3 outline-none focus:border-[#5b8dee] transition"
-          />
-          <button
-            onClick={handleCheckout}
-            disabled={loading || !email}
-            className="w-full bg-[#5b8dee] hover:bg-[#4a7de0] disabled:opacity-40 text-white font-semibold py-3.5 rounded-lg transition text-base"
-          >
-            {loading ? 'Memproses...' : 'Subscribe Sekarang'}
-          </button>
-          <p className="text-white/25 text-xs text-center mt-4 flex items-center justify-center gap-1">
-            🔒 Pembayaran aman via Midtrans
-          </p>
         </div>
       </section>
 
