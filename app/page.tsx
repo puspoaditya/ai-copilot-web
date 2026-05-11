@@ -249,7 +249,7 @@ export default function Home() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col gap-3">
+            <div className="relative">
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => setShowTrialForm((v) => !v)}
@@ -266,7 +266,7 @@ export default function Home() {
                 </a>
               </div>
               {showTrialForm && (
-                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <div className="absolute top-full left-0 right-0 mt-2 z-20 bg-[#0f0f1a] border border-white/10 rounded-xl p-4 shadow-2xl">
                   <p className="text-white/50 text-xs mb-3">Tidak perlu kartu kredit · License key dikirim ke emailmu</p>
                   <TrialForm onDone={() => setShowTrialForm(false)} />
                 </div>
