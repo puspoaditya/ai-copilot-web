@@ -576,6 +576,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Feedback */}
+      <section className="relative z-10 max-w-2xl mx-auto px-6 py-16">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-3">Punya Masukan?</h2>
+          <p className="text-white/40">Bantu kami berkembang — ceritakan pengalamanmu atau request fitur baru.</p>
+        </div>
+        <div className="rounded-2xl overflow-hidden border border-white/8">
+          <iframe
+            src="https://tally.so/embed/0Q1D6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            width="100%"
+            height="400"
+            style={{ border: 'none' }}
+            title="Form Masukan IntervAI"
+          />
+        </div>
+      </section>
+
       <footer className="relative z-10 text-center py-8 text-white/20 text-sm border-t border-white/5">
         © 2025 IntervAI · Dibuat dengan ❤️ di Indonesia
       </footer>
