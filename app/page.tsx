@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
 
-function TrialForm() {
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function TrialForm({ onDone }: { onDone?: () => void }) {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
@@ -9,6 +11,7 @@ function TrialForm() {
 
   async function handleTrial() {
     if (!email) return;
+    if (!EMAIL_RE.test(email)) { setError('Format email tidak valid.'); return; }
     setLoading(true);
     setError('');
     try {
@@ -22,6 +25,7 @@ function TrialForm() {
         setError(data.error ?? 'Terjadi kesalahan. Coba lagi.');
       } else {
         setDone(true);
+        onDone?.();
       }
     } catch {
       setError('Terjadi kesalahan. Coba lagi.');
@@ -32,32 +36,36 @@ function TrialForm() {
 
   if (done) {
     return (
-      <div className="text-center py-3">
-        <div className="text-3xl mb-3">📬</div>
-        <p className="font-semibold text-white mb-1">Cek emailmu!</p>
-        <p className="text-white/50 text-sm">License key trial sudah dikirim ke <span className="text-white/80">{email}</span></p>
+      <div className="flex items-center gap-3 py-2">
+        <span className="text-2xl">📬</span>
+        <div>
+          <p className="font-semibold text-white text-sm">Cek emailmu!</p>
+          <p className="text-white/50 text-xs">License key dikirim ke <span className="text-white/70">{email}</span></p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
-      <input
-        type="email"
-        placeholder="email@kamu.com"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        onKeyDown={(e) => e.key === 'Enter' && handleTrial()}
-        className="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
-      />
-      <button
-        onClick={handleTrial}
-        disabled={loading || !email}
-        className="bg-white text-[#5b8dee] font-semibold px-5 py-2.5 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
-      >
-        {loading ? 'Memproses...' : 'Coba Gratis →'}
-      </button>
-      {error && <p className="text-red-300 text-xs mt-1 w-full">{error}</p>}
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <input
+          type="email"
+          placeholder="email@kamu.com"
+          value={email}
+          onChange={(e) => { setEmail(e.target.value); setError(''); }}
+          onKeyDown={(e) => e.key === 'Enter' && handleTrial()}
+          className="flex-1 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
+        />
+        <button
+          onClick={handleTrial}
+          disabled={loading || !email}
+          className="bg-white text-[#5b8dee] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
+        >
+          {loading ? '...' : 'Kirim →'}
+        </button>
+      </div>
+      {error && <p className="text-red-400 text-xs">{error}</p>}
     </div>
   );
 }
@@ -135,7 +143,7 @@ export default function Home() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
-  const [showTrialModal, setShowTrialModal] = useState(false);
+  const [showTrialForm, setShowTrialForm] = useState(false);
 
   async function handleCheckout() {
     if (!email) return;
@@ -187,18 +195,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Trial Modal */}
-      {showTrialModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={() => setShowTrialModal(false)}>
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-          <div className="relative bg-[#0f0f1a] border border-white/10 rounded-2xl p-8 w-full max-w-md shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setShowTrialModal(false)} className="absolute top-4 right-4 text-white/30 hover:text-white text-xl leading-none">✕</button>
-            <div className="text-2xl mb-1 font-bold">Coba Gratis 3 Hari</div>
-            <p className="text-white/50 text-sm mb-6">Tidak perlu kartu kredit. License key dikirim ke emailmu.</p>
-            <TrialForm />
-          </div>
-        </div>
-      )}
 
       {/* Hero */}
       <section className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-8">
@@ -253,20 +249,28 @@ export default function Home() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => setShowTrialModal(true)}
-                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
-              >
-                🚀 Coba Gratis Sekarang →
-              </button>
-              <a
-                href="#pricing"
-                className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
-              >
-                ✓ Siap Hadapi Interview
-              </a>
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <button
+                  onClick={() => setShowTrialForm((v) => !v)}
+                  className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
+                  style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}
+                >
+                  🚀 Coba Gratis Sekarang →
+                </button>
+                <a
+                  href="#pricing"
+                  className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
+                >
+                  ✓ Siap Hadapi Interview
+                </a>
+              </div>
+              {showTrialForm && (
+                <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <p className="text-white/50 text-xs mb-3">Tidak perlu kartu kredit · License key dikirim ke emailmu</p>
+                  <TrialForm onDone={() => setShowTrialForm(false)} />
+                </div>
+              )}
             </div>
           </div>
 
