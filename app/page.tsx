@@ -198,7 +198,7 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative z-10 max-w-6xl mx-auto px-6 pt-16 pb-8">
-        <div className="flex flex-col lg:flex-row lg:items-stretch gap-12 lg:min-h-[560px]">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-12">
 
           {/* Left: copy */}
           <div className="flex-1 w-full text-center lg:text-left">
@@ -275,12 +275,12 @@ export default function Home() {
           </div>
 
           {/* Right: app screenshot */}
-          <div className="flex-1 w-full min-w-0 flex">
+          <div className="flex-1 w-full min-w-0">
             <img
               src="/hero.webp"
               alt="AI Interview Copilot app screenshot"
-              className="w-full h-full object-contain object-center rounded-2xl block"
-              style={{ boxShadow: '0 0 0 1px rgba(91,141,238,0.5), 0 0 24px rgba(91,141,238,0.4), 0 0 60px rgba(139,92,246,0.2)' }}
+              className="w-full rounded-2xl block"
+              style={{ boxShadow: '0 0 0 1.5px rgba(91,141,238,0.6), 0 0 30px rgba(91,141,238,0.35), 0 0 70px rgba(139,92,246,0.2)' }}
             />
           </div>
 
