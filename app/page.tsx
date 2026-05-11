@@ -55,12 +55,12 @@ function TrialForm({ onDone }: { onDone?: () => void }) {
           value={email}
           onChange={(e) => { setEmail(e.target.value); setError(''); }}
           onKeyDown={(e) => e.key === 'Enter' && handleTrial()}
-          className="flex-1 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
+          className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
         />
         <button
           onClick={handleTrial}
           disabled={loading || !email}
-          className="bg-white text-[#5b8dee] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
+          className="shrink-0 bg-white text-[#5b8dee] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
         >
           {loading ? '...' : 'Kirim →'}
         </button>
