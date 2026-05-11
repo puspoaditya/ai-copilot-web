@@ -330,6 +330,87 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-3">Kenapa IntervAI?</h2>
+          <p className="text-white/40">Ringan, terjangkau, dan langsung kerja — tanpa bloat</p>
+        </div>
+        <div className="overflow-x-auto rounded-2xl border border-white/8">
+          <table className="w-full text-sm min-w-140">
+            <thead>
+              <tr className="border-b border-white/8">
+                <th className="text-left px-5 py-4 text-white/40 font-medium w-[30%]">Fitur</th>
+                {[
+                  { name: 'IntervAI', highlight: true },
+                  { name: 'Final Round AI', highlight: false },
+                  { name: 'Interview Kickstart', highlight: false },
+                  { name: 'Sonara', highlight: false },
+                ].map((col) => (
+                  <th key={col.name} className={`px-5 py-4 text-center font-semibold ${col.highlight ? 'text-[#5b8dee]' : 'text-white/50'}`}>
+                    {col.highlight && <span className="block text-[10px] font-bold uppercase tracking-widest text-[#5b8dee]/70 mb-1">Kamu di sini</span>}
+                    {col.name}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  label: 'Harga mulai',
+                  values: ['Rp 29.000/bln', '~Rp 480.000/bln', '~Rp 800.000/bln', '~Rp 320.000/bln'],
+                },
+                {
+                  label: 'Real-time transkripsi',
+                  values: ['✓', '✓', '✓', '✓'],
+                },
+                {
+                  label: 'Tidak terlihat saat screen share',
+                  values: ['✓', '✓', '✗', '✓'],
+                },
+                {
+                  label: 'Tangkap audio PC (Zoom, Meet)',
+                  values: ['✓', '✓', '✗', '✗'],
+                },
+                {
+                  label: 'Jawaban personal sesuai CV',
+                  values: ['✓', '✓', '✓', '✗'],
+                },
+                {
+                  label: 'Ukuran aplikasi',
+                  values: ['< 30 MB', '~200 MB', 'Web only', 'Web only'],
+                },
+                {
+                  label: 'Trial gratis',
+                  values: ['3 hari', '✗', '✗', '3 sesi'],
+                },
+                {
+                  label: 'Bahasa Indonesia',
+                  values: ['✓', '✗', '✗', '✗'],
+                },
+              ].map((row, i) => (
+                <tr key={row.label} className={`border-b border-white/5 ${i % 2 === 0 ? 'bg-white/1.5' : ''}`}>
+                  <td className="px-5 py-3.5 text-white/60">{row.label}</td>
+                  {row.values.map((val, vi) => (
+                    <td
+                      key={vi}
+                      className={`px-5 py-3.5 text-center ${
+                        vi === 0
+                          ? val === '✓' ? 'text-[#5b8dee] font-semibold' : val === '✗' ? 'text-white/20' : 'text-white font-semibold'
+                          : val === '✓' ? 'text-white/50' : val === '✗' ? 'text-white/15' : 'text-white/40'
+                      }`}
+                    >
+                      {val}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="text-center text-white/20 text-xs mt-4">Harga kompetitor berdasarkan data publik per Mei 2025. Dapat berubah sewaktu-waktu.</p>
+      </section>
+
       {/* Testimonials */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
