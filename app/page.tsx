@@ -276,16 +276,12 @@ export default function Home() {
 
           {/* Right: app screenshot */}
           <div className="flex-1 w-full min-w-0 flex">
-            <div className="relative w-full">
-              <div className="absolute -inset-4 rounded-3xl blur-2xl opacity-40" style={{ background: 'linear-gradient(135deg, #5b8dee40, #8b5cf640)' }} />
-              <div className="relative p-px rounded-2xl h-full" style={{ background: 'linear-gradient(135deg, #5b8dee, #8b5cf6)' }}>
-                <img
-                  src="/hero.webp"
-                  alt="AI Interview Copilot app screenshot"
-                  className="w-full h-full object-contain object-center rounded-2xl block"
-                />
-              </div>
-            </div>
+            <img
+              src="/hero.webp"
+              alt="AI Interview Copilot app screenshot"
+              className="w-full h-full object-contain object-center rounded-2xl block"
+              style={{ boxShadow: '0 0 0 1px rgba(91,141,238,0.5), 0 0 24px rgba(91,141,238,0.4), 0 0 60px rgba(139,92,246,0.2)' }}
+            />
           </div>
 
         </div>
