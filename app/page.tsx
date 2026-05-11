@@ -141,12 +141,16 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function Home() {
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
 
   async function handleCheckout() {
     if (!email) return;
+    if (!EMAIL_RE.test(email)) { setEmailError('Format email tidak valid.'); return; }
+    setEmailError('');
     setLoading(true);
+    const scrollY = window.scrollY;
     try {
       const res = await fetch('/api/create-checkout', {
         method: 'POST',
@@ -154,18 +158,19 @@ export default function Home() {
         body: JSON.stringify({ email, plan }),
       });
       const { token, error } = await res.json();
-      if (error || !token) throw new Error(error ?? 'Failed to create payment');
+      if (error || !token) throw new Error(error ?? 'Terjadi kesalahan. Coba lagi.');
 
       await loadSnapScript();
+      document.body.style.overflow = 'hidden';
       window.snap.pay(token, {
-        onSuccess: () => { window.location.href = '/success'; },
-        onPending: () => { setLoading(false); },
-        onError: () => { setLoading(false); alert('Pembayaran gagal. Coba lagi.'); },
-        onClose: () => { setLoading(false); },
+        onSuccess: () => { document.body.style.overflow = ''; window.location.href = '/success'; },
+        onPending: () => { document.body.style.overflow = ''; setLoading(false); window.scrollTo(0, scrollY); },
+        onError: () => { document.body.style.overflow = ''; setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); window.scrollTo(0, scrollY); },
+        onClose: () => { document.body.style.overflow = ''; setLoading(false); window.scrollTo(0, scrollY); },
       });
-    } catch {
+    } catch (err: unknown) {
       setLoading(false);
-      alert('Terjadi kesalahan. Coba lagi.');
+      setEmailError(err instanceof Error ? err.message : 'Terjadi kesalahan. Coba lagi.');
     }
   }
 
@@ -453,14 +458,15 @@ export default function Home() {
                 type="email"
                 placeholder="email@kamu.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
                 onKeyDown={(e) => e.key === 'Enter' && handleCheckout()}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm mb-3 outline-none focus:border-[#5b8dee] transition"
+                className={`w-full bg-white/5 border rounded-lg px-4 py-3 text-sm mb-1 outline-none transition ${emailError ? 'border-red-500/60' : 'border-white/10 focus:border-[#5b8dee]'}`}
               />
+              {emailError && <p className="text-red-400 text-xs mb-2">{emailError}</p>}
               <button
                 onClick={handleCheckout}
                 disabled={loading || !email}
-                className="w-full bg-[#5b8dee] hover:bg-[#4a7de0] disabled:opacity-40 text-white font-semibold py-3 rounded-lg transition text-sm"
+                className="w-full bg-[#5b8dee] hover:bg-[#4a7de0] disabled:opacity-40 text-white font-semibold py-3 rounded-lg transition text-sm mt-2"
               >
                 {loading ? 'Memproses...' : 'Subscribe Sekarang'}
               </button>
