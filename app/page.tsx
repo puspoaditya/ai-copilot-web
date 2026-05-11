@@ -144,6 +144,7 @@ export default function Home() {
   const [emailError, setEmailError] = useState('');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<'monthly' | 'yearly'>('monthly');
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   async function handleCheckout() {
     if (!email) return;
@@ -576,26 +577,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Feedback */}
-      <section className="relative z-10 max-w-2xl mx-auto px-6 py-16">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-3">Punya Masukan?</h2>
-          <p className="text-white/40">Bantu kami berkembang — ceritakan pengalamanmu atau request fitur baru.</p>
-        </div>
-        <div className="rounded-2xl overflow-hidden border border-white/8">
-          <iframe
-            src="https://tally.so/embed/0Q1D6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-            width="100%"
-            height="400"
-            style={{ border: 'none' }}
-            title="Form Masukan IntervAI"
-          />
-        </div>
-      </section>
-
       <footer className="relative z-10 text-center py-8 text-white/20 text-sm border-t border-white/5">
         © 2025 IntervAI · Dibuat dengan ❤️ di Indonesia
       </footer>
+
+      {/* Floating Feedback Button */}
+      <button
+        onClick={() => setFeedbackOpen(true)}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#5b8dee] hover:bg-[#4a7de0] text-white text-sm font-semibold px-4 py-3 rounded-full shadow-lg shadow-[#5b8dee]/30 transition"
+      >
+        💬 Masukan
+      </button>
+
+      {/* Feedback Popup */}
+      {feedbackOpen && (
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:justify-end sm:p-6 p-0">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setFeedbackOpen(false)} />
+          <div className="relative bg-[#0d0d14] border border-white/10 rounded-t-2xl sm:rounded-2xl w-full sm:w-100 shadow-2xl overflow-hidden">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-white/8">
+              <span className="font-semibold text-sm">Punya Masukan?</span>
+              <button onClick={() => setFeedbackOpen(false)} className="text-white/40 hover:text-white text-xl leading-none transition">×</button>
+            </div>
+            <iframe
+              src="https://tally.so/embed/0Q1D6j?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              width="100%"
+              height="480"
+              style={{ border: 'none' }}
+              title="Form Masukan IntervAI"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }
