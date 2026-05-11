@@ -344,8 +344,8 @@ export default function Home() {
                 {[
                   { name: 'IntervAI', highlight: true },
                   { name: 'Final Round AI', highlight: false },
-                  { name: 'Interview Kickstart', highlight: false },
-                  { name: 'Sonara', highlight: false },
+                  { name: 'Cluely', highlight: false },
+                  { name: 'Interview Coder', highlight: false },
                 ].map((col) => (
                   <th key={col.name} className={`px-5 py-4 text-center font-semibold ${col.highlight ? 'text-[#5b8dee]' : 'text-white/50'}`}>
                     {col.highlight && <span className="block text-[10px] font-bold uppercase tracking-widest text-[#5b8dee]/70 mb-1">Kamu di sini</span>}
@@ -358,7 +358,7 @@ export default function Home() {
               {[
                 {
                   label: 'Harga mulai',
-                  values: ['Rp 29.000/bln', '~Rp 480.000/bln', '~Rp 800.000/bln', '~Rp 320.000/bln'],
+                  values: ['Rp 179.000/bln', '~Rp 400.000/bln', '~Rp 1.200.000/bln', '~Rp 4.800.000/bln'],
                 },
                 {
                   label: 'Real-time transkripsi',
@@ -366,11 +366,11 @@ export default function Home() {
                 },
                 {
                   label: 'Tidak terlihat saat screen share',
-                  values: ['✓', '✓', '✗', '✓'],
+                  values: ['✓', '✓', '✓', '✓'],
                 },
                 {
                   label: 'Tangkap audio PC (Zoom, Meet)',
-                  values: ['✓', '✓', '✗', '✗'],
+                  values: ['✓', '✓', '✓', '✓'],
                 },
                 {
                   label: 'Jawaban personal sesuai CV',
@@ -378,11 +378,11 @@ export default function Home() {
                 },
                 {
                   label: 'Ukuran aplikasi',
-                  values: ['< 30 MB', '~200 MB', 'Web only', 'Web only'],
+                  values: ['< 80 MB', 'Web + berat', '~200 MB', '~300 MB'],
                 },
                 {
                   label: 'Trial gratis',
-                  values: ['3 hari', '✗', '✗', '3 sesi'],
+                  values: ['3 hari penuh', 'Sesi terbatas', '✗', 'Terbatas'],
                 },
                 {
                   label: 'Bahasa Indonesia',
@@ -408,7 +408,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="text-center text-white/20 text-xs mt-4">Harga kompetitor berdasarkan data publik per Mei 2025. Dapat berubah sewaktu-waktu.</p>
+        <p className="text-center text-white/20 text-xs mt-4">Harga kompetitor berdasarkan data publik per Mei 2026. Dapat berubah sewaktu-waktu.</p>
       </section>
 
       {/* Testimonials */}
