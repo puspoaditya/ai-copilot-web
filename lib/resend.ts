@@ -6,12 +6,12 @@ export async function sendTrialEmail(email: string, licenseKey: string) {
   const downloadUrl = process.env.APP_DOWNLOAD_URL ?? '#';
 
   await resend.emails.send({
-    from: 'AI Interview Copilot <noreply@karakterku.my.id>',
+    from: 'IntervAI <noreply@intervai.my.id>',
     to: email,
-    subject: '🎁 Trial 3 Hari Gratis — AI Interview Copilot',
+    subject: '🎁 Trial 3 Hari Gratis — IntervAI',
     html: `
       <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px;background:#fff">
-        <h2 style="color:#5b8dee;margin-bottom:4px">AI Interview Copilot</h2>
+        <h2 style="color:#5b8dee;margin-bottom:4px">IntervAI</h2>
         <p style="color:#888;font-size:13px;margin-top:0">Trial gratis 3 hari kamu sudah aktif!</p>
 
         <p style="margin-top:24px">Berikut license key trial kamu:</p>
@@ -27,7 +27,7 @@ export async function sendTrialEmail(email: string, licenseKey: string) {
         <a href="${downloadUrl}"
            style="display:inline-block;background:#5b8dee;color:#fff;text-decoration:none;
                   padding:12px 28px;border-radius:8px;font-weight:600;margin:8px 0 24px">
-          ⬇ Download AI Interview Copilot
+          ⬇ Download IntervAI
         </a>
 
         <div style="background:#f9f9fb;border-radius:8px;padding:16px 20px;font-size:13px;color:#555">
@@ -52,12 +52,12 @@ export async function sendLicenseEmail(email: string, licenseKey: string) {
   const downloadUrl = process.env.APP_DOWNLOAD_URL ?? '#';
 
   await resend.emails.send({
-    from: 'AI Interview Copilot <noreply@karakterku.my.id>',
+    from: 'IntervAI <noreply@intervai.my.id>',
     to: email,
-    subject: '🎉 License Key & Link Download AI Interview Copilot',
+    subject: '🎉 License Key & Link Download IntervAI',
     html: `
       <div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px;background:#fff">
-        <h2 style="color:#5b8dee;margin-bottom:4px">AI Interview Copilot</h2>
+        <h2 style="color:#5b8dee;margin-bottom:4px">IntervAI</h2>
         <p style="color:#888;font-size:13px;margin-top:0">Terima kasih telah berlangganan!</p>
 
         <p style="margin-top:24px">Berikut license key kamu:</p>
@@ -69,7 +69,7 @@ export async function sendLicenseEmail(email: string, licenseKey: string) {
         <a href="${downloadUrl}"
            style="display:inline-block;background:#5b8dee;color:#fff;text-decoration:none;
                   padding:12px 28px;border-radius:8px;font-weight:600;margin:8px 0 24px">
-          ⬇ Download AI Interview Copilot
+          ⬇ Download IntervAI
         </a>
 
         <div style="background:#f9f9fb;border-radius:8px;padding:16px 20px;font-size:13px;color:#555">
