@@ -214,7 +214,8 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="font-extrabold leading-none mb-5">
-              <span className="text-6xl lg:text-7xl text-white">Interv</span><span className="text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI</span>
+              <span className="block text-6xl lg:text-7xl text-white">AI Interview</span>
+              <span className="block text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Copilot</span>
             </h1>
 
             {/* Underline accent */}
