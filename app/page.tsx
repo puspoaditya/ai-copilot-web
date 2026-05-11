@@ -188,7 +188,7 @@ export default function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/5 bg-[#0d0d14]/80 backdrop-blur">
         <span className="font-bold text-lg tracking-tight">
-          <span className="text-[#5b8dee]">AI</span> Interview Copilot
+          Interv<span className="text-[#5b8dee]">AI</span>
         </span>
         <div className="flex items-center gap-6">
           <a href="#how" className="text-sm text-white/50 hover:text-white transition hidden md:block">Cara Kerja</a>
@@ -214,11 +214,7 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="font-extrabold leading-none mb-5">
-              <div className="flex flex-wrap items-baseline gap-x-3 justify-center lg:justify-start">
-                <span className="text-5xl lg:text-6xl text-white">AI</span>
-                <span className="text-5xl lg:text-6xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
-              </div>
-              <span className="block text-5xl lg:text-6xl text-white mt-1">Copilot</span>
+              <span className="text-6xl lg:text-7xl text-white">Interv</span><span className="text-6xl lg:text-7xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>AI</span>
             </h1>
 
             {/* Underline accent */}
@@ -274,7 +270,7 @@ export default function Home() {
           <div className="flex-1 w-full min-w-0">
             <img
               src="/hero.webp"
-              alt="AI Interview Copilot app screenshot"
+              alt="IntervAI app screenshot"
               className="w-full rounded-2xl block"
               style={{ boxShadow: '0 0 0 1.5px rgba(91,141,238,0.6), 0 0 30px rgba(91,141,238,0.35), 0 0 70px rgba(139,92,246,0.2)' }}
             />
@@ -499,7 +495,7 @@ export default function Home() {
       </section>
 
       <footer className="relative z-10 text-center py-8 text-white/20 text-sm border-t border-white/5">
-        © 2025 AI Interview Copilot · Dibuat dengan ❤️ di Indonesia
+        © 2025 IntervAI · Dibuat dengan ❤️ di Indonesia
       </footer>
     </main>
   );

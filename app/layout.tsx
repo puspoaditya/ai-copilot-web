@@ -15,19 +15,19 @@ const geistMono = Geist_Mono({
 const BASE_URL = 'https://ai-copilot-web.vercel.app';
 
 export const metadata: Metadata = {
-  title: "AI Interview Copilot — Bantuan AI Real-time saat Interview",
+  title: "IntervAI — Bantuan AI Real-time saat Interview",
   description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
   metadataBase: new URL(BASE_URL),
   openGraph: {
-    title: "AI Interview Copilot — Bantuan AI Real-time saat Interview",
+    title: "IntervAI — Bantuan AI Real-time saat Interview",
     description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
     url: BASE_URL,
-    siteName: "AI Interview Copilot",
+    siteName: "IntervAI",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Interview Copilot — Bantuan AI Real-time saat Interview",
+    title: "IntervAI — Bantuan AI Real-time saat Interview",
     description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
   },
 };
