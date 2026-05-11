@@ -210,7 +210,7 @@ export default function Home() {
 
             {/* Headline */}
             <h1 className="font-extrabold leading-none mb-5">
-              <div className="flex flex-wrap items-baseline gap-x-3">
+              <div className="flex flex-wrap items-baseline gap-x-3 justify-center lg:justify-start">
                 <span className="text-5xl lg:text-6xl text-white">AI</span>
                 <span className="text-5xl lg:text-6xl" style={{ background: 'linear-gradient(90deg, #5b8dee, #8b5cf6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Interview</span>
               </div>
