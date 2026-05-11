@@ -150,7 +150,6 @@ export default function Home() {
     if (!EMAIL_RE.test(email)) { setEmailError('Format email tidak valid.'); return; }
     setEmailError('');
     setLoading(true);
-    const scrollY = window.scrollY;
     try {
       const res = await fetch('/api/create-checkout', {
         method: 'POST',
@@ -161,12 +160,21 @@ export default function Home() {
       if (error || !token) throw new Error(error ?? 'Terjadi kesalahan. Coba lagi.');
 
       await loadSnapScript();
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      const unlockScroll = () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, scrollY);
+      };
       window.snap.pay(token, {
-        onSuccess: () => { document.body.style.overflow = ''; window.location.href = '/success'; },
-        onPending: () => { document.body.style.overflow = ''; setLoading(false); window.scrollTo(0, scrollY); },
-        onError: () => { document.body.style.overflow = ''; setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); window.scrollTo(0, scrollY); },
-        onClose: () => { document.body.style.overflow = ''; setLoading(false); window.scrollTo(0, scrollY); },
+        onSuccess: () => { unlockScroll(); window.location.href = '/success'; },
+        onPending: () => { unlockScroll(); setLoading(false); },
+        onError: () => { unlockScroll(); setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); },
+        onClose: () => { unlockScroll(); setLoading(false); },
       });
     } catch (err: unknown) {
       setLoading(false);
