@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #05091a;
     --foreground: #ededed;
   }
 }
@@ -28,8 +28,8 @@ body {
 
 /* ── Landing page background ── */
 .bg-dot-pattern {
-  background-color: #0d0d14;
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-color: #05091a;
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -42,13 +42,18 @@ body {
 }
 
 .orb-blue {
-  background: radial-gradient(circle, rgba(91,141,238,0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(79,142,255,0.30) 0%, transparent 70%);
 }
 
 .orb-purple {
-  background: radial-gradient(circle, rgba(139,92,246,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(139,92,246,0.22) 0%, transparent 70%);
 }
 
 .orb-cyan {
-  background: radial-gradient(circle, rgba(34,211,238,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34,211,238,0.14) 0%, transparent 70%);
+}
+
+/* ── Section alternating bg ── */
+.section-alt {
+  background: rgba(10, 15, 35, 0.6);
 }
