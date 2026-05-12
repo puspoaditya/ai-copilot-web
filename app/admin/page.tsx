@@ -247,9 +247,9 @@ export default function AdminPage() {
                     { key: 'email', label: 'Email' },
                     { key: null, label: 'License Key' },
                     { key: 'plan', label: 'Plan' },
-                    { key: 'expires_at', label: 'Expires' },
                     { key: 'status', label: 'Status' },
                     { key: 'created_at', label: 'Daftar' },
+                    { key: 'expires_at', label: 'Expires' },
                     { key: null, label: 'Aksi' },
                   ] as { key: SortKey | null; label: string }[]).map(col => (
                     <th
@@ -283,9 +283,9 @@ export default function AdminPage() {
                       <td className="px-5 py-3.5">
                         <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${badge.cls}`}>{badge.label}</span>
                       </td>
-                      <td className="px-5 py-3.5 text-white/40 text-xs">{fmt(l.expires_at)}</td>
                       <td className="px-5 py-3.5 text-white/40 text-xs">{l.status}</td>
                       <td className="px-5 py-3.5 text-white/40 text-xs">{fmt(l.created_at)}</td>
+                      <td className="px-5 py-3.5 text-white/40 text-xs">{fmt(l.expires_at)}</td>
                       <td className="px-5 py-3.5">
                         <div className="flex items-center gap-2">
                           <button
@@ -330,7 +330,7 @@ export default function AdminPage() {
                 <select
                   value={editPlan}
                   onChange={e => setEditPlan(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
+                  style={{ colorScheme: 'dark' }} className="w-full bg-[#0d0d1a] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
                 >
                   <option value="trial">Trial</option>
                   <option value="monthly">Monthly</option>
@@ -344,7 +344,7 @@ export default function AdminPage() {
                 <select
                   value={editStatus}
                   onChange={e => setEditStatus(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
+                  style={{ colorScheme: 'dark' }} className="w-full bg-[#0d0d1a] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
                 >
                   <option value="active">active</option>
                   <option value="inactive">inactive</option>
@@ -364,7 +364,7 @@ export default function AdminPage() {
                   placeholder="Misal: 3"
                   value={extendDays}
                   onChange={e => setExtendDays(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
+                  style={{ colorScheme: 'dark' }} className="w-full bg-[#0d0d1a] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white outline-none focus:border-[#5b8dee] transition"
                 />
                 <p className="text-white/25 text-xs mt-1">Kosongkan jika tidak ingin mengubah tanggal expired.</p>
               </div>
