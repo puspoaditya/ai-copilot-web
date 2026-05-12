@@ -57,3 +57,43 @@ body {
 .section-alt {
   background: rgba(10, 15, 35, 0.6);
 }
+
+/* ── Orb drift animations ── */
+@keyframes orbDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(45px, -30px) scale(1.06); }
+  66%       { transform: translate(-20px, 30px) scale(0.96); }
+}
+@keyframes orbDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-40px, 25px) scale(1.04); }
+  75%       { transform: translate(30px, -20px) scale(0.97); }
+}
+@keyframes orbDrift3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(25px, 40px) scale(1.05); }
+}
+
+.orb-drift-1 { animation: orbDrift1 18s ease-in-out infinite; }
+.orb-drift-2 { animation: orbDrift2 22s ease-in-out infinite; }
+.orb-drift-3 { animation: orbDrift3 16s ease-in-out infinite; }
+.orb-drift-4 { animation: orbDrift2 26s ease-in-out infinite reverse; }
+
+/* ── Hero image float ── */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+.hero-float { animation: heroFloat 5s ease-in-out infinite; }
+
+/* ── CTA shimmer ── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.btn-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(135deg, #4f8eff 0%, #8b5cf6 40%, #4f8eff 60%, #8b5cf6 100%);
+  animation: shimmer 3s linear infinite;
+}
+.btn-shimmer:hover { animation-duration: 1.2s; }

@@ -1,5 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+
+function FadeUp({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.12 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(28px)', transition: `opacity 0.65s ease ${delay}ms, transform 0.65s ease ${delay}ms` }}>
+      {children}
+    </div>
+  );
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -180,10 +197,10 @@ export default function Home() {
 
       {/* Background orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="orb orb-blue w-[700px] h-[700px] -top-40 -left-40" />
-        <div className="orb orb-purple w-[500px] h-[500px] top-1/3 -right-32" />
-        <div className="orb orb-cyan w-[400px] h-[400px] bottom-1/4 left-1/4" />
-        <div className="orb orb-blue w-[400px] h-[400px] bottom-0 right-1/4 opacity-50" />
+        <div className="orb orb-blue orb-drift-1 w-175 h-175 -top-40 -left-40" />
+        <div className="orb orb-purple orb-drift-2 w-125 h-125 top-1/3 -right-32" />
+        <div className="orb orb-cyan orb-drift-3 w-100 h-100 bottom-1/4 left-1/4" />
+        <div className="orb orb-blue orb-drift-4 w-100 h-100 bottom-0 right-1/4 opacity-50" />
       </div>
 
       {/* Nav */}
@@ -209,7 +226,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row lg:items-center gap-12">
 
           {/* Left: copy */}
-          <div className="flex-1 w-full text-center lg:text-left">
+          <FadeUp className="flex-1 w-full text-center lg:text-left">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
               <span className="text-[#4f8eff]">✦</span>
@@ -257,8 +274,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#pricing"
-                className="flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #4f8eff, #8b5cf6)' }}
+                className="btn-shimmer flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-95 hover:scale-[1.02]"
               >
                 🚀 Coba Gratis Sekarang →
               </a>
@@ -269,15 +285,15 @@ export default function Home() {
                 ✓ Siap Hadapi Interview
               </a>
             </div>
-          </div>
+          </FadeUp>
 
           {/* Right: app screenshot */}
-          <div className="flex-1 w-full min-w-0">
+          <div className="flex-1 w-full min-w-0 hero-float">
             <img
               src="/hero.webp"
               alt="IntervAI app screenshot"
               className="w-full rounded-2xl block"
-              style={{ boxShadow: '0 0 0 1.5px rgba(91,141,238,0.6), 0 0 30px rgba(91,141,238,0.35), 0 0 70px rgba(139,92,246,0.2)' }}
+              style={{ boxShadow: '0 0 0 1.5px rgba(79,142,255,0.6), 0 0 30px rgba(79,142,255,0.35), 0 0 70px rgba(139,92,246,0.2)' }}
             />
           </div>
 
@@ -287,11 +303,11 @@ export default function Home() {
       {/* How it works */}
       <section id="how" className="relative z-10 section-alt py-20">
         <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <FadeUp><div className="text-center mb-14">
           <h2 className="text-3xl font-bold mb-3">Cara Kerja</h2>
           <p className="text-white/60">Siap pakai dalam hitungan menit</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        </div></FadeUp>
+        <FadeUp delay={150}><div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
           {/* Connector line (desktop only) */}
           <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-white/8" />
           {[
@@ -309,17 +325,17 @@ export default function Home() {
               <p className="text-white/65 text-sm leading-relaxed">{s.desc}</p>
             </div>
           ))}
-        </div>
+        </div></FadeUp>
         </div>
       </section>
 
       {/* Features */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 py-8">
-        <div className="text-center mb-12">
+        <FadeUp><div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Fitur Lengkap</h2>
           <p className="text-white/60">Semua yang kamu butuhkan untuk interview percaya diri</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        </div></FadeUp>
+        <FadeUp delay={150}><div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             { icon: '🎙', title: 'Transkripsi Real-time', desc: 'Deepgram Nova-3 mengubah suara interviewer jadi teks dalam milidetik — akurat dan responsif.' },
             { icon: '🤖', title: 'Jawaban Personal', desc: 'Isi profil CV dan job description-mu, AI akan menjawab sesuai pengalamanmu yang spesifik.' },
@@ -334,16 +350,16 @@ export default function Home() {
               <p className="text-white/65 text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
-        </div>
+        </div></FadeUp>
       </section>
 
       {/* Comparison Table */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 py-16">
-        <div className="text-center mb-12">
+        <FadeUp><div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Kenapa IntervAI?</h2>
           <p className="text-white/60">Ringan, terjangkau, dan langsung kerja — tanpa bloat</p>
-        </div>
-        <div className="overflow-x-auto rounded-2xl border border-white/8">
+        </div></FadeUp>
+        <FadeUp delay={150}><div className="overflow-x-auto rounded-2xl border border-white/8">
           <table className="w-full text-sm min-w-140">
             <thead>
               <tr className="border-b border-white/8">
@@ -414,18 +430,18 @@ export default function Home() {
               ))}
             </tbody>
           </table>
-        </div>
+        </div></FadeUp>
         <p className="text-center text-white/20 text-xs mt-4">Harga kompetitor berdasarkan data publik per Mei 2026. Dapat berubah sewaktu-waktu.</p>
       </section>
 
       {/* Testimonials */}
       <section className="relative z-10 section-alt py-20">
         <div className="max-w-5xl mx-auto px-6">
-        <div className="text-center mb-12">
+        <FadeUp><div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Apa Kata Mereka</h2>
           <p className="text-white/60">Dari pengguna nyata yang sudah merasakannya</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        </div></FadeUp>
+        <FadeUp delay={150}><div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {[
             {
               name: 'Rizky A.',
@@ -459,16 +475,18 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </div></FadeUp>
         </div>
       </section>
 
       {/* Pricing */}
       <section id="pricing" className="relative z-10 max-w-4xl mx-auto px-6 py-8">
-        <h2 className="text-3xl font-bold text-center mb-3">Pilih Paket</h2>
-        <p className="text-white/60 text-center mb-10">Mulai gratis, upgrade kapan saja.</p>
+        <FadeUp><div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-3">Pilih Paket</h2>
+          <p className="text-white/60">Mulai gratis, upgrade kapan saja.</p>
+        </div></FadeUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
+        <FadeUp delay={100}><div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
 
           {/* Free Trial Card */}
           <div className="bg-[#0a1228] border border-white/12 rounded-2xl p-7 flex flex-col gap-5">
@@ -560,28 +578,32 @@ export default function Home() {
             </div>
           </div>
 
-        </div>
+        </div></FadeUp>
       </section>
 
       {/* FAQ */}
       <section className="relative z-10 max-w-2xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold text-center mb-10">Pertanyaan Umum</h2>
-        <div className="divide-y divide-white/8 border-t border-white/8">
-          {faqs.map((f) => (
-            <FaqItem key={f.q} q={f.q} a={f.a} />
-          ))}
-        </div>
+        <FadeUp>
+          <h2 className="text-3xl font-bold text-center mb-10">Pertanyaan Umum</h2>
+          <div className="divide-y divide-white/8 border-t border-white/8">
+            {faqs.map((f) => (
+              <FaqItem key={f.q} q={f.q} a={f.a} />
+            ))}
+          </div>
+        </FadeUp>
       </section>
 
       {/* CTA */}
       <section className="relative z-10 max-w-2xl mx-auto px-6 py-16 text-center">
-        <div className="bg-[#4f8eff]/10 border border-[#4f8eff]/30 rounded-2xl p-10">
-          <h2 className="text-3xl font-bold mb-4">Siap untuk interview berikutnya?</h2>
-          <p className="text-white/70 mb-7">Mulai dalam 5 menit. Tidak perlu setup yang rumit.</p>
-          <a href="#pricing" className="bg-[#4f8eff] hover:bg-[#3d76f5] text-white font-semibold px-8 py-3.5 rounded-lg transition text-base inline-block">
-            Mulai Sekarang →
-          </a>
-        </div>
+        <FadeUp>
+          <div className="bg-[#4f8eff]/10 border border-[#4f8eff]/30 rounded-2xl p-10">
+            <h2 className="text-3xl font-bold mb-4">Siap untuk interview berikutnya?</h2>
+            <p className="text-white/70 mb-7">Mulai dalam 5 menit. Tidak perlu setup yang rumit.</p>
+            <a href="#pricing" className="bg-[#4f8eff] hover:bg-[#3d76f5] text-white font-semibold px-8 py-3.5 rounded-lg transition text-base inline-block">
+              Mulai Sekarang →
+            </a>
+          </div>
+        </FadeUp>
       </section>
 
       <footer className="relative z-10 text-center py-8 text-white/40 text-sm border-t border-white/10">
