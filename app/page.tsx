@@ -188,9 +188,10 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-8 py-4 border-b border-white/8 bg-[#05091a]/90 backdrop-blur">
-        <span className="font-bold text-lg tracking-tight">
-          Interv<span className="text-[#4f8eff]">AI</span>
-        </span>
+        <a href="/" className="flex items-center gap-2.5 font-bold text-lg tracking-tight hover:opacity-85 transition">
+          <img src="/icon.ico" alt="IntervAI" className="w-7 h-7 rounded-md" />
+          Interv <span className="text-[#4f8eff]">AI</span>
+        </a>
         <div className="flex items-center gap-6">
           <a href="#how" className="text-sm text-white/65 hover:text-white transition hidden md:block">Cara Kerja</a>
           <a href="#pricing" className="text-sm text-white/65 hover:text-white transition hidden md:block">Harga</a>
