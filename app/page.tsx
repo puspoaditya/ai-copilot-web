@@ -58,6 +58,7 @@ function TrialForm({ onDone }: { onDone?: () => void }) {
         <div>
           <p className="font-semibold text-white text-sm">Cek emailmu!</p>
           <p className="text-white/50 text-xs">License key dikirim ke <span className="text-white/70">{email}</span></p>
+          <p className="text-white/35 text-xs mt-1">Belum masuk? Cek folder Spam — email ini dikirim otomatis.</p>
         </div>
       </div>
     );
