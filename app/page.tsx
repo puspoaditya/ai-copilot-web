@@ -43,6 +43,9 @@ function TrialForm({ onDone }: { onDone?: () => void }) {
       } else {
         setDone(true);
         onDone?.();
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
       }
     } catch {
       setError('Terjadi kesalahan. Coba lagi.');
