@@ -184,8 +184,12 @@ export default function Home() {
       await loadSnapScript();
       const scrollY = window.scrollY;
       const restoreScroll = () => setTimeout(() => window.scrollTo({ top: scrollY, behavior: 'instant' as ScrollBehavior }), 50);
+      const prices: Record<string, number> = { monthly: 179000, yearly: 1499000 };
       window.snap.pay(token, {
-        onSuccess: () => { window.location.href = '/success'; },
+        onSuccess: () => {
+          if ((window as any).fbq) (window as any).fbq('track', 'Purchase', { value: prices[plan] ?? 179000, currency: 'IDR' });
+          window.location.href = '/success';
+        },
         onPending: () => { setLoading(false); restoreScroll(); },
         onError: () => { setLoading(false); setEmailError('Pembayaran gagal. Coba lagi.'); restoreScroll(); },
         onClose: () => { setLoading(false); restoreScroll(); },

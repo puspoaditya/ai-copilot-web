@@ -1,6 +1,14 @@
+'use client';
+import { useEffect } from 'react';
+
 const DOWNLOAD_URL = process.env.NEXT_PUBLIC_APP_DOWNLOAD_URL ?? '#';
 
 export default function SuccessPage() {
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', { currency: 'IDR' });
+    }
+  }, []);
   return (
     <main className="min-h-screen bg-[#0d0d14] text-white flex items-center justify-center px-6">
       <div className="max-w-md w-full text-center">
