@@ -235,9 +235,9 @@ export default function Home() {
           {/* Left: copy */}
           <FadeUp className="flex-1 w-full text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
+            <div className="inline-flex items-center gap-2 bg-[#4f8eff]/10 border border-[#4f8eff]/25 text-white text-xs font-semibold px-4 py-2 rounded-full mb-7">
               <span className="text-[#4f8eff]">✦</span>
-              Realtime AI Assistance
+              Khusus Interview Perusahaan Luar Negeri & Remote
             </div>
 
             {/* Headline */}
@@ -251,10 +251,9 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-white/80 text-base mb-8 leading-relaxed">
-              Bantu Kamu Jawab Pertanyaan Saat Interview<br />
-              Dengan Bantuan AI Secara{' '}
-              <span className="text-[#4f8eff] font-semibold">Real Time</span>
-              {' '}& <span className="text-[#8b5cf6] font-semibold">Tidak Terlihat</span>
+              Jawaban AI muncul real-time di layarmu saat interviewer bicara.<br />
+              <span className="text-[#4f8eff] font-semibold">Tidak terlihat</span> oleh interviewer —{' '}
+              cocok untuk interview <span className="text-[#8b5cf6] font-semibold">remote & perusahaan luar negeri.</span>
             </p>
 
             {/* Feature pills */}
@@ -283,14 +282,24 @@ export default function Home() {
                 href="#pricing"
                 className="btn-shimmer flex items-center justify-center gap-2 text-white font-bold px-6 py-4 rounded-xl text-base transition hover:opacity-95 hover:scale-[1.02]"
               >
-                🚀 Coba Gratis Sekarang →
+                🚀 Coba Gratis 3 Hari →
               </a>
               <a
-                href="#pricing"
+                href="#how"
                 className="flex items-center justify-center gap-2 bg-white/8 hover:bg-white/12 border border-white/15 text-white/85 hover:text-white font-semibold px-6 py-4 rounded-xl text-base transition"
               >
-                ✓ Siap Hadapi Interview
+                ▶ Lihat Cara Kerja
               </a>
+            </div>
+
+            {/* Social proof */}
+            <div className="flex items-center gap-3 mt-5 justify-center lg:justify-start">
+              <div className="flex -space-x-2">
+                {['🧑‍💻','👩‍💼','🧑‍🎓','👨‍💻'].map((e, i) => (
+                  <div key={i} className="w-7 h-7 rounded-full bg-[#0a1228] border border-white/15 flex items-center justify-center text-sm">{e}</div>
+                ))}
+              </div>
+              <p className="text-white/50 text-xs">Sudah dipakai <span className="text-white/80 font-semibold">50+ job seeker</span> Indonesia</p>
             </div>
           </FadeUp>
 
