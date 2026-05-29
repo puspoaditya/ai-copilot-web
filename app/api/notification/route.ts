@@ -13,6 +13,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
+  // Reject transactions not originating from our checkout
+  if (!order_id.startsWith('AIC-')) {
+    return NextResponse.json({ error: 'Invalid order' }, { status: 400 });
+  }
+
+  // Reject suspiciously low amounts (minimum Rp 100.000)
+  if (Number(gross_amount) < 100000) {
+    return NextResponse.json({ error: 'Invalid amount' }, { status: 400 });
+  }
+
   const isPaid =
     transaction_status === 'settlement' ||
     (transaction_status === 'capture' && fraud_status === 'accept');
