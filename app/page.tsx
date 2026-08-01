@@ -21,72 +21,12 @@ function FadeUp({ children, delay = 0, className = '' }: { children: React.React
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function TrialForm({ onDone }: { onDone?: () => void }) {
-  const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
-  const [error, setError] = useState('');
-
-  async function handleTrial() {
-    if (!email) return;
-    if (!EMAIL_RE.test(email)) { setError('Format email tidak valid.'); return; }
-    setLoading(true);
-    setError('');
-    try {
-      const res = await fetch('/api/trial', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok || data.error) {
-        setError(data.error ?? 'Terjadi kesalahan. Coba lagi.');
-      } else {
-        setDone(true);
-        onDone?.();
-        if (typeof window !== 'undefined' && (window as any).fbq) {
-          (window as any).fbq('track', 'Lead');
-        }
-      }
-    } catch {
-      setError('Terjadi kesalahan. Coba lagi.');
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (done) {
-    return (
-      <div className="flex items-center gap-3 py-2">
-        <span className="text-2xl">📬</span>
-        <div>
-          <p className="font-semibold text-white text-sm">Cek emailmu!</p>
-          <p className="text-white/50 text-xs">License key dikirim ke <span className="text-white/70">{email}</span></p>
-          <p className="text-white/35 text-xs mt-1">Belum masuk? Cek folder Spam — email ini dikirim otomatis.</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-2">
-        <input
-          type="email"
-          placeholder="email@kamu.com"
-          value={email}
-          onChange={(e) => { setEmail(e.target.value); setError(''); }}
-          onKeyDown={(e) => e.key === 'Enter' && handleTrial()}
-          className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm outline-none focus:border-white/50 transition placeholder:text-white/40"
-        />
-        <button
-          onClick={handleTrial}
-          disabled={loading || !email}
-          className="shrink-0 bg-white text-[#4f8eff] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50 transition hover:bg-white/90 whitespace-nowrap"
-        >
-          {loading ? '...' : 'Kirim →'}
-        </button>
-      </div>
-      {error && <p className="text-red-400 text-xs">{error}</p>}
+    <div className="bg-[#4f8eff]/10 border border-[#4f8eff]/30 rounded-lg p-4 mt-2">
+      <p className="text-[#4f8eff] text-sm font-semibold mb-1">Trial Sementara Dinonaktifkan</p>
+      <p className="text-white/70 text-xs leading-relaxed">
+        Mohon maaf, trial gratis sementara kami nonaktifkan dikarenakan tingginya biaya operasional (server, AI model, dan API). Silakan pilih paket berbayar di sebelah kanan.
+      </p>
     </div>
   );
 }
@@ -524,7 +464,6 @@ export default function Home() {
               ))}
             </ul>
             <div className="border-t border-white/8 pt-5">
-              <p className="text-white/60 text-xs mb-3">Masukkan email untuk dapat license key trial:</p>
               <TrialForm />
             </div>
           </div>

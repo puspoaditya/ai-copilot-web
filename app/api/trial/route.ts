@@ -21,6 +21,8 @@ function isDisposableEmail(email: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
+  return NextResponse.json({ error: 'Trial sementara dinonaktifkan dikarenakan tingginya biaya operasional (server, AI model, API).' }, { status: 403 });
+
   const { email } = await req.json();
 
   if (!email) {
