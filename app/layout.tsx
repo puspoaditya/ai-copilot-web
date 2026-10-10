@@ -15,15 +15,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const BASE_URL = 'https://ai-copilot-web.vercel.app';
+const BASE_URL = "https://www.intervai.my.id";
 
 export const metadata: Metadata = {
   title: "IntervAI — Bantuan AI Real-time saat Interview",
-  description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+  description:
+    "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
   metadataBase: new URL(BASE_URL),
   openGraph: {
     title: "IntervAI — Bantuan AI Real-time saat Interview",
-    description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+    description:
+      "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
     url: BASE_URL,
     siteName: "IntervAI",
     type: "website",
@@ -31,7 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "IntervAI — Bantuan AI Real-time saat Interview",
-    description: "Transkripsi otomatis + jawaban AI instan saat interview. Tidak terlihat saat screen share. Coba gratis 3 hari.",
+    description:
+      "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
   },
 };
 
@@ -42,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
@@ -58,7 +61,15 @@ export default function RootLayout({
           fbq('init','1079559318572719');
           fbq('track','PageView');
         `}</Script>
-        <noscript><img height="1" width="1" style={{display:'none'}} src="https://www.facebook.com/tr?id=1079559318572719&ev=PageView&noscript=1" alt="" /></noscript>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=1079559318572719&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
       </body>
     </html>
   );

@@ -1,0 +1,4565 @@
+/* Landing styles are scoped to preserve admin and success pages. */
+
+.intervai-landing {
+  --ink: #11113c;
+  --muted: #777895;
+  --purple: #683cff;
+  --blue: #1a8dff;
+  --border: #eeecfc;
+  --green: #05cd85;
+  --max: 1216px;
+  --radius: 16px;
+  --body: var(--font-intervai-body), Arial, sans-serif;
+  --heading: var(--font-intervai-heading), Arial, sans-serif;
+}
+.intervai-landing * {
+  box-sizing: border-box;
+}
+.intervai-landing {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+.intervai-landing {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.55;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+.intervai-landing.modal-open {
+  overflow: hidden;
+}
+.intervai-landing button,
+.intervai-landing input,
+.intervai-landing select {
+  font: inherit;
+}
+.intervai-landing button,
+.intervai-landing a {
+  -webkit-tap-highlight-color: transparent;
+}
+.intervai-landing button {
+  cursor: pointer;
+}
+.intervai-landing a {
+  text-decoration: none;
+  color: inherit;
+}
+.intervai-landing button {
+  color: inherit;
+}
+.intervai-landing h1,
+.intervai-landing h2,
+.intervai-landing h3,
+.intervai-landing p {
+  margin: 0;
+}
+.intervai-landing h1,
+.intervai-landing h2,
+.intervai-landing h3 {
+  font-family: var(--heading);
+  line-height: 1.2;
+}
+.intervai-landing button:focus-visible,
+.intervai-landing a:focus-visible,
+.intervai-landing summary:focus-visible,
+.intervai-landing select:focus-visible {
+  outline: 3px solid #17afd5;
+  outline-offset: 5px;
+}
+.intervai-landing button:disabled {
+  cursor: default;
+}
+.intervai-landing button::-moz-focus-inner {
+  border: 0;
+}
+.intervai-landing [hidden] {
+  display: none !important;
+}
+.intervai-landing svg {
+  display: block;
+}
+.intervai-landing .svg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.intervai-landing .container {
+  max-width: var(--max);
+  padding: 0 28px;
+  margin: 0 auto;
+}
+.intervai-landing .icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.intervai-landing .icon-button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.intervai-landing .icon-button:hover {
+  background: #f0edff;
+}
+.intervai-landing .skip-link {
+  position: absolute;
+  left: 20px;
+  top: -100px;
+  z-index: 100;
+  background: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+}
+.intervai-landing .skip-link:focus {
+  top: 12px;
+}
+.intervai-landing .button {
+  border: 1px solid transparent;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition:
+    transform 0.18s,
+    box-shadow 0.18s,
+    background 0.18s;
+}
+.intervai-landing .button:hover {
+  transform: translateY(-2px);
+}
+.intervai-landing .button-primary {
+  color: white;
+  background: linear-gradient(110deg, #793aff, #4935ff);
+  box-shadow: 0 6px 16px #6639ff22;
+}
+.intervai-landing .button-primary:hover {
+  box-shadow: 0 8px 22px #6639ff40;
+}
+.intervai-landing .button-outline {
+  color: #7143fa;
+  background: white;
+  border-color: #bca5ff;
+  box-shadow: 0 2px 6px #6043c308;
+}
+.intervai-landing .button-outline:hover {
+  background: #f7f3ff;
+  border-color: var(--purple);
+}
+.intervai-landing .button-soft {
+  background: white;
+  color: var(--purple);
+  border-color: var(--border);
+}
+.intervai-landing .button-sm {
+  font-size: 12px;
+  min-height: 38px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  gap: 8px;
+}
+.intervai-landing .button-sm .icon {
+  width: 17px;
+  height: 17px;
+}
+.intervai-landing .site-header {
+  height: 84px;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.intervai-landing .nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  gap: 30px;
+}
+.intervai-landing .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--heading);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+  white-space: nowrap;
+}
+.intervai-landing .brand > svg {
+  width: 37px;
+  height: 32px;
+}
+.intervai-landing .brand-ai {
+  color: #4d35fa;
+}
+.intervai-landing .desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #ffffffde;
+  min-height: 84px;
+  padding: 0 40px;
+  border-radius: 0 0 50px 50px;
+  backdrop-filter: blur(10px);
+}
+.intervai-landing .desktop-nav a {
+  padding: 8px 0;
+  transition: color 0.15s;
+}
+.intervai-landing .desktop-nav a:hover {
+  color: var(--purple);
+}
+.intervai-landing .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.intervai-landing .menu-toggle {
+  display: none;
+}
+.intervai-landing .mobile-nav {
+  background: #fff;
+  position: absolute;
+  top: 76px;
+  left: 16px;
+  right: 16px;
+  box-shadow: 0 16px 60px #32206822;
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 15px;
+}
+.intervai-landing .mobile-nav a {
+  display: block;
+  padding: 13px 15px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+.intervai-landing .mobile-nav a:hover {
+  background: #f7f4ff;
+}
+.intervai-landing .hero {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  background: linear-gradient(
+    115deg,
+    #f5fbff 0%,
+    #fff 30%,
+    #fff 62%,
+    #e6faff 100%
+  );
+  isolation: isolate;
+}
+.intervai-landing .hero:before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: 130px;
+  width: 420px;
+  height: 400px;
+  border: 34px solid #e7f8fe5c;
+  border-radius: 100px;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+.intervai-landing .hero-glow {
+  position: absolute;
+  width: 770px;
+  height: 550px;
+  right: -200px;
+  bottom: -160px;
+  background: radial-gradient(ellipse, #6fe8ff52, transparent 65%);
+  pointer-events: none;
+}
+.intervai-landing .hero-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 47% 53%;
+  align-items: center;
+  min-height: 650px;
+  padding-top: 97px;
+  padding-bottom: 30px;
+}
+.intervai-landing .hero-copy {
+  position: relative;
+  z-index: 2;
+  padding-top: 4px;
+}
+.intervai-landing .eyebrow {
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+  border-radius: 999px;
+  background: #f0edff;
+  color: #7250ff;
+}
+.intervai-landing .hero-eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.35px;
+  padding: 7px 10px;
+  margin-bottom: 23px;
+  background: #eee9ff;
+}
+.intervai-landing .tiny-spark {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 11px;
+  color: #8a5eff;
+}
+.intervai-landing h1 {
+  font-size: 57px;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -2.6px;
+}
+.intervai-landing .gradient-text {
+  background: linear-gradient(100deg, #8931f7 0%, #6541fa 42%, #04bee8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.intervai-landing .hero-description {
+  color: #74758e;
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 400px;
+  margin-top: 20px;
+}
+.intervai-landing .hero-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 22px;
+  font-size: 10px;
+  font-weight: 650;
+  color: #636584;
+}
+.intervai-landing .hero-benefits span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.intervai-landing .hero-benefits i {
+  font-style: normal;
+  display: grid;
+  place-items: center;
+  width: 13px;
+  height: 13px;
+  background: #09cd88;
+  border-radius: 50%;
+  color: white;
+  font-size: 9px;
+}
+.intervai-landing .hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 27px;
+}
+.intervai-landing .windows-availability {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-top: 25px;
+  font-size: 10px;
+}
+.intervai-landing .windows-icon {
+  width: 28px;
+  height: 28px;
+  color: #1175ed;
+}
+.intervai-landing .windows-availability strong {
+  display: block;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #656687;
+  font-weight: 700;
+}
+.intervai-landing .windows-availability span {
+  display: block;
+  color: #87879c;
+}
+.intervai-landing .hero-visual {
+  position: absolute;
+  left: 44%;
+  right: -4.5%;
+  top: 43px;
+  bottom: 5px;
+  pointer-events: none;
+  z-index: 1;
+}
+.intervai-landing .hero-visual img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 95%),
+    linear-gradient(to bottom, #000 0%, #000 91%, transparent 100%);
+  mask-composite: intersect;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 9%, #000 95%),
+    linear-gradient(to bottom, #000 0%, #000 91%, transparent 100%);
+  -webkit-mask-composite: source-in;
+}
+.intervai-landing .visual-caption {
+  position: absolute;
+  bottom: 37px;
+  right: 70px;
+  font-size: 7px;
+  letter-spacing: 1px;
+  opacity: 0.5;
+  color: #667492;
+}
+.intervai-landing .company-strip {
+  padding-top: 6px;
+  padding-bottom: 43px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+}
+.intervai-landing .company-strip > p {
+  font-size: 12px;
+  color: #626382;
+  margin: 8px 0 26px;
+}
+.intervai-landing .company-logos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.intervai-landing .company-logos > span {
+  white-space: nowrap;
+  line-height: 1.1;
+}
+.intervai-landing .google {
+  font-size: 26px;
+  letter-spacing: -1.4px;
+  font-family: Arial, sans-serif;
+}
+.intervai-landing .google b {
+  font-weight: 500;
+}
+.intervai-landing .google b:nth-child(1),
+.intervai-landing .google b:nth-child(4) {
+  color: #4285f4;
+}
+.intervai-landing .google b:nth-child(2),
+.intervai-landing .google b:nth-child(6) {
+  color: #ea4335;
+}
+.intervai-landing .google b:nth-child(3) {
+  color: #fbbc05;
+}
+.intervai-landing .google b:nth-child(5) {
+  color: #34a853;
+}
+.intervai-landing .microsoft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 19px;
+  color: #6f6f6f;
+  font-weight: 600;
+  letter-spacing: -0.7px;
+}
+.intervai-landing .microsoft i {
+  display: grid;
+  grid-template-columns: 10px 10px;
+  gap: 2px;
+}
+.intervai-landing .microsoft b {
+  width: 10px;
+  height: 10px;
+  background: #f25022;
+}
+.intervai-landing .microsoft b:nth-child(2) {
+  background: #7fba00;
+}
+.intervai-landing .microsoft b:nth-child(3) {
+  background: #00a4ef;
+}
+.intervai-landing .microsoft b:nth-child(4) {
+  background: #ffb900;
+}
+.intervai-landing .amazon {
+  position: relative;
+  font-family: Arial, sans-serif;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-size: 23px;
+}
+.intervai-landing .amazon > span {
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 23px;
+  color: #ff9900;
+  font-size: 29px;
+  transform: scaleX(1.5);
+}
+.intervai-landing .meta {
+  font-size: 23px;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.intervai-landing .meta b {
+  font-size: 35px;
+  line-height: 0.65;
+  color: #087afe;
+  font-family: Arial, sans-serif;
+}
+.intervai-landing .tesla {
+  font-size: 17px;
+  letter-spacing: 4px;
+  color: #e4212d;
+  font-weight: 700;
+}
+.intervai-landing .apple {
+  width: 22px;
+  height: 29px;
+  color: #111;
+}
+.intervai-landing .shopify {
+  font-size: 20px;
+  font-weight: 750;
+  font-style: italic;
+  letter-spacing: -0.8px;
+  color: #1b2616;
+}
+.intervai-landing .shopify b {
+  color: #89b446;
+  font-style: normal;
+  font-size: 24px;
+}
+.intervai-landing .ibm {
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: #6b9ad2;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, #fff 2px 3px);
+  background-clip: text;
+}
+.intervai-landing .oracle {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: -1px;
+  color: #ee252b;
+}
+.intervai-landing .netflix {
+  font-family: Impact, "Arial Narrow", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+  color: #e50914;
+}
+.intervai-landing .quick-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  padding-top: 8px;
+  padding-bottom: 25px;
+}
+.intervai-landing .quick-card {
+  padding: 22px 21px 23px;
+  background: linear-gradient(135deg, #fff, #f8f6ff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.intervai-landing .icon-tile {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 12px #ffffff50;
+}
+.intervai-landing .icon-tile .icon {
+  width: 29px;
+  height: 29px;
+  stroke-width: 2.3;
+}
+.intervai-landing .purple {
+  background: linear-gradient(145deg, #e8e4ff, #f3f0ff);
+  color: #7655ff;
+}
+.intervai-landing .violet {
+  background: linear-gradient(145deg, #f0dfff, #f8f0ff);
+  color: #902bff;
+}
+.intervai-landing .blue {
+  background: linear-gradient(145deg, #d9f7ff, #edf7ff);
+  color: #048fee;
+}
+.intervai-landing .green {
+  background: linear-gradient(145deg, #c8f8e8, #ebfff5);
+  color: #00bf73;
+}
+.intervai-landing .amber {
+  background: linear-gradient(145deg, #ffedb5, #fff8e6);
+  color: #ffa304;
+}
+.intervai-landing .quick-card h3 {
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.55px;
+  margin-bottom: 9px;
+}
+.intervai-landing .quick-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.intervai-landing .section {
+  padding-top: 50px;
+  padding-bottom: 48px;
+}
+.intervai-landing .section-heading {
+  text-align: center;
+  margin-bottom: 37px;
+}
+.intervai-landing .section-heading .eyebrow {
+  margin-bottom: 14px;
+}
+.intervai-landing .section-heading h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.3;
+}
+.intervai-landing .section-heading p {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.intervai-landing .how-section {
+  padding-top: 23px;
+  padding-bottom: 42px;
+}
+.intervai-landing .steps {
+  display: grid;
+  grid-template-columns: 1fr 36px 1fr 36px 1fr 36px 1fr;
+  align-items: start;
+  gap: 13px;
+  padding: 0 14px;
+}
+.intervai-landing .step {
+  text-align: center;
+}
+.intervai-landing .step-art {
+  position: relative;
+  width: 180px;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #fff, #f2efff);
+  border-radius: 13px;
+  margin: 0 auto 20px;
+}
+.intervai-landing .step-number {
+  position: absolute;
+  top: -12px;
+  left: -9px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  color: white;
+  background: linear-gradient(130deg, #b398ff, #7b55fc);
+  box-shadow: 0 3px 8px #6a42ee18;
+}
+.intervai-landing .step-arrow {
+  color: #a582ff;
+  font-size: 35px;
+  margin-top: 37px;
+  line-height: 1;
+}
+.intervai-landing .step h3 {
+  font-size: 15px;
+  letter-spacing: -0.45px;
+  font-weight: 750;
+  margin-bottom: 9px;
+}
+.intervai-landing .step p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+  max-width: 206px;
+  margin: auto;
+}
+.intervai-landing .mini-laptop {
+  position: relative;
+  width: 126px;
+  height: 88px;
+  border: 4px solid #3d405c;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 10px 15px #3c2b7420;
+  display: grid;
+  place-items: center;
+}
+.intervai-landing .mini-laptop:after {
+  content: "";
+  position: absolute;
+  left: -12px;
+  right: -12px;
+  bottom: -7px;
+  height: 6px;
+  border-radius: 2px 2px 10px 10px;
+  background: linear-gradient(#999cb5, #434765);
+}
+.intervai-landing .mini-brand {
+  font-size: 20px;
+  letter-spacing: -1px;
+  font-weight: 800;
+}
+.intervai-landing .mini-brand span {
+  color: #633cff;
+}
+.intervai-landing .download-stamp {
+  position: absolute;
+  z-index: 1;
+  width: 29px !important;
+  height: 29px !important;
+  background: #07afff;
+  padding: 5px;
+  border-radius: 3px;
+  color: #fff;
+  bottom: -12px;
+  box-shadow: 0 3px 7px #088fe555;
+}
+.intervai-landing .cv-illustration {
+  position: relative;
+  width: 77px;
+  height: 98px;
+  background: linear-gradient(120deg, #e4e5ff, #bfc4fa);
+  box-shadow: 4px 5px 1px #e9e5ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  gap: 7px;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+}
+.intervai-landing .cv-illustration:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  border-top: 22px solid #f5f3ff;
+  border-left: 22px solid #c8c4ee;
+}
+.intervai-landing .cv-illustration > span {
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 5px;
+}
+.intervai-landing .cv-illustration i {
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 1px;
+}
+.intervai-landing .cv-illustration i:nth-last-of-type(1) {
+  width: 70%;
+}
+.intervai-landing .cv-illustration > .icon {
+  position: absolute;
+  right: -15px;
+  bottom: 3px;
+  width: 30px;
+  height: 30px;
+  color: white;
+  background: #0ccd91;
+  box-shadow: 0 3px 10px #07b28228;
+  border-radius: 50%;
+  padding: 6px;
+}
+.intervai-landing .platform-illustration {
+  width: 145px;
+  height: 84px;
+  background: #fff;
+  border-radius: 9px;
+  box-shadow: 0 8px 18px #6958b62b;
+  overflow: hidden;
+}
+.intervai-landing .mini-window-dots {
+  background: #dddcf5;
+  height: 24px;
+  color: #9d9eb9;
+  font-size: 10px;
+  text-align: left;
+  padding: 2px 10px;
+  letter-spacing: 2px;
+}
+.intervai-landing .platform-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  gap: 13px;
+}
+.intervai-landing .platform-icons > span {
+  height: 33px;
+  width: 33px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: 800;
+}
+.intervai-landing .zoom {
+  background: #1683ff;
+  color: #fff;
+}
+.intervai-landing .zoom .icon {
+  width: 21px;
+  height: 21px;
+}
+.intervai-landing .meet {
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #16a86c 40%,
+    #28bb74 40% 60%,
+    #fec631 60%
+  );
+  font-size: 22px;
+  transform: rotate(-8deg);
+}
+.intervai-landing .teams {
+  background: #5f5bcb;
+  color: #fff;
+  font-size: 21px;
+  border-radius: 7px !important;
+}
+.intervai-landing .answer-illustration {
+  width: 125px;
+  height: 88px;
+  background: linear-gradient(120deg, #2479ff, #7433ff);
+  border-radius: 8px;
+  box-shadow: 0 8px 17px #7c54ff44;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  padding: 16px;
+  transform: rotate(-2deg);
+}
+.intervai-landing .answer-illustration i {
+  height: 4px;
+  border-radius: 2px;
+  background: white;
+}
+.intervai-landing .answer-illustration i:nth-last-child(1) {
+  width: 65%;
+}
+.intervai-landing .answer-illustration > .icon {
+  width: 19px;
+  height: 19px;
+  color: #cbd0ff;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+}
+.intervai-landing .feature-section {
+  padding-top: 16px;
+  padding-bottom: 51px;
+}
+.intervai-landing .feature-section .section-heading {
+  margin-bottom: 28px;
+}
+.intervai-landing .feature-section .section-heading h2 {
+  font-size: 30px;
+}
+.intervai-landing .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.intervai-landing .feature-card {
+  display: flex;
+  align-items: start;
+  gap: 13px;
+  padding: 20px 17px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 12px #443f9707;
+  background: white;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.intervai-landing .feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #5b4ab710;
+}
+.intervai-landing .feature-card .icon-tile {
+  width: 43px;
+  height: 43px;
+  flex: none;
+  border-radius: 11px;
+  margin: 0;
+}
+.intervai-landing .feature-card .icon {
+  width: 25px;
+  height: 25px;
+}
+.intervai-landing .feature-card h3 {
+  font-size: 13px;
+  letter-spacing: -0.25px;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.intervai-landing .feature-card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.intervai-landing .pricing-section {
+  background: linear-gradient(180deg, #f6f7ff, #f8f3ff);
+  padding-top: 47px;
+  padding-bottom: 25px;
+  position: relative;
+}
+.intervai-landing .pricing-section:before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  right: 0;
+  top: -100px;
+  background: radial-gradient(#e9f8ff7a, transparent 70%);
+  pointer-events: none;
+}
+.intervai-landing .pricing-section .section-heading {
+  margin-bottom: 38px;
+}
+.intervai-landing .pricing-section .section-heading .eyebrow {
+  background: transparent;
+  padding: 0;
+  font-size: 9px;
+}
+.intervai-landing .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+.intervai-landing .price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 25px 19px 20px;
+  border: 1px solid #eeeafd;
+  border-radius: 13px;
+  box-shadow: 0 4px 14px #55438c03;
+  min-height: 332px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.intervai-landing .price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px #7754d111;
+}
+.intervai-landing .price-card h3 {
+  font-size: 19px;
+  letter-spacing: -0.6px;
+  margin-bottom: 5px;
+}
+.intervai-landing .plan-description {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.intervai-landing .price {
+  display: flex;
+  gap: 4px;
+  align-items: baseline;
+  margin-top: 15px;
+  margin-bottom: 22px;
+  white-space: nowrap;
+}
+.intervai-landing .price > span {
+  font-size: 12px;
+  color: #777695;
+}
+.intervai-landing .price strong {
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: -1.5px;
+  line-height: 1.3;
+}
+.intervai-landing .price small {
+  font-size: 10px;
+  color: #87839f;
+}
+.intervai-landing .price-contact strong {
+  font-size: 17px;
+  letter-spacing: -0.7px;
+  line-height: 1.9;
+}
+.intervai-landing .price-card ul {
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #72708b;
+}
+.intervai-landing .price-card li {
+  display: flex;
+  gap: 8px;
+  align-items: start;
+  margin: 0 0 10px;
+}
+.intervai-landing .price-card li:before {
+  content: "✓";
+  font-weight: 800;
+  color: #04cf8b;
+  line-height: 1.3;
+  font-size: 14px;
+  flex: none;
+}
+.intervai-landing .price-card > .button {
+  margin-top: auto;
+  padding: 10px 8px;
+  min-height: 39px;
+  font-size: 12px;
+  width: 100%;
+  border-radius: 7px;
+  gap: 5px;
+}
+.intervai-landing .price-card > .button .icon {
+  width: 15px;
+  height: 15px;
+}
+.intervai-landing .price-card.featured {
+  border: 2px solid #b999ff;
+  background: linear-gradient(145deg, #fff, #faf8ff);
+  margin-top: -9px;
+  margin-bottom: -2px;
+  padding-top: 32px;
+  box-shadow: 0 0 0 3px #bca6ff08;
+}
+.intervai-landing .popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(100deg, #9548ff, #622eff);
+  padding: 5px 13px;
+  white-space: nowrap;
+  color: white;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px #8a53ff30;
+}
+.intervai-landing .pricing-note {
+  text-align: center;
+  font-size: 10px;
+  color: #9691ad;
+  margin-top: 22px;
+}
+.intervai-landing .testimonials-section {
+  background: linear-gradient(#f8f3ff, #f9f3ff);
+  padding-top: 25px;
+  padding-bottom: 26px;
+}
+.intervai-landing .testimonials-section .section-heading {
+  margin-bottom: 26px;
+}
+.intervai-landing .testimonials-section h2 {
+  font-size: 29px;
+}
+.intervai-landing .testimonial-shell {
+  position: relative;
+}
+.intervai-landing .testimonial-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.intervai-landing .testimonials-viewport {
+  overflow: hidden;
+  padding: 2px;
+}
+.intervai-landing .testimonial-card {
+  background: #fff;
+  border: 1px solid #eee7ff;
+  border-radius: 14px;
+  padding: 22px 23px 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 218px;
+}
+.intervai-landing .quote-mark {
+  color: #e2d5ff;
+  font-family: Georgia, serif;
+  font-size: 51px;
+  font-weight: 700;
+  line-height: 0.6;
+  height: 28px;
+}
+.intervai-landing .testimonial-card blockquote {
+  margin: 9px 0 20px;
+  color: #77728f;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.intervai-landing .testimonial-person {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  min-width: 0;
+}
+.intervai-landing .testimonial-person img {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background: #efeff6;
+}
+.intervai-landing .testimonial-person strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 750;
+  color: #43405d;
+  line-height: 1.3;
+}
+.intervai-landing .testimonial-person div > span {
+  display: block;
+  font-size: 9px;
+  color: #9490a8;
+  white-space: nowrap;
+  margin-top: 3px;
+}
+.intervai-landing .stars {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #ffb900;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  margin-left: auto;
+}
+.intervai-landing .carousel-arrow {
+  position: absolute;
+  top: 44%;
+  background: #ede9fb;
+  color: #9f94c2;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+.intervai-landing .carousel-arrow .icon {
+  width: 16px;
+  height: 16px;
+}
+.intervai-landing .previous {
+  left: -40px;
+  transform: rotate(180deg);
+}
+.intervai-landing .next {
+  right: -40px;
+}
+.intervai-landing .carousel-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 17px;
+}
+.intervai-landing .carousel-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #bda7ee;
+  box-shadow: 0 0 0 5px transparent;
+}
+.intervai-landing .carousel-dots button:hover {
+  box-shadow: 0 0 0 5px #a481ff20;
+}
+.intervai-landing .carousel-dots button.active {
+  background: #804dff;
+  width: 8px;
+  height: 8px;
+}
+.intervai-landing .testimonial-note {
+  font-size: 9px;
+  text-align: center;
+  margin-top: 12px;
+  color: #a59bb7;
+}
+.intervai-landing .faq-section {
+  position: relative;
+  padding-top: 37px;
+  padding-bottom: 36px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.intervai-landing .faq-section:after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 280px;
+  background: linear-gradient(120deg, #f4fbff, #e4f8ff);
+  border-radius: 45%;
+  right: -130px;
+  bottom: -70px;
+  transform: rotate(-26deg);
+  z-index: -1;
+}
+.intervai-landing .faq-section:before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  left: -80px;
+  bottom: -140px;
+  border: 40px solid #e0f6ff80;
+  transform: rotate(-30deg);
+  border-radius: 35%;
+  z-index: -1;
+}
+.intervai-landing .faq-section .section-heading {
+  margin-bottom: 28px;
+}
+.intervai-landing .faq-section h2 {
+  font-size: 29px;
+}
+.intervai-landing .faq-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.intervai-landing .faq-list details {
+  border: 1px solid #f0eff8;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 3px 10px #25377204;
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.intervai-landing .faq-list summary {
+  padding: 12px 17px;
+  font-size: 12px;
+  font-weight: 650;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  min-height: 43px;
+}
+.intervai-landing .faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.intervai-landing .faq-list summary:hover {
+  color: var(--purple);
+}
+.intervai-landing .faq-plus {
+  color: #89819d;
+  font-size: 18px;
+  font-weight: 400;
+  transition: transform 0.15s;
+}
+.intervai-landing .faq-list details[open] {
+  border-color: #ddd0ff;
+}
+.intervai-landing .faq-list details[open] .faq-plus {
+  transform: rotate(45deg);
+  color: var(--purple);
+}
+.intervai-landing .faq-list details[open] summary {
+  color: var(--purple);
+  background: #faf8ff;
+}
+.intervai-landing .faq-list details > p {
+  padding: 3px 17px 16px;
+  color: #79718f;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.intervai-landing .faq-visual {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: relative;
+  padding-top: 15px;
+}
+.intervai-landing .faq-visual > img {
+  width: 248px;
+  height: auto;
+  mix-blend-mode: multiply;
+  display: block;
+  margin-left: -14px;
+  margin-bottom: -28px;
+  object-fit: contain;
+}
+.intervai-landing .help-card {
+  background: #ffffffdc;
+  backdrop-filter: blur(5px);
+  border: 1px solid #fff;
+  border-radius: 11px;
+  box-shadow: 0 7px 24px #4ec5ef22;
+  padding: 20px 20px 18px;
+  position: relative;
+  margin-left: -12px;
+  margin-bottom: 0;
+  min-width: 208px;
+}
+.intervai-landing .help-card strong {
+  font-size: 13px;
+  white-space: nowrap;
+  font-family: var(--heading);
+}
+.intervai-landing .help-card p {
+  font-size: 12px;
+  color: #7c7890;
+  margin: 5px 0 13px;
+}
+.intervai-landing .help-card .button {
+  width: 100%;
+}
+.intervai-landing .final-cta {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(110deg, #03204a 0%, #052e70 55%, #0862a5 100%);
+  color: white;
+  isolation: isolate;
+  border-radius: 50% 50% 0 0 / 16px 16px 0 0;
+}
+.intervai-landing .final-cta:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 78% 20%, #0059ab70, transparent 45%),
+    radial-gradient(ellipse at 30% 110%, #033056, transparent 60%);
+  z-index: -1;
+}
+.intervai-landing .cta-layout {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-top: 34px;
+  padding-bottom: 32px;
+  position: relative;
+}
+.intervai-landing .cta-layout h2 {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+.intervai-landing .cta-layout p {
+  font-size: 13px;
+  color: #ccd7eb;
+  line-height: 1.65;
+  margin-top: 9px;
+}
+.intervai-landing .cta-layout > .button {
+  margin-left: auto;
+  z-index: 1;
+}
+.intervai-landing .button-lime {
+  background: linear-gradient(120deg, #b4ff5d, #c4ff3e);
+  color: #183b0c;
+  box-shadow: 0 0 25px #a9ff3759;
+  border-color: #baff54;
+  font-size: 15px;
+  border-radius: 9px;
+  padding: 14px 24px;
+}
+.intervai-landing .button-lime:hover {
+  box-shadow: 0 0 35px #a9ff3790;
+}
+.intervai-landing .plane-illustration {
+  font-size: 76px;
+  color: #8358ff;
+  transform: rotate(-20deg);
+  line-height: 1;
+  text-shadow: 0 4px 20px #6b32ff80;
+  margin-left: -15px;
+}
+.intervai-landing .cta-eyebrow {
+  display: block;
+  color: #83c9f8;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  margin-bottom: 8px;
+}
+.intervai-landing .cta-orbit {
+  position: absolute;
+  left: -190px;
+  bottom: -70px;
+  width: 440px;
+  height: 145px;
+  border: 2px solid #844fffa8;
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+.intervai-landing .cta-spark {
+  position: absolute;
+  right: -12px;
+  bottom: 11px;
+  font-size: 94px;
+  color: #367eda;
+  opacity: 0.5;
+  transform: rotate(20deg);
+}
+.intervai-landing .site-footer {
+  padding-top: 32px;
+  padding-bottom: 20px;
+}
+.intervai-landing .footer-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 0.8fr 1.2fr 1fr;
+  gap: 55px;
+  padding-bottom: 30px;
+}
+.intervai-landing .footer-about .brand {
+  font-size: 25px;
+}
+.intervai-landing .footer-about .brand svg {
+  width: 33px;
+}
+.intervai-landing .footer-about > p {
+  color: #9391a6;
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 7px;
+}
+.intervai-landing .footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 7px;
+  padding-top: 4px;
+}
+.intervai-landing .footer-column h3 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+.intervai-landing .footer-column > a,
+.intervai-landing .footer-column > button {
+  font-size: 11px;
+  color: #888499;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+.intervai-landing .footer-column a:hover,
+.intervai-landing .footer-column > button:hover {
+  color: var(--purple);
+}
+.intervai-landing .social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.intervai-landing .social-links > a,
+.intervai-landing .social-links > button {
+  width: 25px;
+  height: 25px;
+  display: grid;
+  place-items: center;
+  background: #f1eff7;
+  border: 0;
+  border-radius: 5px;
+  color: #2f2c4c;
+  font-size: 16px;
+}
+.intervai-landing .social-links .icon {
+  width: 14px;
+  height: 14px;
+}
+.intervai-landing .social-links b {
+  display: block;
+  font-size: 13px;
+  background: #2f2c4c;
+  color: white;
+  border-radius: 2px;
+  width: 14px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.intervai-landing .footer-bottom {
+  border-top: 1px solid #efedf5;
+  padding-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  color: #9490a5;
+  font-size: 10px;
+}
+.intervai-landing .heart {
+  color: #f94e6d;
+  font-size: 15px;
+  margin-left: 4px;
+}
+.intervai-landing dialog {
+  padding: 0;
+  border: 1px solid #eee8ff;
+  border-radius: 22px;
+  box-shadow: 0 25px 100px #21134535;
+  color: var(--ink);
+  max-height: 90vh;
+  max-height: 90dvh;
+  width: calc(100% - 40px);
+  overflow-y: auto;
+  background: #fff;
+}
+.intervai-landing dialog::backdrop {
+  background: #18103980;
+  backdrop-filter: blur(6px);
+}
+.intervai-landing dialog[open] {
+  animation: dialog-in 0.2s ease;
+}
+.intervai-landing .dialog-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #888097;
+  z-index: 5;
+}
+.intervai-landing .dialog-close .icon {
+  width: 20px;
+  height: 20px;
+}
+.intervai-landing .demo-dialog {
+  max-width: 860px;
+}
+.intervai-landing .demo-header {
+  text-align: center;
+  padding: 34px 40px 25px;
+}
+.intervai-landing .demo-header h2 {
+  font-size: 27px;
+  margin-top: 14px;
+  letter-spacing: -1px;
+}
+.intervai-landing .demo-header > p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 9px;
+}
+.intervai-landing .demo-body {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+  padding: 0 27px 0;
+}
+.intervai-landing .demo-interviewer {
+  border: 1px solid #ece8f9;
+  background: linear-gradient(145deg, #f5f3ff, #edf8ff);
+  border-radius: 16px;
+  padding: 25px 24px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.intervai-landing .demo-avatar {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(125deg, #8753ff, #2b95e7);
+  color: white;
+  font-family: var(--heading);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.intervai-landing .demo-live {
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #88839e;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.intervai-landing .demo-live i,
+.intervai-landing .live-indicator i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #05c888;
+  display: inline-block;
+}
+.intervai-landing .demo-interviewer h3 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.intervai-landing .demo-interviewer > p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #8b859f;
+  margin-top: 7px;
+}
+.intervai-landing .demo-interviewer label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #847c99;
+  margin-top: 27px;
+  display: block;
+  margin-bottom: 7px;
+}
+.intervai-landing .demo-interviewer select {
+  font-size: 11px;
+  border: 1px solid #e1d8f5;
+  border-radius: 7px;
+  background: white;
+  color: #473e68;
+  width: 100%;
+  padding: 10px;
+}
+.intervai-landing .demo-question-text {
+  font-size: 16px;
+  font-weight: 650;
+  margin: 21px 0;
+  color: #595071;
+  line-height: 1.55;
+  min-height: 50px;
+}
+.intervai-landing .demo-interviewer > .button {
+  min-height: 40px;
+  font-size: 11px;
+  margin-top: auto;
+  align-self: stretch;
+}
+.intervai-landing .demo-interviewer > .button .icon {
+  width: 16px;
+  height: 16px;
+}
+.intervai-landing .demo-copilot {
+  border: 1px solid #e6e0f7;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.intervai-landing .copilot-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0ebfc;
+  padding: 18px;
+  font-weight: 800;
+}
+.intervai-landing .copilot-title > span:first-child {
+  color: #633afa;
+  font-size: 19px;
+}
+.intervai-landing .live-indicator {
+  color: #05b680;
+  font-size: 9px;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.intervai-landing .demo-tabs {
+  display: flex;
+  margin: 13px 13px 0;
+  gap: 4px;
+  background: #f8f5ff;
+  border-radius: 7px;
+  padding: 4px;
+}
+.intervai-landing .demo-tabs > button {
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #8e869d;
+  font-size: 9px;
+  white-space: nowrap;
+  flex: 1;
+  padding: 7px 4px;
+  font-weight: 600;
+}
+.intervai-landing .demo-tabs > button.active {
+  color: #7341f6;
+  background: #fff;
+  box-shadow: 0 1px 5px #775ba419;
+}
+.intervai-landing .demo-panel {
+  padding: 20px 19px;
+  min-height: 234px;
+  color: #766c8b;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.intervai-landing .demo-panel h4 {
+  color: #7662c2;
+  margin: 0 0 10px;
+  font-size: 11px;
+}
+.intervai-landing .demo-panel p + p {
+  margin-top: 12px;
+}
+.intervai-landing .demo-panel ul {
+  padding-left: 17px;
+}
+.intervai-landing .demo-panel .demo-transcript-label {
+  color: #ada4bc;
+  font-size: 9px;
+  display: block;
+  margin-bottom: 10px;
+}
+.intervai-landing .demo-cv-note {
+  margin: 0 14px 15px;
+  padding: 12px;
+  background: #eef9ff;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 9px;
+  color: #867b96;
+  line-height: 1.5;
+  margin-top: auto;
+}
+.intervai-landing .demo-cv-note .icon {
+  color: #05a8db;
+  width: 22px;
+  height: 22px;
+}
+.intervai-landing .demo-cv-note strong {
+  font-weight: 500;
+  color: #6a607c;
+}
+.intervai-landing .demo-disclaimer {
+  text-align: center;
+  padding: 16px;
+  color: #a29aae;
+  font-size: 9px;
+}
+.intervai-landing .start-dialog {
+  max-width: 450px;
+  padding: 38px;
+  text-align: center;
+}
+.intervai-landing .start-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg, #efe5ff, #edf8ff);
+  color: #8454ff;
+  font-size: 33px;
+  border-radius: 16px;
+  margin: 0 auto 21px;
+}
+.intervai-landing .start-dialog h2 {
+  font-size: 25px;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  margin-top: 15px;
+}
+.intervai-landing .start-dialog > p {
+  color: #92889e;
+  font-size: 13px;
+  margin-top: 14px;
+  line-height: 1.65;
+}
+.intervai-landing .start-checklist {
+  margin: 24px 0 27px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: #6f627d;
+}
+.intervai-landing .start-checklist > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.intervai-landing .start-checklist .icon {
+  width: 16px;
+  height: 16px;
+  color: #02c47e;
+}
+.intervai-landing .start-dialog > .button {
+  width: 100%;
+}
+.intervai-landing .start-dialog .start-note {
+  font-size: 10px;
+  color: #ada4b8;
+  margin-top: 12px;
+}
+.intervai-landing .toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: #2a2051;
+  color: white;
+  font-size: 12px;
+  box-shadow: 0 8px 40px #39264c30;
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 1400px) {
+  .intervai-landing .hero-visual {
+    right: -7%;
+    left: 44%;
+  }
+  .intervai-landing .hero-layout {
+    min-height: 680px;
+  }
+  .intervai-landing .hero {
+    min-height: 680px;
+  }
+  .intervai-landing h1 {
+    font-size: 63px;
+  }
+  .intervai-landing .hero-description {
+    max-width: 424px;
+    font-size: 18px;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 9.5px;
+  }
+}
+@media (max-width: 1250px) {
+  .intervai-landing {
+    --max: 1120px;
+  }
+  .intervai-landing .desktop-nav {
+    gap: 22px;
+    padding: 0 25px;
+  }
+  .intervai-landing .nav-wrap {
+    gap: 20px;
+  }
+  .intervai-landing .hero-layout {
+    min-height: 610px;
+  }
+  .intervai-landing .hero {
+    min-height: 610px;
+  }
+  .intervai-landing h1 {
+    font-size: 53px;
+  }
+  .intervai-landing .hero-description {
+    font-size: 16px;
+    max-width: 360px;
+  }
+  .intervai-landing .hero-visual {
+    left: 43%;
+    right: -4%;
+    top: 44px;
+  }
+  .intervai-landing .hero-benefits {
+    font-size: 9px;
+    gap: 9px;
+  }
+  .intervai-landing .company-logos {
+    gap: 17px;
+  }
+  .intervai-landing .company-logos > .google {
+    font-size: 24px;
+  }
+  .intervai-landing .microsoft {
+    font-size: 17px;
+  }
+  .intervai-landing .tesla {
+    font-size: 15px;
+    letter-spacing: 3px;
+  }
+  .intervai-landing .shopify {
+    font-size: 18px;
+  }
+  .intervai-landing .netflix {
+    font-size: 20px;
+  }
+  .intervai-landing .ibm {
+    font-size: 28px;
+  }
+  .intervai-landing .feature-card {
+    padding: 17px 14px;
+    gap: 10px;
+  }
+  .intervai-landing .feature-card h3 {
+    font-size: 12px;
+  }
+  .intervai-landing .price-card {
+    padding: 25px 13px 17px;
+  }
+  .intervai-landing .price strong {
+    font-size: 23px;
+  }
+  .intervai-landing .price-contact strong {
+    font-size: 16px;
+  }
+  .intervai-landing .price small {
+    font-size: 9px;
+  }
+  .intervai-landing .stars {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .intervai-landing .carousel-arrow.previous {
+    left: -19px;
+  }
+  .intervai-landing .carousel-arrow.next {
+    right: -19px;
+  }
+}
+@media (max-width: 1000px) {
+  .intervai-landing .desktop-nav {
+    gap: 17px;
+    padding: 0 20px;
+    font-size: 11px;
+  }
+  .intervai-landing .brand {
+    font-size: 24px;
+  }
+  .intervai-landing .nav-actions {
+    gap: 7px;
+  }
+  .intervai-landing .nav-actions .button {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+  .intervai-landing .hero-layout {
+    grid-template-columns: 48% 52%;
+    min-height: 565px;
+  }
+  .intervai-landing .hero {
+    min-height: 565px;
+  }
+  .intervai-landing h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 7px;
+  }
+  .intervai-landing .hero-benefits {
+    font-size: 8px;
+    gap: 7px;
+  }
+  .intervai-landing .hero-description {
+    font-size: 14px;
+    max-width: 330px;
+  }
+  .intervai-landing .hero-visual {
+    top: 60px;
+    bottom: 15px;
+    left: 45%;
+    right: -4%;
+  }
+  .intervai-landing .hero-buttons .button {
+    font-size: 12px;
+    padding: 11px 17px;
+    min-height: 44px;
+  }
+  .intervai-landing .company-logos {
+    justify-content: center;
+    gap: 27px;
+  }
+  .intervai-landing .company-strip {
+    padding-bottom: 33px;
+  }
+  .intervai-landing .quick-features {
+    gap: 13px;
+  }
+  .intervai-landing .quick-card {
+    padding: 19px 16px;
+  }
+  .intervai-landing .quick-card h3 {
+    font-size: 13px;
+  }
+  .intervai-landing .quick-card p {
+    font-size: 11px;
+  }
+  .intervai-landing .quick-card .icon-tile {
+    width: 45px;
+    height: 45px;
+  }
+  .intervai-landing .section-heading h2 {
+    font-size: 29px;
+  }
+  .intervai-landing .steps {
+    gap: 8px;
+    padding: 0;
+  }
+  .intervai-landing .step-art {
+    width: 150px;
+    height: 115px;
+  }
+  .intervai-landing .step h3 {
+    font-size: 12px;
+  }
+  .intervai-landing .step p {
+    font-size: 11px;
+  }
+  .intervai-landing .step-arrow {
+    font-size: 28px;
+  }
+  .intervai-landing .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .intervai-landing .feature-card {
+    padding: 20px;
+  }
+  .intervai-landing .feature-card h3 {
+    font-size: 14px;
+  }
+  .intervai-landing .feature-card p {
+    font-size: 12px;
+  }
+  .intervai-landing .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px 16px;
+  }
+  .intervai-landing .price-card {
+    padding: 25px 20px 20px;
+    min-height: 345px;
+  }
+  .intervai-landing .price-card h3 {
+    font-size: 21px;
+  }
+  .intervai-landing .price strong {
+    font-size: 28px;
+  }
+  .intervai-landing .price small {
+    font-size: 11px;
+  }
+  .intervai-landing .price-card ul {
+    font-size: 12px;
+  }
+  .intervai-landing .plan-description {
+    font-size: 12px;
+  }
+  .intervai-landing .price-contact strong {
+    font-size: 22px;
+  }
+  .intervai-landing .price-card.featured {
+    margin: 0;
+    padding-top: 25px;
+  }
+  .intervai-landing .testimonial-card {
+    padding: 20px 16px;
+  }
+  .intervai-landing .testimonial-card blockquote {
+    font-size: 12px;
+  }
+  .intervai-landing .testimonial-person {
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .intervai-landing .testimonial-person > img {
+    width: 33px;
+    height: 33px;
+  }
+  .intervai-landing .stars {
+    font-size: 13px;
+    margin-left: 40px;
+    line-height: 1;
+  }
+  .intervai-landing .faq-layout {
+    gap: 30px;
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .intervai-landing .faq-visual {
+    flex-wrap: wrap;
+  }
+  .intervai-landing .faq-visual > img {
+    width: 190px;
+    max-width: 100%;
+    margin: 0;
+  }
+  .intervai-landing .help-card {
+    margin: -16px 0 0;
+    min-width: 200px;
+    z-index: 1;
+    padding: 15px;
+  }
+  .intervai-landing .faq-list summary {
+    font-size: 11px;
+  }
+  .intervai-landing .footer-grid {
+    gap: 25px;
+  }
+  .intervai-landing .cta-layout h2 {
+    font-size: 22px;
+  }
+  .intervai-landing .cta-layout p {
+    font-size: 12px;
+  }
+  .intervai-landing .plane-illustration {
+    font-size: 61px;
+  }
+  .intervai-landing .button-lime {
+    font-size: 13px;
+  }
+  .intervai-landing .feature-section .section-heading h2 {
+    font-size: 27px;
+  }
+}
+@media (max-width: 760px) {
+  .intervai-landing .container {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .intervai-landing .site-header,
+  .intervai-landing .nav-wrap {
+    height: 73px;
+  }
+  .intervai-landing .nav-wrap {
+    gap: 12px;
+  }
+  .intervai-landing .brand {
+    font-size: 24px;
+  }
+  .intervai-landing .brand > svg {
+    width: 32px;
+  }
+  .intervai-landing .desktop-nav,
+  .intervai-landing .login-link {
+    display: none;
+  }
+  .intervai-landing .nav-actions > .button {
+    min-height: 34px;
+    font-size: 10px;
+    padding: 8px 11px;
+  }
+  .intervai-landing .nav-actions > .button .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .intervai-landing .menu-toggle {
+    display: grid;
+    width: 33px;
+    height: 33px;
+  }
+  .intervai-landing .nav-actions {
+    gap: 6px;
+  }
+  .intervai-landing .hero {
+    min-height: 0;
+    background: linear-gradient(145deg, #f5fbff 0%, #fff 50%, #d9f7ff);
+  }
+  .intervai-landing .hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+    padding-top: 99px;
+    padding-bottom: 0;
+  }
+  .intervai-landing .hero-copy {
+    padding: 0;
+    text-align: center;
+    z-index: 3;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.25px;
+    margin-bottom: 17px;
+    padding: 7px 11px;
+  }
+  .intervai-landing h1 {
+    font-size: 46px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+  }
+  .intervai-landing .hero-description {
+    font-size: 14px;
+    max-width: 350px;
+    margin: 16px auto 0;
+  }
+  .intervai-landing .hero-benefits {
+    justify-content: center;
+    font-size: 8px;
+    margin-top: 18px;
+    gap: 11px;
+  }
+  .intervai-landing .hero-buttons {
+    justify-content: center;
+    gap: 11px;
+    margin-top: 22px;
+  }
+  .intervai-landing .hero-buttons .button {
+    padding: 12px 18px;
+    font-size: 12px;
+    min-height: 45px;
+  }
+  .intervai-landing .windows-availability {
+    justify-content: center;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 8px;
+  }
+  .intervai-landing .windows-availability strong {
+    font-size: 10px;
+  }
+  .intervai-landing .windows-icon {
+    width: 23px;
+    height: 23px;
+  }
+  .intervai-landing .hero-visual {
+    position: relative;
+    inset: auto;
+    margin: 10px -22px -6px;
+    height: auto;
+    max-height: none;
+    width: calc(100% + 44px);
+    aspect-ratio: 1.23;
+    overflow: hidden;
+    align-self: center;
+    pointer-events: none;
+  }
+  .intervai-landing .hero-visual img {
+    object-fit: cover;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-composite: add;
+    -webkit-mask-composite: source-over;
+    object-position: center;
+  }
+  .intervai-landing .visual-caption {
+    font-size: 5px;
+    bottom: 23px;
+    right: 25px;
+  }
+  .intervai-landing .hero:before {
+    left: -210px;
+    top: 180px;
+  }
+  .intervai-landing .company-strip {
+    padding-top: 12px;
+    padding-bottom: 24px;
+  }
+  .intervai-landing .company-strip > p {
+    font-size: 10px;
+    margin: 8px 0 20px;
+  }
+  .intervai-landing .company-logos {
+    gap: 22px 25px;
+    justify-content: center;
+  }
+  .intervai-landing .google {
+    font-size: 22px !important;
+  }
+  .intervai-landing .microsoft {
+    font-size: 16px;
+  }
+  .intervai-landing .microsoft i {
+    grid-template-columns: 8px 8px;
+  }
+  .intervai-landing .microsoft b {
+    width: 8px;
+    height: 8px;
+  }
+  .intervai-landing .amazon {
+    font-size: 21px;
+  }
+  .intervai-landing .amazon > span {
+    font-size: 24px;
+    bottom: -10px;
+  }
+  .intervai-landing .meta {
+    font-size: 20px;
+  }
+  .intervai-landing .meta b {
+    font-size: 30px;
+  }
+  .intervai-landing .apple {
+    width: 19px;
+    height: 24px;
+  }
+  .intervai-landing .shopify {
+    font-size: 17px;
+  }
+  .intervai-landing .tesla {
+    font-size: 14px;
+  }
+  .intervai-landing .ibm {
+    font-size: 26px;
+  }
+  .intervai-landing .oracle {
+    font-size: 16px;
+  }
+  .intervai-landing .netflix {
+    font-size: 18px;
+  }
+  .intervai-landing .quick-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-top: 10px;
+    padding-bottom: 18px;
+  }
+  .intervai-landing .quick-card {
+    padding: 17px 16px;
+    border-radius: 12px;
+  }
+  .intervai-landing .quick-card .icon-tile {
+    width: 41px;
+    height: 41px;
+    margin-bottom: 12px;
+    border-radius: 11px;
+  }
+  .intervai-landing .quick-card .icon-tile .icon {
+    width: 24px;
+    height: 24px;
+  }
+  .intervai-landing .quick-card h3 {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    letter-spacing: -0.25px;
+  }
+  .intervai-landing .quick-card p {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+  .intervai-landing .section {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+  .intervai-landing .section-heading {
+    margin-bottom: 29px;
+  }
+  .intervai-landing .section-heading h2,
+  .intervai-landing .feature-section .section-heading h2,
+  .intervai-landing .testimonials-section h2,
+  .intervai-landing .faq-section h2 {
+    font-size: 24px;
+    letter-spacing: -0.9px;
+    line-height: 1.35;
+  }
+  .intervai-landing .section-heading p {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .intervai-landing .eyebrow {
+    font-size: 8px;
+    padding: 5px 11px;
+    letter-spacing: 0.6px;
+  }
+  .intervai-landing .section-heading .eyebrow {
+    margin-bottom: 12px;
+  }
+  .intervai-landing .steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 18px;
+    padding: 7px 0 0;
+  }
+  .intervai-landing .step-arrow {
+    display: none;
+  }
+  .intervai-landing .step-art {
+    width: 145px;
+    height: 110px;
+    margin-bottom: 15px;
+  }
+  .intervai-landing .step-number {
+    width: 26px;
+    height: 26px;
+    font-size: 10px;
+    left: -2px;
+  }
+  .intervai-landing .step h3 {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  .intervai-landing .step p {
+    font-size: 11px;
+    max-width: 160px;
+  }
+  .intervai-landing .mini-laptop {
+    width: 103px;
+    height: 74px;
+  }
+  .intervai-landing .mini-brand {
+    font-size: 17px;
+  }
+  .intervai-landing .platform-illustration {
+    width: 121px;
+    height: 76px;
+  }
+  .intervai-landing .platform-icons {
+    height: 52px;
+    gap: 10px;
+  }
+  .intervai-landing .platform-icons > span {
+    width: 28px;
+    height: 28px;
+  }
+  .intervai-landing .answer-illustration {
+    width: 109px;
+    height: 78px;
+  }
+  .intervai-landing .cv-illustration {
+    width: 65px;
+    height: 86px;
+  }
+  .intervai-landing .feature-section {
+    padding-top: 8px;
+  }
+  .intervai-landing .feature-grid {
+    gap: 10px;
+  }
+  .intervai-landing .feature-card {
+    padding: 15px 13px;
+    display: block;
+  }
+  .intervai-landing .feature-card .icon-tile {
+    margin-bottom: 12px;
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+  }
+  .intervai-landing .feature-card .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .intervai-landing .feature-card h3 {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .intervai-landing .feature-card p {
+    font-size: 10.5px;
+    line-height: 1.65;
+  }
+  .intervai-landing .feature-section .section-heading {
+    margin-bottom: 24px;
+  }
+  .intervai-landing .pricing-section .section-heading .eyebrow {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+  }
+  .intervai-landing .pricing-section .section-heading {
+    margin-bottom: 29px;
+  }
+  .intervai-landing .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 13px;
+  }
+  .intervai-landing .price-card {
+    min-height: 330px;
+    padding: 23px 14px 15px;
+    border-radius: 12px;
+  }
+  .intervai-landing .price-card h3 {
+    font-size: 18px;
+  }
+  .intervai-landing .plan-description {
+    font-size: 10px;
+    white-space: normal;
+    min-height: 16px;
+  }
+  .intervai-landing .price {
+    gap: 3px;
+    margin-top: 13px;
+    margin-bottom: 17px;
+  }
+  .intervai-landing .price strong {
+    font-size: 23px;
+    letter-spacing: -1.2px;
+  }
+  .intervai-landing .price > span {
+    font-size: 10px;
+  }
+  .intervai-landing .price small {
+    font-size: 9px;
+  }
+  .intervai-landing .price-card ul {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+  .intervai-landing .price-card li {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .intervai-landing .price-card li:before {
+    font-size: 12px;
+  }
+  .intervai-landing .price-card > .button {
+    font-size: 11px;
+  }
+  .intervai-landing .popular-badge {
+    font-size: 8px;
+    padding: 4px 10px;
+    top: -11px;
+  }
+  .intervai-landing .price-card.featured {
+    padding: 23px 13px 15px;
+  }
+  .intervai-landing .price-contact strong {
+    font-size: 19px;
+    letter-spacing: -0.5px;
+  }
+  .intervai-landing .price-card:last-child {
+    grid-column: 1/-1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+    padding: 22px 18px;
+  }
+  .intervai-landing .price-card:last-child h3 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .intervai-landing .price-card:last-child .plan-description {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 5px;
+  }
+  .intervai-landing .price-card:last-child .price {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 9px;
+  }
+  .intervai-landing .price-card:last-child ul {
+    grid-column: 2;
+    grid-row: 1/4;
+    margin: 0;
+  }
+  .intervai-landing .price-card:last-child > .button {
+    grid-column: 1/-1;
+    margin-top: 15px;
+  }
+  .intervai-landing .pricing-note {
+    font-size: 8px;
+    margin-top: 17px;
+    line-height: 1.65;
+  }
+  .intervai-landing .testimonials-section {
+    padding-top: 12px;
+    padding-bottom: 23px;
+  }
+  .intervai-landing .testimonial-track {
+    display: flex;
+    gap: 13px;
+    transition: transform 0.35s;
+  }
+  .intervai-landing .testimonial-card {
+    flex: 0 0 100%;
+    min-height: 210px;
+    padding: 23px;
+  }
+  .intervai-landing .testimonials-viewport {
+    overflow: hidden;
+  }
+  .intervai-landing .testimonial-card blockquote {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .intervai-landing .testimonial-person {
+    flex-wrap: nowrap;
+    gap: 9px;
+  }
+  .intervai-landing .testimonial-person img {
+    width: 39px;
+    height: 39px;
+  }
+  .intervai-landing .testimonial-person strong {
+    font-size: 11px;
+  }
+  .intervai-landing .testimonial-person div > span {
+    font-size: 9px;
+  }
+  .intervai-landing .stars {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-left: auto;
+  }
+  .intervai-landing .carousel-arrow {
+    background: white;
+    box-shadow: 0 2px 12px #6950a515;
+  }
+  .intervai-landing .carousel-arrow.previous {
+    left: -15px;
+  }
+  .intervai-landing .carousel-arrow.next {
+    right: -15px;
+  }
+  .intervai-landing .testimonial-note {
+    font-size: 8px;
+  }
+  .intervai-landing .faq-section {
+    padding-top: 29px;
+    padding-bottom: 25px;
+  }
+  .intervai-landing .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 21px;
+  }
+  .intervai-landing .faq-list summary {
+    font-size: 11px;
+    padding: 12px 14px;
+    min-height: 45px;
+  }
+  .intervai-landing .faq-list details > p {
+    font-size: 11px;
+    padding: 0 14px 15px;
+  }
+  .intervai-landing .faq-visual {
+    flex-wrap: nowrap;
+    align-items: end;
+    padding-top: 0;
+    max-width: 440px;
+    margin: auto;
+    width: 100%;
+  }
+  .intervai-landing .faq-visual > img {
+    width: 49%;
+    margin-left: -15px;
+    margin-bottom: -15px;
+  }
+  .intervai-landing .help-card {
+    min-width: 0;
+    width: 51%;
+    margin: 0 0 0 -10px;
+    padding: 16px 13px;
+  }
+  .intervai-landing .help-card strong {
+    font-size: 11px;
+    white-space: normal;
+    display: block;
+    line-height: 1.3;
+  }
+  .intervai-landing .help-card p {
+    font-size: 10px;
+    margin: 6px 0 11px;
+  }
+  .intervai-landing .help-card .button {
+    font-size: 10px;
+    padding: 8px 10px;
+    min-height: 35px;
+  }
+  .intervai-landing .help-card .button .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .intervai-landing .cta-layout {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 29px;
+    padding-bottom: 29px;
+    padding-left: 27px;
+    padding-right: 27px;
+    justify-content: center;
+    text-align: center;
+  }
+  .intervai-landing .plane-illustration {
+    display: none;
+  }
+  .intervai-landing .cta-layout > div {
+    width: 100%;
+  }
+  .intervai-landing .cta-layout h2 {
+    font-size: 23px;
+  }
+  .intervai-landing .cta-layout p {
+    font-size: 12px;
+  }
+  .intervai-landing .cta-layout > .button {
+    margin: 4px 0 0;
+    font-size: 12px;
+    min-height: 45px;
+    padding: 12px 22px;
+  }
+  .intervai-landing .cta-spark {
+    right: 5px;
+    font-size: 60px;
+    opacity: 0.18;
+  }
+  .intervai-landing .cta-eyebrow {
+    font-size: 7px;
+  }
+  .intervai-landing .final-cta {
+    border-radius: 50% 50% 0 0 / 10px 10px 0 0;
+  }
+  .intervai-landing .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 26px 20px;
+    padding-bottom: 26px;
+  }
+  .intervai-landing .footer-about {
+    grid-column: 1/-1;
+  }
+  .intervai-landing .footer-about .brand {
+    font-size: 24px;
+  }
+  .intervai-landing .footer-about > p {
+    font-size: 11px;
+  }
+  .intervai-landing .footer-column {
+    padding-top: 0;
+  }
+  .intervai-landing .footer-column h3 {
+    font-size: 11px;
+  }
+  .intervai-landing .footer-column > a,
+  .intervai-landing .footer-column > button {
+    font-size: 10px;
+  }
+  .intervai-landing .footer-grid > .footer-column:last-child {
+    grid-column: 1/-1;
+  }
+  .intervai-landing .footer-bottom {
+    font-size: 8px;
+    gap: 12px;
+    align-items: center;
+  }
+  .intervai-landing .site-footer {
+    padding-top: 26px;
+    padding-bottom: 17px;
+  }
+  .intervai-landing .demo-header {
+    padding: 32px 24px 22px;
+  }
+  .intervai-landing .demo-header h2 {
+    font-size: 22px;
+  }
+  .intervai-landing .demo-header > p {
+    font-size: 11px;
+  }
+  .intervai-landing .demo-body {
+    grid-template-columns: 1fr;
+    padding: 0 17px;
+    gap: 15px;
+  }
+  .intervai-landing .demo-interviewer {
+    padding: 19px;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 0 13px;
+  }
+  .intervai-landing .demo-avatar {
+    grid-column: 1;
+    grid-row: 1/4;
+    margin: 0;
+    align-self: center;
+  }
+  .intervai-landing .demo-live {
+    grid-column: 2;
+    align-self: end;
+  }
+  .intervai-landing .demo-interviewer h3 {
+    grid-column: 2;
+    font-size: 12px;
+    margin-top: 7px;
+  }
+  .intervai-landing .demo-interviewer > p {
+    grid-column: 1/-1;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+  .intervai-landing .demo-interviewer label {
+    grid-column: 1/-1;
+    margin-top: 18px;
+  }
+  .intervai-landing .demo-interviewer select {
+    grid-column: 1/-1;
+  }
+  .intervai-landing .demo-question-text {
+    grid-column: 1/-1;
+    font-size: 14px;
+    margin: 13px 0;
+    min-height: 0;
+  }
+  .intervai-landing .demo-interviewer > .button {
+    grid-column: 1/-1;
+    width: 100%;
+  }
+  .intervai-landing .demo-panel {
+    min-height: 0;
+    font-size: 11px;
+  }
+  .intervai-landing .demo-tabs > button {
+    font-size: 9px;
+  }
+  .intervai-landing .demo-disclaimer {
+    font-size: 8px;
+    padding: 14px 18px;
+  }
+  .intervai-landing .start-dialog {
+    padding: 35px 26px;
+  }
+  .intervai-landing .start-dialog h2 {
+    font-size: 23px;
+  }
+  .intervai-landing .start-dialog > p {
+    font-size: 12px;
+  }
+  .intervai-landing .toast {
+    font-size: 10px;
+    width: max-content;
+    max-width: calc(100vw - 30px);
+  }
+}
+@media (max-width: 370px) {
+  .intervai-landing .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 6px;
+  }
+  .intervai-landing .hero-benefits {
+    gap: 7px;
+    font-size: 7px;
+  }
+  .intervai-landing h1 {
+    font-size: 41px;
+  }
+  .intervai-landing .nav-actions > .button {
+    padding: 8px 9px;
+    font-size: 9px;
+  }
+  .intervai-landing .nav-actions > .button .icon {
+    display: none;
+  }
+  .intervai-landing .hero-description {
+    font-size: 13px;
+  }
+  .intervai-landing .hero-visual {
+    margin-left: -18px;
+    margin-right: -18px;
+    width: calc(100% + 36px);
+  }
+  .intervai-landing .hero-buttons .button {
+    padding: 11px 15px;
+    font-size: 11px;
+  }
+  .intervai-landing .quick-card {
+    padding: 15px 12px;
+  }
+  .intervai-landing .quick-card h3 {
+    font-size: 11px;
+  }
+  .intervai-landing .quick-card p {
+    font-size: 10px;
+  }
+  .intervai-landing .steps {
+    gap: 26px 13px;
+  }
+  .intervai-landing .step-art {
+    width: 130px;
+  }
+  .intervai-landing .price strong {
+    font-size: 21px;
+  }
+  .intervai-landing .price small {
+    font-size: 8px;
+  }
+  .intervai-landing .price-card {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  .intervai-landing .testimonial-card {
+    padding: 20px;
+  }
+  .intervai-landing .stars {
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+  .intervai-landing .section-heading h2,
+  .intervai-landing .feature-section .section-heading h2,
+  .intervai-landing .testimonials-section h2,
+  .intervai-landing .faq-section h2 {
+    font-size: 22px;
+  }
+  .intervai-landing .help-card {
+    padding: 13px 11px;
+  }
+  .intervai-landing .help-card .button {
+    font-size: 9px;
+    gap: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intervai-landing {
+    scroll-behavior: auto;
+  }
+  .intervai-landing *,
+  .intervai-landing *:before,
+  .intervai-landing *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .intervai-landing .button:hover,
+  .intervai-landing .feature-card:hover,
+  .intervai-landing .price-card:hover {
+    transform: none;
+  }
+}
+
+/* Fluid page geometry, vector branding and live product illustration. */
+.intervai-landing {
+  --gutter: clamp(20px, 4.5vw, 180px);
+}
+.intervai-landing,
+.intervai-landing {
+  max-width: 100%;
+  overflow-x: clip;
+}
+.intervai-landing {
+  font-size: clamp(15px, 1.04vw, 24px);
+}
+.intervai-landing .container {
+  width: 100%;
+  max-width: none;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.intervai-landing .container > * {
+  min-width: 0;
+}
+.intervai-landing .section {
+  padding-block: clamp(34px, 3.7vw, 90px);
+}
+.intervai-landing .site-header,
+.intervai-landing .nav-wrap {
+  height: clamp(76px, 6vw, 132px);
+}
+.intervai-landing .nav-wrap {
+  gap: clamp(15px, 2vw, 44px);
+}
+.intervai-landing .brand {
+  font-size: clamp(25px, 2.05vw, 46px);
+}
+.intervai-landing .brand > svg {
+  width: clamp(34px, 2.8vw, 60px);
+  height: auto;
+}
+.intervai-landing .desktop-nav {
+  min-height: clamp(76px, 6vw, 132px);
+  padding-inline: clamp(22px, 2.8vw, 64px);
+  gap: clamp(16px, 2.1vw, 45px);
+  font-size: clamp(11px, 0.85vw, 19px);
+}
+.intervai-landing .nav-actions {
+  gap: clamp(7px, 0.8vw, 17px);
+}
+.intervai-landing .nav-actions .button {
+  font-size: clamp(11px, 0.86vw, 20px);
+  padding: clamp(9px, 0.8vw, 18px) clamp(13px, 1.15vw, 27px);
+}
+.intervai-landing .hero {
+  min-height: 0;
+  background:
+    radial-gradient(ellipse at 85% 82%, #d8f8ff 0%, transparent 42%),
+    radial-gradient(ellipse at 5% 16%, #edf7ff 0%, transparent 30%), #fff;
+}
+.intervai-landing .hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.91fr) minmax(0, 1.09fr);
+  gap: clamp(12px, 2.2vw, 50px);
+  min-height: 0;
+  padding-top: clamp(100px, 8vw, 180px);
+  padding-bottom: clamp(30px, 2.8vw, 68px);
+  align-items: center;
+}
+.intervai-landing .hero-copy {
+  padding-top: 0;
+  min-width: 0;
+}
+.intervai-landing .hero-eyebrow {
+  font-size: clamp(8px, 0.67vw, 15px);
+  padding: clamp(6px, 0.5vw, 12px) clamp(10px, 0.8vw, 20px);
+  margin-bottom: clamp(19px, 1.7vw, 36px);
+}
+.intervai-landing h1 {
+  font-size: clamp(42px, 4.25vw, 104px);
+  letter-spacing: -0.045em;
+  line-height: 1.07;
+}
+.intervai-landing .hero-description {
+  font-size: clamp(15px, 1.22vw, 29px);
+  max-width: 36ch;
+  margin-top: clamp(17px, 1.6vw, 38px);
+}
+.intervai-landing .hero-benefits {
+  font-size: clamp(9px, 0.74vw, 17px);
+  gap: clamp(8px, 0.9vw, 22px);
+  margin-top: clamp(17px, 1.6vw, 35px);
+}
+.intervai-landing .hero-benefits i {
+  width: clamp(12px, 1vw, 23px);
+  height: clamp(12px, 1vw, 23px);
+  font-size: clamp(8px, 0.65vw, 15px);
+}
+.intervai-landing .hero-buttons {
+  gap: clamp(12px, 1.2vw, 28px);
+  margin-top: clamp(22px, 2vw, 44px);
+}
+.intervai-landing .hero-buttons .button {
+  font-size: clamp(12px, 1vw, 23px);
+  padding: clamp(11px, 1vw, 22px) clamp(18px, 1.65vw, 38px);
+}
+.intervai-landing .hero-buttons .icon {
+  width: clamp(19px, 1.6vw, 34px);
+  height: clamp(19px, 1.6vw, 34px);
+}
+.intervai-landing .windows-availability {
+  font-size: clamp(9px, 0.75vw, 17px);
+  gap: clamp(10px, 0.9vw, 20px);
+  margin-top: clamp(21px, 2vw, 42px);
+}
+.intervai-landing .windows-availability strong {
+  font-size: clamp(11px, 0.87vw, 20px);
+}
+.intervai-landing .windows-icon {
+  width: clamp(25px, 2vw, 46px);
+  height: auto;
+}
+.intervai-landing .hero-visual {
+  position: relative;
+  inset: auto;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.12;
+  max-height: none;
+  pointer-events: none;
+  z-index: 1;
+  isolation: isolate;
+}
+.intervai-landing .hero-visual:before {
+  content: "";
+  position: absolute;
+  inset: 20% -7% -2% 2%;
+  z-index: -1;
+  background: radial-gradient(ellipse at 65% 60%, #89e3ff70, transparent 64%);
+}
+.intervai-landing .hero-visual > img.hero-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  mask: none;
+  -webkit-mask: none;
+}
+.intervai-landing .confidence-sticker {
+  position: absolute;
+  top: 2%;
+  right: 0%;
+  width: 21%;
+  padding: 4% 2% 3%;
+  font-family: var(--heading);
+  font-size: clamp(10px, 1.2vw, 28px);
+  font-weight: 800;
+  text-align: center;
+  color: #122b07;
+  background: #b9ff38;
+  line-height: 1.18;
+  transform: rotate(-9deg);
+  border-radius: 7px;
+  box-shadow: 0 8px 25px #a7e62745;
+}
+.intervai-landing .confidence-sticker > span {
+  position: absolute;
+  top: -22%;
+  left: 10%;
+  font-size: 2em;
+  color: #261e36;
+}
+.intervai-landing .transcript-badge {
+  position: absolute;
+  left: 2%;
+  top: 29%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 2.2% 2.7%;
+  background: #fffffff5;
+  box-shadow: 0 6px 27px #0f5ebd18;
+  border: 1px solid #e5eaf5;
+  border-radius: 10px;
+  transform: rotate(-3deg);
+  font-size: clamp(7px, 0.61vw, 15px);
+}
+.intervai-landing .transcript-badge > .icon {
+  color: #06baff;
+  width: clamp(28px, 2.9vw, 60px);
+  height: clamp(28px, 2.9vw, 60px);
+}
+.intervai-landing .transcript-badge strong {
+  display: block;
+  font-size: 1.05em;
+  color: #5e5879;
+  line-height: 1.4;
+}
+.intervai-landing .transcript-badge strong i,
+.intervai-landing .hero-active i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #05c88b;
+  margin-right: 3px;
+}
+.intervai-landing .transcript-badge span {
+  font-size: 0.9em;
+  color: #8c87a2;
+  display: block;
+  margin-top: 2px;
+  line-height: 1.5;
+}
+.intervai-landing .hero-copilot {
+  position: absolute;
+  right: -1%;
+  bottom: 6%;
+  width: 39%;
+  background: #fffffffa;
+  border: 1px solid #e3e7fa;
+  border-radius: clamp(8px, 1vw, 22px);
+  box-shadow: 0 15px 45px #2089d72b;
+  transform: rotate(2deg);
+  font-size: clamp(7px, 0.65vw, 16px);
+  padding: 3%;
+  line-height: 1.65;
+}
+.intervai-landing .hero-copilot-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  border-bottom: 1px solid #eae8f6;
+  padding-bottom: 6%;
+  font-family: var(--heading);
+}
+.intervai-landing .hero-copilot-title > strong {
+  font-size: 1.55em;
+  font-weight: 800;
+  color: #242146;
+  white-space: nowrap;
+}
+.intervai-landing .hero-copilot-title > strong > span {
+  color: #7341ff;
+}
+.intervai-landing .hero-active {
+  font-size: 0.8em;
+  color: #0db387;
+  white-space: nowrap;
+}
+.intervai-landing .hero-copilot-tabs {
+  display: flex;
+  gap: 4%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6%;
+  font-size: 0.78em;
+  color: #958eaa;
+  white-space: nowrap;
+}
+.intervai-landing .hero-copilot-tabs .selected {
+  padding: 3% 5%;
+  border: 1px solid #ddceff;
+  background: #f4eeff;
+  border-radius: 4px;
+  color: #8853ff;
+}
+.intervai-landing .hero-question,
+.intervai-landing .hero-answer {
+  margin-top: 7%;
+  padding: 7%;
+  border-radius: 8px;
+  background: #f8f7fe;
+  color: #8b829e;
+  font-size: 0.96em;
+}
+.intervai-landing .hero-question strong,
+.intervai-landing .hero-answer strong {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.93em;
+  line-height: 1.4;
+  color: #7563bc;
+  margin-bottom: 4%;
+}
+.intervai-landing .hero-question .icon,
+.intervai-landing .hero-answer .icon {
+  width: 1.3em;
+  height: 1.3em;
+  color: #8853ff;
+}
+.intervai-landing .hero-answer {
+  background: linear-gradient(140deg, #f6f3ff, #f3f8ff);
+  margin-top: 4%;
+}
+.intervai-landing .hero-answer p + p {
+  margin-top: 8%;
+}
+.intervai-landing .hero-cv-badge {
+  position: absolute;
+  left: 16%;
+  right: -6%;
+  bottom: -12%;
+  padding: 6%;
+  background: #fffffff5;
+  border: 1px solid #ecedfc;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px #29a3d929;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+.intervai-landing .hero-cv-badge .icon {
+  width: 2.7em;
+  height: 2.7em;
+  color: #00b5e8;
+}
+.intervai-landing .hero-cv-badge strong {
+  color: #776888;
+  font-size: 1.05em;
+}
+.intervai-landing .visual-caption {
+  bottom: 0;
+  right: 1%;
+  font-size: clamp(6px, 0.45vw, 11px);
+}
+.intervai-landing .company-strip {
+  padding-top: clamp(6px, 0.8vw, 22px);
+  padding-bottom: clamp(32px, 3.6vw, 80px);
+}
+.intervai-landing .company-strip > p {
+  font-size: clamp(11px, 0.9vw, 21px);
+  margin-bottom: clamp(23px, 2.3vw, 52px);
+}
+.intervai-landing .company-logos {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(15px, 2.6vw, 62px);
+}
+.intervai-landing .company-logo {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(28px, 2.9vw, 64px);
+}
+.intervai-landing .company-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+}
+.intervai-landing .logo-apple img {
+  width: 36%;
+  max-height: 90%;
+}
+.intervai-landing .logo-tesla img {
+  height: 72%;
+}
+.intervai-landing .logo-amazon img {
+  height: 83%;
+}
+.intervai-landing .logo-oracle img {
+  height: 65%;
+}
+.intervai-landing .logo-netflix img {
+  height: 75%;
+}
+.intervai-landing .quick-features {
+  gap: clamp(14px, 1.5vw, 34px);
+  padding-top: 0;
+  padding-bottom: clamp(12px, 1.6vw, 40px);
+}
+.intervai-landing .quick-card {
+  padding: clamp(18px, 1.9vw, 45px);
+}
+.intervai-landing .icon-tile {
+  width: clamp(44px, 3.8vw, 85px);
+  height: clamp(44px, 3.8vw, 85px);
+  margin-bottom: clamp(13px, 1.2vw, 28px);
+}
+.intervai-landing .icon-tile .icon {
+  width: 56%;
+  height: 56%;
+}
+.intervai-landing .quick-card h3 {
+  font-size: clamp(14px, 1.2vw, 28px);
+  letter-spacing: -0.025em;
+}
+.intervai-landing .quick-card p {
+  font-size: clamp(12px, 0.96vw, 23px);
+}
+.intervai-landing .section-heading {
+  margin-bottom: clamp(28px, 3vw, 66px);
+}
+.intervai-landing .section-heading h2,
+.intervai-landing .feature-section .section-heading h2,
+.intervai-landing .testimonials-section h2,
+.intervai-landing .faq-section h2 {
+  font-size: clamp(24px, 2.35vw, 55px);
+  letter-spacing: -0.035em;
+}
+.intervai-landing .section-heading p {
+  font-size: clamp(13px, 1.08vw, 25px);
+}
+.intervai-landing .section-heading .eyebrow {
+  font-size: clamp(9px, 0.7vw, 16px);
+  padding: clamp(5px, 0.4vw, 9px) clamp(11px, 0.9vw, 22px);
+  margin-bottom: clamp(13px, 1.1vw, 25px);
+}
+.intervai-landing .how-section,
+.intervai-landing .feature-section {
+  padding-top: clamp(22px, 2vw, 48px);
+}
+.intervai-landing .steps {
+  grid-template-columns: minmax(0, 1fr) 3% minmax(0, 1fr) 3% minmax(
+      0,
+      1fr
+    ) 3% minmax(0, 1fr);
+  gap: clamp(9px, 1.3vw, 32px);
+  padding: 0;
+}
+.intervai-landing .step-art {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1.4;
+  margin-bottom: clamp(16px, 1.5vw, 35px);
+}
+.intervai-landing .step-art > *:not(.step-number) {
+  transform: scale(clamp(1, 1.1, 1.3));
+}
+.intervai-landing .step h3 {
+  font-size: clamp(13px, 1.08vw, 26px);
+  letter-spacing: -0.025em;
+}
+.intervai-landing .step p {
+  font-size: clamp(12px, 0.95vw, 22px);
+  max-width: 24ch;
+}
+.intervai-landing .step-arrow {
+  margin-top: 4vw;
+  font-size: clamp(26px, 2.6vw, 60px);
+}
+.intervai-landing .feature-grid {
+  gap: clamp(13px, 1.3vw, 30px);
+}
+.intervai-landing .feature-card {
+  padding: clamp(18px, 1.7vw, 40px);
+  gap: clamp(12px, 1.1vw, 28px);
+}
+.intervai-landing .feature-card .icon-tile {
+  width: clamp(40px, 3.2vw, 74px);
+  height: clamp(40px, 3.2vw, 74px);
+}
+.intervai-landing .feature-card .icon {
+  width: 55%;
+  height: 55%;
+}
+.intervai-landing .feature-card h3 {
+  font-size: clamp(13px, 0.97vw, 24px);
+  letter-spacing: -0.02em;
+}
+.intervai-landing .feature-card p {
+  font-size: clamp(12px, 0.9vw, 22px);
+}
+.intervai-landing .pricing-section {
+  padding-bottom: clamp(28px, 2.8vw, 65px);
+}
+.intervai-landing .pricing-section .section-heading .eyebrow {
+  font-size: clamp(9px, 0.7vw, 17px);
+}
+.intervai-landing .pricing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1fr) minmax(0, 1.08fr);
+  gap: clamp(18px, 2vw, 50px);
+  align-items: stretch;
+}
+.intervai-landing .trial-card,
+.intervai-landing .subscription-card {
+  border-radius: clamp(15px, 1.3vw, 28px);
+  background: #fff;
+  border: 1px solid #e8e2f8;
+  padding: clamp(24px, 2.4vw, 55px);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  position: relative;
+}
+.intervai-landing .subscription-card h3,
+.intervai-landing .trial-card h3 {
+  font-size: clamp(23px, 2vw, 47px);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.intervai-landing .subscription-card .plan-description {
+  font-size: clamp(12px, 0.95vw, 23px);
+  min-height: 0;
+  white-space: normal;
+}
+.intervai-landing .plan-kicker {
+  font-size: clamp(8px, 0.65vw, 15px);
+  letter-spacing: 1px;
+  font-weight: 750;
+  color: #9382b9;
+  display: block;
+  margin-bottom: clamp(17px, 1.6vw, 36px);
+}
+.intervai-landing .subscription-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: clamp(5px, 0.45vw, 12px);
+  margin-top: clamp(23px, 2.2vw, 52px);
+  line-height: 1.2;
+  color: #181139;
+}
+.intervai-landing .subscription-price > span {
+  font-size: clamp(13px, 1vw, 25px);
+  color: #8b80a3;
+}
+.intervai-landing .subscription-price strong {
+  font-family: var(--heading);
+  font-size: clamp(30px, 3.3vw, 78px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+.intervai-landing .subscription-price small {
+  font-size: clamp(12px, 0.96vw, 23px);
+  color: #998dad;
+}
+.intervai-landing .billing-info {
+  font-size: clamp(10px, 0.8vw, 19px);
+  color: #9385a6;
+  min-height: 2.8em;
+  margin-top: clamp(11px, 0.9vw, 22px);
+}
+.intervai-landing .subscription-card ul {
+  padding: 0;
+  margin: clamp(24px, 2.3vw, 54px) 0;
+  list-style: none;
+  color: #776a8b;
+  font-size: clamp(12px, 0.97vw, 23px);
+}
+.intervai-landing .subscription-card li {
+  display: flex;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: clamp(12px, 0.9vw, 24px);
+}
+.intervai-landing .subscription-card li:before {
+  content: "✓";
+  color: #04c486;
+  font-weight: 800;
+  flex: none;
+}
+.intervai-landing .subscription-card .button,
+.intervai-landing .trial-card .button {
+  width: 100%;
+  margin-top: auto;
+  font-size: clamp(12px, 1vw, 23px);
+  padding: clamp(12px, 1vw, 25px) 15px;
+}
+.intervai-landing .annual-card {
+  background: linear-gradient(140deg, #fff, #f8f3ff);
+  border: 2px solid #ab87ff;
+  box-shadow: 0 10px 35px #7b3aff12;
+}
+.intervai-landing .annual-card .popular-badge {
+  font-size: clamp(10px, 0.8vw, 19px);
+  padding: clamp(5px, 0.5vw, 12px) clamp(15px, 1.3vw, 30px);
+  top: -1em;
+}
+.intervai-landing .trial-card {
+  background: linear-gradient(140deg, #fff, #fbfaff);
+  border-color: #ede9f5;
+}
+.intervai-landing .trial-status {
+  font-size: clamp(8px, 0.65vw, 16px);
+  font-weight: 750;
+  letter-spacing: 1px;
+  color: #b39365;
+  background: #fff7e9;
+  align-self: start;
+  border-radius: 99px;
+  padding: 7px 10px;
+  margin-bottom: clamp(19px, 1.8vw, 43px);
+}
+.intervai-landing .trial-status > span {
+  color: #d7ac71;
+  font-size: 0.9em;
+  margin-right: 4px;
+}
+.intervai-landing .trial-subtitle {
+  font-size: clamp(12px, 0.96vw, 22px);
+  color: #958b9f;
+}
+.intervai-landing .trial-notice {
+  background: #f6f3fb;
+  border: 1px solid #eeebf4;
+  border-radius: 12px;
+  padding: clamp(18px, 1.8vw, 42px);
+  margin-block: clamp(24px, 2.3vw, 54px);
+}
+.intervai-landing .trial-notice > .icon {
+  width: clamp(27px, 2.2vw, 50px);
+  height: clamp(27px, 2.2vw, 50px);
+  color: #b9abc9;
+  margin-bottom: clamp(17px, 1.2vw, 27px);
+}
+.intervai-landing .trial-notice h4 {
+  font-family: var(--heading);
+  font-size: clamp(14px, 1.1vw, 26px);
+  margin: 0 0 12px;
+  line-height: 1.4;
+  color: #62546f;
+}
+.intervai-landing .trial-notice p {
+  font-size: clamp(12px, 0.94vw, 23px);
+  color: #786d86;
+  line-height: 1.8;
+}
+.intervai-landing .trial-disabled {
+  color: #b4aabf;
+  background: #efebf5;
+  border-color: #e8e3ef;
+  white-space: normal;
+}
+.intervai-landing .trial-disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+.intervai-landing .pricing-note {
+  font-size: clamp(10px, 0.8vw, 19px);
+  margin-top: clamp(23px, 2vw, 45px);
+}
+.intervai-landing .testimonial-card {
+  padding: clamp(23px, 2vw, 50px);
+  min-height: clamp(230px, 19vw, 440px);
+}
+.intervai-landing .testimonial-card blockquote {
+  font-size: clamp(13px, 1.02vw, 24px);
+}
+.intervai-landing .testimonial-person {
+  flex-wrap: nowrap;
+  gap: clamp(10px, 0.85vw, 20px);
+}
+.intervai-landing .testimonial-avatar {
+  width: clamp(38px, 3.2vw, 75px);
+  height: clamp(38px, 3.2vw, 75px);
+  border-radius: 50%;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-family: var(--heading);
+  font-weight: 750;
+  color: #6b48ba;
+  font-size: clamp(12px, 1vw, 23px);
+  background: linear-gradient(140deg, #e8dbff, #e1f1ff);
+}
+.intervai-landing .avatar-maya {
+  color: #8f4c9c;
+  background: linear-gradient(130deg, #fbdff3, #ebe7ff);
+}
+.intervai-landing .avatar-dedi {
+  color: #2f88ad;
+  background: linear-gradient(140deg, #d4f6e9, #dfefff);
+}
+.intervai-landing .testimonial-person strong {
+  font-size: clamp(11px, 0.87vw, 20px);
+}
+.intervai-landing .testimonial-person div > span {
+  font-size: clamp(9px, 0.65vw, 16px);
+}
+.intervai-landing .stars {
+  font-size: clamp(11px, 0.95vw, 23px);
+  margin-left: auto;
+  letter-spacing: 0;
+}
+.intervai-landing .testimonials-section .testimonial-track {
+  gap: clamp(15px, 1.5vw, 34px);
+}
+.intervai-landing .faq-layout {
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 95px);
+}
+.intervai-landing .faq-list summary {
+  font-size: clamp(12px, 0.96vw, 23px);
+  padding: clamp(13px, 1.2vw, 30px) clamp(17px, 1.5vw, 36px);
+}
+.intervai-landing .faq-list details > p {
+  font-size: clamp(12px, 0.9vw, 22px);
+}
+.intervai-landing .faq-visual {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.intervai-landing .faq-visual > img {
+  width: 52%;
+  height: auto;
+  mix-blend-mode: normal;
+  margin: 0;
+}
+.intervai-landing .help-card {
+  padding: clamp(17px, 1.7vw, 42px);
+  min-width: 0;
+  width: 48%;
+  margin: 0 0 0 -5%;
+  flex: none;
+}
+.intervai-landing .help-card strong {
+  font-size: clamp(12px, 1vw, 24px);
+  white-space: normal;
+}
+.intervai-landing .help-card p {
+  font-size: clamp(11px, 0.91vw, 21px);
+}
+.intervai-landing .help-card .button {
+  font-size: clamp(10px, 0.84vw, 20px);
+}
+.intervai-landing .cta-layout {
+  padding-block: clamp(32px, 3vw, 72px);
+}
+.intervai-landing .cta-layout h2 {
+  font-size: clamp(24px, 2vw, 48px);
+}
+.intervai-landing .cta-layout p {
+  font-size: clamp(13px, 1.04vw, 24px);
+}
+.intervai-landing .cta-layout > .button {
+  font-size: clamp(13px, 1.13vw, 25px);
+  padding: clamp(14px, 1.2vw, 28px) clamp(22px, 2vw, 47px);
+}
+.intervai-landing .plane-illustration {
+  font-size: clamp(60px, 5.4vw, 125px);
+}
+.intervai-landing .cta-eyebrow {
+  font-size: clamp(8px, 0.7vw, 16px);
+}
+.intervai-landing .site-footer {
+  padding-top: clamp(30px, 2.8vw, 70px);
+  padding-bottom: clamp(18px, 1.5vw, 36px);
+}
+.intervai-landing .footer-grid {
+  gap: clamp(26px, 4vw, 90px);
+  padding-bottom: clamp(29px, 2.7vw, 65px);
+}
+.intervai-landing .footer-about .brand {
+  font-size: clamp(25px, 2vw, 48px);
+}
+.intervai-landing .footer-about > p {
+  font-size: clamp(12px, 0.92vw, 22px);
+}
+.intervai-landing .footer-column {
+  gap: clamp(8px, 0.6vw, 16px);
+}
+.intervai-landing .footer-column h3 {
+  font-size: clamp(12px, 0.94vw, 22px);
+}
+.intervai-landing .footer-column > a,
+.intervai-landing .footer-column > button {
+  font-size: clamp(11px, 0.85vw, 20px);
+}
+.intervai-landing .footer-bottom {
+  font-size: clamp(10px, 0.8vw, 18px);
+}
+@media (max-width: 1100px) {
+  .intervai-landing .desktop-nav {
+    gap: 15px;
+    padding-inline: 18px;
+  }
+  .intervai-landing .hero-layout {
+    gap: 14px;
+  }
+  .intervai-landing .hero-copy h1 {
+    font-size: clamp(40px, 4.4vw, 53px);
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 7px;
+  }
+  .intervai-landing .hero-description {
+    font-size: 14px;
+  }
+  .intervai-landing .hero-benefits {
+    font-size: 8px;
+    gap: 7px;
+  }
+  .intervai-landing .hero-buttons .button {
+    font-size: 11px;
+    padding: 11px 16px;
+  }
+  .intervai-landing .hero-copilot {
+    font-size: 7px;
+    right: -1%;
+    width: 39%;
+  }
+  .intervai-landing .confidence-sticker {
+    font-size: 12px;
+  }
+  .intervai-landing .transcript-badge {
+    font-size: 7px;
+  }
+  .intervai-landing .company-logos {
+    gap: 20px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    row-gap: 24px;
+  }
+  .intervai-landing .company-logo {
+    height: 30px;
+  }
+  .intervai-landing .company-logo img {
+    max-width: 110px;
+  }
+  .intervai-landing .logo-apple img {
+    width: 24px;
+  }
+  .intervai-landing .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .intervai-landing .testimonial-person {
+    flex-wrap: wrap;
+  }
+  .intervai-landing .stars {
+    margin-left: 48px;
+    font-size: 13px;
+  }
+  .intervai-landing .faq-layout {
+    gap: 28px;
+  }
+  .intervai-landing .help-card .button {
+    gap: 6px;
+    padding-inline: 10px;
+  }
+  .intervai-landing .help-card .button .icon {
+    width: 14px;
+    height: 14px;
+  }
+  .intervai-landing .subscription-price strong {
+    font-size: 32px;
+  }
+  .intervai-landing .trial-card,
+  .intervai-landing .subscription-card {
+    padding: 24px 20px;
+  }
+  .intervai-landing .plan-kicker {
+    font-size: 7px;
+    letter-spacing: 0.65px;
+  }
+  .intervai-landing .trial-notice {
+    padding: 18px 16px;
+  }
+}
+@media (max-width: 900px) {
+  .intervai-landing .desktop-nav {
+    display: none;
+  }
+  .intervai-landing .menu-toggle {
+    display: grid;
+  }
+  .intervai-landing .mobile-nav {
+    top: calc(clamp(76px, 6vw, 132px) - 1px);
+  }
+  .intervai-landing .login-link {
+    display: inline-flex;
+  }
+  .intervai-landing .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .intervai-landing .trial-card {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    column-gap: 25px;
+    align-items: start;
+  }
+  .intervai-landing .trial-status {
+    grid-column: 1;
+    margin-bottom: 13px;
+    justify-self: start;
+  }
+  .intervai-landing .trial-card h3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .intervai-landing .trial-subtitle {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .intervai-landing .trial-notice {
+    grid-column: 2;
+    grid-row: 1/5;
+    margin: 0;
+  }
+  .intervai-landing .trial-card > .button {
+    grid-column: 1;
+    grid-row: 4;
+    align-self: end;
+    margin-top: 22px;
+  }
+  .intervai-landing .trial-notice > .icon {
+    display: none;
+  }
+  .intervai-landing .trial-notice h4 {
+    font-size: 14px;
+  }
+  .intervai-landing .subscription-price strong {
+    font-size: 39px;
+  }
+  .intervai-landing .subscription-card {
+    padding: 28px;
+  }
+  .intervai-landing .plan-kicker {
+    font-size: 8px;
+  }
+  .intervai-landing .steps {
+    gap: 10px;
+  }
+  .intervai-landing .step-art {
+    width: 100%;
+    max-width: 190px;
+  }
+  .intervai-landing .step-arrow {
+    margin-top: 40px;
+  }
+  .intervai-landing .quick-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .intervai-landing .quick-card h3 {
+    font-size: 16px;
+  }
+  .intervai-landing .quick-card p {
+    font-size: 13px;
+  }
+  .intervai-landing .quick-card .icon-tile {
+    width: 46px;
+    height: 46px;
+  }
+}
+@media (max-width: 760px) {
+  .intervai-landing {
+    --gutter: 22px;
+  }
+  .intervai-landing .container {
+    padding-inline: var(--gutter);
+  }
+  .intervai-landing .nav-wrap,
+  .intervai-landing .site-header {
+    height: 73px;
+  }
+  .intervai-landing .nav-actions .login-link {
+    display: none;
+  }
+  .intervai-landing .brand {
+    font-size: 24px;
+  }
+  .intervai-landing .brand > svg {
+    width: 31px;
+  }
+  .intervai-landing .nav-actions .button {
+    padding: 8px 11px;
+    font-size: 10px;
+    min-height: 34px;
+  }
+  .intervai-landing .mobile-nav {
+    top: 73px;
+  }
+  .intervai-landing .hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding-top: 99px;
+    padding-bottom: 22px;
+  }
+  .intervai-landing .hero-copy {
+    text-align: center;
+  }
+  .intervai-landing h1,
+  .intervai-landing .hero-copy h1 {
+    font-size: clamp(40px, 7.5vw, 60px);
+    letter-spacing: -0.04em;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 7px;
+    padding: 7px 11px;
+    margin-bottom: 19px;
+  }
+  .intervai-landing .hero-description {
+    font-size: 14px;
+    max-width: 37ch;
+    margin: 17px auto 0;
+  }
+  .intervai-landing .hero-benefits {
+    font-size: 8px;
+    justify-content: center;
+    gap: 10px;
+  }
+  .intervai-landing .hero-buttons {
+    justify-content: center;
+    gap: 12px;
+  }
+  .intervai-landing .hero-buttons .button {
+    font-size: 12px;
+    padding: 12px 19px;
+  }
+  .intervai-landing .windows-availability {
+    justify-content: center;
+    font-size: 9px;
+  }
+  .intervai-landing .windows-availability strong {
+    font-size: 11px;
+  }
+  .intervai-landing .hero-visual {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    margin: 0;
+    height: auto;
+    aspect-ratio: 1.12;
+    max-width: 650px;
+    justify-self: center;
+  }
+  .intervai-landing .hero-visual > img.hero-art {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mask: none;
+    -webkit-mask: none;
+  }
+  .intervai-landing .hero-copilot {
+    font-size: clamp(6px, 1.3vw, 9px);
+    width: 40%;
+    right: 0;
+    bottom: 5%;
+    padding: 3%;
+  }
+  .intervai-landing .transcript-badge {
+    font-size: clamp(6px, 1.3vw, 9px);
+    left: 0;
+    top: 28%;
+    border-radius: 7px;
+  }
+  .intervai-landing .transcript-badge > .icon {
+    width: clamp(21px, 6vw, 38px);
+    height: clamp(21px, 6vw, 38px);
+  }
+  .intervai-landing .confidence-sticker {
+    font-size: clamp(9px, 2.6vw, 16px);
+    right: 1%;
+    width: 22%;
+    border-radius: 4px;
+  }
+  .intervai-landing .hero-cv-badge {
+    border-radius: 5px;
+    bottom: -11%;
+    padding: 5%;
+  }
+  .intervai-landing .hero-question,
+  .intervai-landing .hero-answer {
+    border-radius: 5px;
+  }
+  .intervai-landing .visual-caption {
+    font-size: 5px;
+    bottom: -8px;
+  }
+  .intervai-landing .hero-answer p + p {
+    display: none;
+  }
+  .intervai-landing .company-strip {
+    padding-top: 15px;
+    padding-bottom: 30px;
+  }
+  .intervai-landing .company-strip > p {
+    font-size: 10px;
+    margin-bottom: 21px;
+  }
+  .intervai-landing .company-logos {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 19px 18px;
+  }
+  .intervai-landing .company-logo {
+    height: 23px;
+  }
+  .intervai-landing .company-logo img {
+    max-width: 100%;
+  }
+  .intervai-landing .logo-apple img {
+    width: 19px;
+  }
+  .intervai-landing .logo-ibm img {
+    height: 85%;
+  }
+  .intervai-landing .quick-features {
+    gap: 12px;
+    padding-bottom: 18px;
+  }
+  .intervai-landing .quick-card {
+    padding: 18px 15px;
+  }
+  .intervai-landing .quick-card h3 {
+    font-size: 12px;
+  }
+  .intervai-landing .quick-card p {
+    font-size: 11px;
+  }
+  .intervai-landing .quick-card .icon-tile {
+    width: 40px;
+    height: 40px;
+  }
+  .intervai-landing .section {
+    padding-block: 33px;
+  }
+  .intervai-landing .section-heading h2,
+  .intervai-landing .feature-section .section-heading h2,
+  .intervai-landing .testimonials-section h2,
+  .intervai-landing .faq-section h2 {
+    font-size: 24px;
+  }
+  .intervai-landing .section-heading p {
+    font-size: 12px;
+  }
+  .intervai-landing .section-heading .eyebrow {
+    font-size: 8px;
+  }
+  .intervai-landing .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 29px 21px;
+    padding-top: 5px;
+  }
+  .intervai-landing .step-art {
+    width: 100%;
+    max-width: 185px;
+    aspect-ratio: 1.45;
+    margin-bottom: 15px;
+  }
+  .intervai-landing .step-art > *:not(.step-number) {
+    transform: none;
+  }
+  .intervai-landing .step-arrow {
+    display: none;
+  }
+  .intervai-landing .step h3 {
+    font-size: 12px;
+  }
+  .intervai-landing .step p {
+    font-size: 11px;
+    max-width: 24ch;
+  }
+  .intervai-landing .feature-card {
+    padding: 16px 14px;
+    gap: 12px;
+    display: block;
+  }
+  .intervai-landing .feature-card .icon-tile {
+    width: 37px;
+    height: 37px;
+    margin-bottom: 12px;
+  }
+  .intervai-landing .feature-card h3 {
+    font-size: 11px;
+  }
+  .intervai-landing .feature-card p {
+    font-size: 10.5px;
+  }
+  .intervai-landing .feature-grid {
+    gap: 11px;
+  }
+  .intervai-landing .pricing-section .section-heading .eyebrow {
+    font-size: 7px;
+  }
+  .intervai-landing .pricing-grid {
+    gap: 24px 14px;
+  }
+  .intervai-landing .subscription-card {
+    padding: 25px 18px 20px;
+  }
+  .intervai-landing .subscription-card h3 {
+    font-size: 22px;
+  }
+  .intervai-landing .subscription-card .plan-description {
+    font-size: 11px;
+    min-height: 3.1em;
+  }
+  .intervai-landing .subscription-price {
+    margin-top: 20px;
+    column-gap: 3px;
+  }
+  .intervai-landing .subscription-price strong {
+    font-size: clamp(25px, 4.5vw, 36px);
+  }
+  .intervai-landing .subscription-price > span {
+    font-size: 11px;
+  }
+  .intervai-landing .subscription-price small {
+    font-size: 10px;
+  }
+  .intervai-landing .plan-kicker {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    min-height: 2.8em;
+  }
+  .intervai-landing .billing-info {
+    font-size: 10px;
+    min-height: 4em;
+  }
+  .intervai-landing .subscription-card ul {
+    font-size: 11px;
+    margin-block: 23px;
+  }
+  .intervai-landing .subscription-card li {
+    gap: 7px;
+    margin-bottom: 12px;
+  }
+  .intervai-landing .subscription-card > .button {
+    font-size: 11px;
+    gap: 7px;
+    white-space: normal;
+    min-height: 43px;
+  }
+  .intervai-landing .subscription-card > .button .icon {
+    width: 16px;
+    height: 16px;
+  }
+  .intervai-landing .annual-card .popular-badge {
+    font-size: 9px;
+    padding: 5px 13px;
+  }
+  .intervai-landing .trial-card {
+    display: flex;
+    padding: 23px;
+  }
+  .intervai-landing .trial-card h3 {
+    font-size: 23px;
+  }
+  .intervai-landing .trial-status {
+    font-size: 8px;
+    margin-bottom: 17px;
+  }
+  .intervai-landing .trial-notice {
+    margin: 21px 0;
+    padding: 19px;
+  }
+  .intervai-landing .trial-notice > .icon {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin-bottom: 14px;
+  }
+  .intervai-landing .trial-notice h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .intervai-landing .trial-notice p {
+    font-size: 12px;
+  }
+  .intervai-landing .trial-card > .button {
+    font-size: 12px;
+    margin-top: 0;
+  }
+  .intervai-landing .pricing-note {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+  .intervai-landing .testimonial-card {
+    padding: 23px;
+    min-height: 215px;
+  }
+  .intervai-landing .testimonial-card blockquote {
+    font-size: 13px;
+  }
+  .intervai-landing .testimonials-section .testimonial-track {
+    gap: 13px;
+  }
+  .intervai-landing .testimonial-avatar {
+    width: 39px;
+    height: 39px;
+    font-size: 12px;
+  }
+  .intervai-landing .testimonial-person {
+    flex-wrap: nowrap;
+    gap: 9px;
+  }
+  .intervai-landing .testimonial-person strong {
+    font-size: 11px;
+  }
+  .intervai-landing .testimonial-person div > span {
+    font-size: 9px;
+  }
+  .intervai-landing .stars {
+    margin-left: auto;
+    font-size: 13px;
+  }
+  .intervai-landing .faq-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 21px;
+  }
+  .intervai-landing .faq-list summary {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+  .intervai-landing .faq-list details > p {
+    font-size: 11px;
+  }
+  .intervai-landing .faq-visual {
+    max-width: 540px;
+    justify-self: center;
+    width: 100%;
+    align-items: center;
+    gap: 0;
+  }
+  .intervai-landing .faq-visual > img {
+    width: 53%;
+    height: auto;
+    margin: 0;
+  }
+  .intervai-landing .help-card {
+    width: 49%;
+    margin-left: -4%;
+    padding: 16px 13px;
+  }
+  .intervai-landing .help-card strong {
+    font-size: 11px;
+  }
+  .intervai-landing .help-card p {
+    font-size: 10px;
+  }
+  .intervai-landing .help-card .button {
+    font-size: 10px;
+    min-height: 35px;
+    padding: 8px 10px;
+  }
+  .intervai-landing .cta-layout {
+    padding-block: 30px;
+    gap: 15px;
+  }
+  .intervai-landing .cta-layout h2 {
+    font-size: 23px;
+  }
+  .intervai-landing .cta-layout p {
+    font-size: 12px;
+  }
+  .intervai-landing .cta-layout > .button {
+    font-size: 12px;
+    padding: 13px 23px;
+  }
+  .intervai-landing .cta-eyebrow {
+    font-size: 7px;
+  }
+  .intervai-landing .footer-grid {
+    gap: 26px 20px;
+    padding-bottom: 26px;
+  }
+  .intervai-landing .footer-about .brand {
+    font-size: 24px;
+  }
+  .intervai-landing .footer-about > p {
+    font-size: 11px;
+  }
+  .intervai-landing .footer-column h3 {
+    font-size: 11px;
+  }
+  .intervai-landing .footer-column > a,
+  .intervai-landing .footer-column > button {
+    font-size: 10px;
+  }
+  .intervai-landing .footer-bottom {
+    font-size: 8px;
+  }
+  .intervai-landing .site-footer {
+    padding-top: 27px;
+    padding-bottom: 17px;
+  }
+}
+@media (max-width: 460px) {
+  .intervai-landing .pricing-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+  }
+  .intervai-landing .trial-card {
+    grid-column: auto;
+  }
+  .intervai-landing .subscription-card {
+    padding: 29px 26px 24px;
+  }
+  .intervai-landing .subscription-card .plan-description {
+    min-height: 0;
+    font-size: 12px;
+  }
+  .intervai-landing .subscription-price {
+    margin-top: 24px;
+    gap: 5px;
+  }
+  .intervai-landing .subscription-price strong {
+    font-size: 41px;
+  }
+  .intervai-landing .subscription-price > span {
+    font-size: 13px;
+  }
+  .intervai-landing .subscription-price small {
+    font-size: 12px;
+  }
+  .intervai-landing .plan-kicker {
+    font-size: 8px;
+    min-height: 0;
+    margin-bottom: 16px;
+  }
+  .intervai-landing .billing-info {
+    font-size: 11px;
+    min-height: 0;
+  }
+  .intervai-landing .subscription-card ul {
+    font-size: 12px;
+    margin-block: 26px;
+  }
+  .intervai-landing .subscription-card > .button {
+    font-size: 13px;
+    min-height: 47px;
+  }
+  .intervai-landing .annual-card .popular-badge {
+    font-size: 10px;
+  }
+  .intervai-landing .confidence-sticker {
+    top: 0;
+  }
+  .intervai-landing .hero-copilot {
+    font-size: 6px;
+  }
+  .intervai-landing .hero-answer {
+    padding: 7%;
+  }
+  .intervai-landing .hero-question strong,
+  .intervai-landing .hero-answer strong {
+    font-size: 0.9em;
+  }
+  .intervai-landing .testimonials-section .stars {
+    font-size: 11px;
+  }
+  .intervai-landing .trial-card h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 370px) {
+  .intervai-landing {
+    --gutter: 18px;
+  }
+  .intervai-landing .hero-eyebrow {
+    font-size: 6px;
+  }
+  .intervai-landing .hero-copy h1 {
+    font-size: 39px;
+  }
+  .intervai-landing .hero-benefits {
+    font-size: 7px;
+    gap: 7px;
+  }
+  .intervai-landing .hero-buttons .button {
+    font-size: 11px;
+    padding: 12px 15px;
+  }
+  .intervai-landing .company-logos {
+    gap: 17px 13px;
+  }
+  .intervai-landing .hero-copilot {
+    font-size: 5.5px;
+  }
+  .intervai-landing .hero-copilot-tabs {
+    font-size: 0.7em;
+  }
+  .intervai-landing .hero-cv-badge {
+    font-size: 0.75em;
+  }
+  .intervai-landing .transcript-badge {
+    font-size: 5.5px;
+  }
+  .intervai-landing .confidence-sticker {
+    font-size: 8px;
+  }
+  .intervai-landing .subscription-price strong {
+    font-size: 38px;
+  }
+}
+
+/* React carousel geometry follows the viewport without resize listeners. */
+.intervai-landing .testimonial-avatar {
+  flex: none;
+}
+.intervai-landing .avatar-0 {
+  background: linear-gradient(135deg, #d3f2ff, #9ac6ff);
+  color: #234e88;
+}
+.intervai-landing .avatar-1 {
+  background: linear-gradient(135deg, #f1dcff, #d2b3ff);
+  color: #6c339c;
+}
+.intervai-landing .avatar-2 {
+  background: linear-gradient(135deg, #d4ffe9, #a8efcd);
+  color: #187555;
+}
+.intervai-landing .checkout-dialog {
+  width: min(560px, calc(100vw - 32px));
+}
+.intervai-landing .checkout-plans {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 16px;
+  padding: 5px;
+  background: #f4f1ff;
+  border-radius: 12px;
+}
+.intervai-landing .checkout-plans button {
+  flex: 1;
+  padding: 12px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.intervai-landing .checkout-plans button[aria-pressed="true"] {
+  color: #6335ff;
+  background: white;
+  border-color: #e6dcff;
+  box-shadow: 0 2px 6px #4f27ad0a;
+}
+.intervai-landing .checkout-price {
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+.intervai-landing .checkout-price strong {
+  color: var(--ink);
+  font-size: 28px;
+  margin-right: 4px;
+}
+.intervai-landing .checkout-dialog label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 650;
+  margin-bottom: 8px;
+}
+.intervai-landing .checkout-dialog input {
+  width: 100%;
+  min-height: 48px;
+  background: white;
+  border: 1px solid #d9d2ec;
+  border-radius: 10px;
+  color: var(--ink);
+  padding: 12px 14px;
+  font-size: 16px;
+}
+.intervai-landing .checkout-dialog input:focus-visible {
+  outline: 3px solid #a0ccff;
+  outline-offset: 2px;
+  border-color: #6335ff;
+}
+.intervai-landing .checkout-dialog input[aria-invalid="true"] {
+  border-color: #d63855;
+}
+.intervai-landing .checkout-dialog form > .button {
+  width: 100%;
+  margin-top: 18px;
+}
+.intervai-landing .checkout-error {
+  color: #b31f3a;
+  text-align: left;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.intervai-landing button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+.intervai-landing .checkout-dialog .start-note {
+  line-height: 1.65;
+}
+@media (max-width: 760px) {
+  .intervai-landing .testimonial-track {
+    transform: translateX(calc(var(--testimonial-index) * (-100% - 13px)));
+  }
+  .intervai-landing .testimonial-card {
+    order: initial !important;
+  }
+}

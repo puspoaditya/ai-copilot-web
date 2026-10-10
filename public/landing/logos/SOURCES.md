@@ -1,0 +1,13 @@
+- google: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/google-wordmark.svg
+- apple: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/apple.svg
+- shopify: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/shopify-wordmark-dark.svg
+- ibm: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/ibm.svg
+- netflix: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/netflix-wordmark.svg
+- microsoft: https://raw.githubusercontent.com/gilbarbara/logos/main/logos/microsoft.svg
+- meta: https://raw.githubusercontent.com/gilbarbara/logos/main/logos/meta.svg
+- oracle: https://raw.githubusercontent.com/gilbarbara/logos/main/logos/oracle.svg
+- amazon: https://cdn.worldvectorlogo.com/logos/amazon-com-logo.svg
+- tesla: https://cdn.worldvectorlogo.com/logos/tesla-motors.svg
+- Tesla wordmark: https://upload.wikimedia.org/wikipedia/commons/6/62/Tesla_Motors_Logo.svg
+- Shopify for white background: https://raw.githubusercontent.com/pheralb/svgl/main/static/library/shopify-wordmark-light.svg
+- Amazon wordmark matching reference: https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg
