@@ -1,13 +1,13 @@
-'use client';
-import { useEffect } from 'react';
+"use client";
+import { useEffect } from "react";
+import Link from "next/link";
 
-const DOWNLOAD_URL = process.env.NEXT_PUBLIC_APP_DOWNLOAD_URL ?? '#';
+const DOWNLOAD_URL =
+  process.env.NEXT_PUBLIC_APP_DOWNLOAD_URL || "/api/download";
 
 export default function SuccessPage() {
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'Purchase', { currency: 'IDR' });
-    }
+    window.fbq?.("track", "Purchase", { currency: "IDR" });
   }, []);
   return (
     <main className="min-h-screen bg-[#0d0d14] text-white flex items-center justify-center px-6">
@@ -34,9 +34,12 @@ export default function SuccessPage() {
             <li>Siap digunakan!</li>
           </ol>
         </div>
-        <a href="/" className="inline-block mt-8 text-[#5b8dee] text-sm hover:underline">
+        <Link
+          href="/"
+          className="inline-block mt-8 text-[#5b8dee] text-sm hover:underline"
+        >
           ← Kembali ke beranda
-        </a>
+        </Link>
       </div>
     </main>
   );
