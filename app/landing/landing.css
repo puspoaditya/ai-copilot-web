@@ -1551,6 +1551,9 @@
   margin-left: 4px;
 }
 .intervai-landing dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   padding: 0;
   border: 1px solid #eee8ff;
   border-radius: 22px;
