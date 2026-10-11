@@ -1551,6 +1551,9 @@
   margin-left: 4px;
 }
 .intervai-landing dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
   padding: 0;
   border: 1px solid #eee8ff;
   border-radius: 22px;
@@ -2974,9 +2977,10 @@
   }
 }
 
-/* Fluid page geometry, vector branding and live product illustration. */
+/* Fluid geometry follows the viewport up to 1440px, then keeps desktop proportions. */
 .intervai-landing {
-  --gutter: clamp(20px, 4.5vw, 180px);
+  --layout-vw: min(1vw, 14.4px);
+  --gutter: clamp(20px, calc(var(--layout-vw) * 4.5), 180px);
 }
 .intervai-landing,
 .intervai-landing {
@@ -2984,11 +2988,11 @@
   overflow-x: clip;
 }
 .intervai-landing {
-  font-size: clamp(15px, 1.04vw, 24px);
+  font-size: clamp(15px, calc(var(--layout-vw) * 1.04), 24px);
 }
 .intervai-landing .container {
   width: 100%;
-  max-width: none;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
@@ -2996,34 +3000,35 @@
   min-width: 0;
 }
 .intervai-landing .section {
-  padding-block: clamp(34px, 3.7vw, 90px);
+  padding-block: clamp(34px, calc(var(--layout-vw) * 3.7), 90px);
 }
 .intervai-landing .site-header,
 .intervai-landing .nav-wrap {
-  height: clamp(76px, 6vw, 132px);
+  height: clamp(76px, calc(var(--layout-vw) * 6), 132px);
 }
 .intervai-landing .nav-wrap {
-  gap: clamp(15px, 2vw, 44px);
+  gap: clamp(15px, calc(var(--layout-vw) * 2), 44px);
 }
 .intervai-landing .brand {
-  font-size: clamp(25px, 2.05vw, 46px);
+  font-size: clamp(25px, calc(var(--layout-vw) * 2.05), 46px);
 }
 .intervai-landing .brand > svg {
-  width: clamp(34px, 2.8vw, 60px);
+  width: clamp(34px, calc(var(--layout-vw) * 2.8), 60px);
   height: auto;
 }
 .intervai-landing .desktop-nav {
-  min-height: clamp(76px, 6vw, 132px);
-  padding-inline: clamp(22px, 2.8vw, 64px);
-  gap: clamp(16px, 2.1vw, 45px);
-  font-size: clamp(11px, 0.85vw, 19px);
+  min-height: clamp(76px, calc(var(--layout-vw) * 6), 132px);
+  padding-inline: clamp(22px, calc(var(--layout-vw) * 2.8), 64px);
+  gap: clamp(16px, calc(var(--layout-vw) * 2.1), 45px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.85), 19px);
 }
 .intervai-landing .nav-actions {
-  gap: clamp(7px, 0.8vw, 17px);
+  gap: clamp(7px, calc(var(--layout-vw) * 0.8), 17px);
 }
 .intervai-landing .nav-actions .button {
-  font-size: clamp(11px, 0.86vw, 20px);
-  padding: clamp(9px, 0.8vw, 18px) clamp(13px, 1.15vw, 27px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.86), 20px);
+  padding: clamp(9px, calc(var(--layout-vw) * 0.8), 18px)
+    clamp(13px, calc(var(--layout-vw) * 1.15), 27px);
 }
 .intervai-landing .hero {
   min-height: 0;
@@ -3034,10 +3039,10 @@
 .intervai-landing .hero-layout {
   display: grid;
   grid-template-columns: minmax(0, 0.91fr) minmax(0, 1.09fr);
-  gap: clamp(12px, 2.2vw, 50px);
+  gap: clamp(12px, calc(var(--layout-vw) * 2.2), 50px);
   min-height: 0;
-  padding-top: clamp(100px, 8vw, 180px);
-  padding-bottom: clamp(30px, 2.8vw, 68px);
+  padding-top: clamp(100px, calc(var(--layout-vw) * 8), 180px);
+  padding-bottom: clamp(30px, calc(var(--layout-vw) * 2.8), 68px);
   align-items: center;
 }
 .intervai-landing .hero-copy {
@@ -3045,52 +3050,54 @@
   min-width: 0;
 }
 .intervai-landing .hero-eyebrow {
-  font-size: clamp(8px, 0.67vw, 15px);
-  padding: clamp(6px, 0.5vw, 12px) clamp(10px, 0.8vw, 20px);
-  margin-bottom: clamp(19px, 1.7vw, 36px);
+  font-size: clamp(8px, calc(var(--layout-vw) * 0.67), 15px);
+  padding: clamp(6px, calc(var(--layout-vw) * 0.5), 12px)
+    clamp(10px, calc(var(--layout-vw) * 0.8), 20px);
+  margin-bottom: clamp(19px, calc(var(--layout-vw) * 1.7), 36px);
 }
 .intervai-landing h1 {
-  font-size: clamp(42px, 4.25vw, 104px);
+  font-size: clamp(42px, calc(var(--layout-vw) * 4.25), 104px);
   letter-spacing: -0.045em;
   line-height: 1.07;
 }
 .intervai-landing .hero-description {
-  font-size: clamp(15px, 1.22vw, 29px);
+  font-size: clamp(15px, calc(var(--layout-vw) * 1.22), 29px);
   max-width: 36ch;
-  margin-top: clamp(17px, 1.6vw, 38px);
+  margin-top: clamp(17px, calc(var(--layout-vw) * 1.6), 38px);
 }
 .intervai-landing .hero-benefits {
-  font-size: clamp(9px, 0.74vw, 17px);
-  gap: clamp(8px, 0.9vw, 22px);
-  margin-top: clamp(17px, 1.6vw, 35px);
+  font-size: clamp(9px, calc(var(--layout-vw) * 0.74), 17px);
+  gap: clamp(8px, calc(var(--layout-vw) * 0.9), 22px);
+  margin-top: clamp(17px, calc(var(--layout-vw) * 1.6), 35px);
 }
 .intervai-landing .hero-benefits i {
-  width: clamp(12px, 1vw, 23px);
-  height: clamp(12px, 1vw, 23px);
-  font-size: clamp(8px, 0.65vw, 15px);
+  width: clamp(12px, calc(var(--layout-vw) * 1), 23px);
+  height: clamp(12px, calc(var(--layout-vw) * 1), 23px);
+  font-size: clamp(8px, calc(var(--layout-vw) * 0.65), 15px);
 }
 .intervai-landing .hero-buttons {
-  gap: clamp(12px, 1.2vw, 28px);
-  margin-top: clamp(22px, 2vw, 44px);
+  gap: clamp(12px, calc(var(--layout-vw) * 1.2), 28px);
+  margin-top: clamp(22px, calc(var(--layout-vw) * 2), 44px);
 }
 .intervai-landing .hero-buttons .button {
-  font-size: clamp(12px, 1vw, 23px);
-  padding: clamp(11px, 1vw, 22px) clamp(18px, 1.65vw, 38px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 1), 23px);
+  padding: clamp(11px, calc(var(--layout-vw) * 1), 22px)
+    clamp(18px, calc(var(--layout-vw) * 1.65), 38px);
 }
 .intervai-landing .hero-buttons .icon {
-  width: clamp(19px, 1.6vw, 34px);
-  height: clamp(19px, 1.6vw, 34px);
+  width: clamp(19px, calc(var(--layout-vw) * 1.6), 34px);
+  height: clamp(19px, calc(var(--layout-vw) * 1.6), 34px);
 }
 .intervai-landing .windows-availability {
-  font-size: clamp(9px, 0.75vw, 17px);
-  gap: clamp(10px, 0.9vw, 20px);
-  margin-top: clamp(21px, 2vw, 42px);
+  font-size: clamp(9px, calc(var(--layout-vw) * 0.75), 17px);
+  gap: clamp(10px, calc(var(--layout-vw) * 0.9), 20px);
+  margin-top: clamp(21px, calc(var(--layout-vw) * 2), 42px);
 }
 .intervai-landing .windows-availability strong {
-  font-size: clamp(11px, 0.87vw, 20px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.87), 20px);
 }
 .intervai-landing .windows-icon {
-  width: clamp(25px, 2vw, 46px);
+  width: clamp(25px, calc(var(--layout-vw) * 2), 46px);
   height: auto;
 }
 .intervai-landing .hero-visual {
@@ -3128,7 +3135,7 @@
   width: 21%;
   padding: 4% 2% 3%;
   font-family: var(--heading);
-  font-size: clamp(10px, 1.2vw, 28px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 1.2), 28px);
   font-weight: 800;
   text-align: center;
   color: #122b07;
@@ -3158,12 +3165,12 @@
   border: 1px solid #e5eaf5;
   border-radius: 10px;
   transform: rotate(-3deg);
-  font-size: clamp(7px, 0.61vw, 15px);
+  font-size: clamp(7px, calc(var(--layout-vw) * 0.61), 15px);
 }
 .intervai-landing .transcript-badge > .icon {
   color: #06baff;
-  width: clamp(28px, 2.9vw, 60px);
-  height: clamp(28px, 2.9vw, 60px);
+  width: clamp(28px, calc(var(--layout-vw) * 2.9), 60px);
+  height: clamp(28px, calc(var(--layout-vw) * 2.9), 60px);
 }
 .intervai-landing .transcript-badge strong {
   display: block;
@@ -3194,10 +3201,10 @@
   width: 39%;
   background: #fffffffa;
   border: 1px solid #e3e7fa;
-  border-radius: clamp(8px, 1vw, 22px);
+  border-radius: clamp(8px, calc(var(--layout-vw) * 1), 22px);
   box-shadow: 0 15px 45px #2089d72b;
   transform: rotate(2deg);
-  font-size: clamp(7px, 0.65vw, 16px);
+  font-size: clamp(7px, calc(var(--layout-vw) * 0.65), 16px);
   padding: 3%;
   line-height: 1.65;
 }
@@ -3301,21 +3308,21 @@
 .intervai-landing .visual-caption {
   bottom: 0;
   right: 1%;
-  font-size: clamp(6px, 0.45vw, 11px);
+  font-size: clamp(6px, calc(var(--layout-vw) * 0.45), 11px);
 }
 .intervai-landing .company-strip {
-  padding-top: clamp(6px, 0.8vw, 22px);
-  padding-bottom: clamp(32px, 3.6vw, 80px);
+  padding-top: clamp(6px, calc(var(--layout-vw) * 0.8), 22px);
+  padding-bottom: clamp(32px, calc(var(--layout-vw) * 3.6), 80px);
 }
 .intervai-landing .company-strip > p {
-  font-size: clamp(11px, 0.9vw, 21px);
-  margin-bottom: clamp(23px, 2.3vw, 52px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.9), 21px);
+  margin-bottom: clamp(23px, calc(var(--layout-vw) * 2.3), 52px);
 }
 .intervai-landing .company-logos {
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
   align-items: center;
-  gap: clamp(15px, 2.6vw, 62px);
+  gap: clamp(15px, calc(var(--layout-vw) * 2.6), 62px);
 }
 .intervai-landing .company-logo {
   width: 100%;
@@ -3323,7 +3330,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: clamp(28px, 2.9vw, 64px);
+  height: clamp(28px, calc(var(--layout-vw) * 2.9), 64px);
 }
 .intervai-landing .company-logo img {
   display: block;
@@ -3350,120 +3357,120 @@
   height: 75%;
 }
 .intervai-landing .quick-features {
-  gap: clamp(14px, 1.5vw, 34px);
+  gap: clamp(14px, calc(var(--layout-vw) * 1.5), 34px);
   padding-top: 0;
-  padding-bottom: clamp(12px, 1.6vw, 40px);
+  padding-bottom: clamp(12px, calc(var(--layout-vw) * 1.6), 40px);
 }
 .intervai-landing .quick-card {
-  padding: clamp(18px, 1.9vw, 45px);
+  padding: clamp(18px, calc(var(--layout-vw) * 1.9), 45px);
 }
 .intervai-landing .icon-tile {
-  width: clamp(44px, 3.8vw, 85px);
-  height: clamp(44px, 3.8vw, 85px);
-  margin-bottom: clamp(13px, 1.2vw, 28px);
+  width: clamp(44px, calc(var(--layout-vw) * 3.8), 85px);
+  height: clamp(44px, calc(var(--layout-vw) * 3.8), 85px);
+  margin-bottom: clamp(13px, calc(var(--layout-vw) * 1.2), 28px);
 }
 .intervai-landing .icon-tile .icon {
   width: 56%;
   height: 56%;
 }
 .intervai-landing .quick-card h3 {
-  font-size: clamp(14px, 1.2vw, 28px);
+  font-size: clamp(14px, calc(var(--layout-vw) * 1.2), 28px);
   letter-spacing: -0.025em;
 }
 .intervai-landing .quick-card p {
-  font-size: clamp(12px, 0.96vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.96), 23px);
 }
 .intervai-landing .section-heading {
-  margin-bottom: clamp(28px, 3vw, 66px);
+  margin-bottom: clamp(28px, calc(var(--layout-vw) * 3), 66px);
 }
 .intervai-landing .section-heading h2,
 .intervai-landing .feature-section .section-heading h2,
 .intervai-landing .testimonials-section h2,
 .intervai-landing .faq-section h2 {
-  font-size: clamp(24px, 2.35vw, 55px);
+  font-size: clamp(24px, calc(var(--layout-vw) * 2.35), 55px);
   letter-spacing: -0.035em;
 }
 .intervai-landing .section-heading p {
-  font-size: clamp(13px, 1.08vw, 25px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1.08), 25px);
 }
 .intervai-landing .section-heading .eyebrow {
-  font-size: clamp(9px, 0.7vw, 16px);
-  padding: clamp(5px, 0.4vw, 9px) clamp(11px, 0.9vw, 22px);
-  margin-bottom: clamp(13px, 1.1vw, 25px);
+  font-size: clamp(9px, calc(var(--layout-vw) * 0.7), 16px);
+  padding: clamp(5px, calc(var(--layout-vw) * 0.4), 9px)
+    clamp(11px, calc(var(--layout-vw) * 0.9), 22px);
+  margin-bottom: clamp(13px, calc(var(--layout-vw) * 1.1), 25px);
 }
 .intervai-landing .how-section,
 .intervai-landing .feature-section {
-  padding-top: clamp(22px, 2vw, 48px);
+  padding-top: clamp(22px, calc(var(--layout-vw) * 2), 48px);
 }
 .intervai-landing .steps {
-  grid-template-columns: minmax(0, 1fr) 3% minmax(0, 1fr) 3% minmax(
-      0,
-      1fr
-    ) 3% minmax(0, 1fr);
-  gap: clamp(9px, 1.3vw, 32px);
+  grid-template-columns:
+    minmax(0, 1fr) 3% minmax(0, 1fr) 3% minmax(0, 1fr)
+    3% minmax(0, 1fr);
+  gap: clamp(9px, calc(var(--layout-vw) * 1.3), 32px);
   padding: 0;
 }
 .intervai-landing .step-art {
   width: 80%;
   height: auto;
   aspect-ratio: 1.4;
-  margin-bottom: clamp(16px, 1.5vw, 35px);
+  margin-bottom: clamp(16px, calc(var(--layout-vw) * 1.5), 35px);
 }
 .intervai-landing .step-art > *:not(.step-number) {
   transform: scale(clamp(1, 1.1, 1.3));
 }
 .intervai-landing .step h3 {
-  font-size: clamp(13px, 1.08vw, 26px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1.08), 26px);
   letter-spacing: -0.025em;
 }
 .intervai-landing .step p {
-  font-size: clamp(12px, 0.95vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.95), 22px);
   max-width: 24ch;
 }
 .intervai-landing .step-arrow {
-  margin-top: 4vw;
-  font-size: clamp(26px, 2.6vw, 60px);
+  margin-top: calc(var(--layout-vw) * 4);
+  font-size: clamp(26px, calc(var(--layout-vw) * 2.6), 60px);
 }
 .intervai-landing .feature-grid {
-  gap: clamp(13px, 1.3vw, 30px);
+  gap: clamp(13px, calc(var(--layout-vw) * 1.3), 30px);
 }
 .intervai-landing .feature-card {
-  padding: clamp(18px, 1.7vw, 40px);
-  gap: clamp(12px, 1.1vw, 28px);
+  padding: clamp(18px, calc(var(--layout-vw) * 1.7), 40px);
+  gap: clamp(12px, calc(var(--layout-vw) * 1.1), 28px);
 }
 .intervai-landing .feature-card .icon-tile {
-  width: clamp(40px, 3.2vw, 74px);
-  height: clamp(40px, 3.2vw, 74px);
+  width: clamp(40px, calc(var(--layout-vw) * 3.2), 74px);
+  height: clamp(40px, calc(var(--layout-vw) * 3.2), 74px);
 }
 .intervai-landing .feature-card .icon {
   width: 55%;
   height: 55%;
 }
 .intervai-landing .feature-card h3 {
-  font-size: clamp(13px, 0.97vw, 24px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 0.97), 24px);
   letter-spacing: -0.02em;
 }
 .intervai-landing .feature-card p {
-  font-size: clamp(12px, 0.9vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.9), 22px);
 }
 .intervai-landing .pricing-section {
-  padding-bottom: clamp(28px, 2.8vw, 65px);
+  padding-bottom: clamp(28px, calc(var(--layout-vw) * 2.8), 65px);
 }
 .intervai-landing .pricing-section .section-heading .eyebrow {
-  font-size: clamp(9px, 0.7vw, 17px);
+  font-size: clamp(9px, calc(var(--layout-vw) * 0.7), 17px);
 }
 .intervai-landing .pricing-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.94fr) minmax(0, 1fr) minmax(0, 1.08fr);
-  gap: clamp(18px, 2vw, 50px);
+  gap: clamp(18px, calc(var(--layout-vw) * 2), 50px);
   align-items: stretch;
 }
 .intervai-landing .trial-card,
 .intervai-landing .subscription-card {
-  border-radius: clamp(15px, 1.3vw, 28px);
+  border-radius: clamp(15px, calc(var(--layout-vw) * 1.3), 28px);
   background: #fff;
   border: 1px solid #e8e2f8;
-  padding: clamp(24px, 2.4vw, 55px);
+  padding: clamp(24px, calc(var(--layout-vw) * 2.4), 55px);
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -3471,64 +3478,64 @@
 }
 .intervai-landing .subscription-card h3,
 .intervai-landing .trial-card h3 {
-  font-size: clamp(23px, 2vw, 47px);
+  font-size: clamp(23px, calc(var(--layout-vw) * 2), 47px);
   letter-spacing: -0.04em;
   margin-bottom: 8px;
 }
 .intervai-landing .subscription-card .plan-description {
-  font-size: clamp(12px, 0.95vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.95), 23px);
   min-height: 0;
   white-space: normal;
 }
 .intervai-landing .plan-kicker {
-  font-size: clamp(8px, 0.65vw, 15px);
+  font-size: clamp(8px, calc(var(--layout-vw) * 0.65), 15px);
   letter-spacing: 1px;
   font-weight: 750;
   color: #9382b9;
   display: block;
-  margin-bottom: clamp(17px, 1.6vw, 36px);
+  margin-bottom: clamp(17px, calc(var(--layout-vw) * 1.6), 36px);
 }
 .intervai-landing .subscription-price {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  column-gap: clamp(5px, 0.45vw, 12px);
-  margin-top: clamp(23px, 2.2vw, 52px);
+  column-gap: clamp(5px, calc(var(--layout-vw) * 0.45), 12px);
+  margin-top: clamp(23px, calc(var(--layout-vw) * 2.2), 52px);
   line-height: 1.2;
   color: #181139;
 }
 .intervai-landing .subscription-price > span {
-  font-size: clamp(13px, 1vw, 25px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1), 25px);
   color: #8b80a3;
 }
 .intervai-landing .subscription-price strong {
   font-family: var(--heading);
-  font-size: clamp(30px, 3.3vw, 78px);
+  font-size: clamp(30px, calc(var(--layout-vw) * 3.3), 78px);
   font-weight: 800;
   letter-spacing: -0.055em;
 }
 .intervai-landing .subscription-price small {
-  font-size: clamp(12px, 0.96vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.96), 23px);
   color: #998dad;
 }
 .intervai-landing .billing-info {
-  font-size: clamp(10px, 0.8vw, 19px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 0.8), 19px);
   color: #9385a6;
   min-height: 2.8em;
-  margin-top: clamp(11px, 0.9vw, 22px);
+  margin-top: clamp(11px, calc(var(--layout-vw) * 0.9), 22px);
 }
 .intervai-landing .subscription-card ul {
   padding: 0;
-  margin: clamp(24px, 2.3vw, 54px) 0;
+  margin: clamp(24px, calc(var(--layout-vw) * 2.3), 54px) 0;
   list-style: none;
   color: #776a8b;
-  font-size: clamp(12px, 0.97vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.97), 23px);
 }
 .intervai-landing .subscription-card li {
   display: flex;
   gap: 10px;
   align-items: start;
-  margin-bottom: clamp(12px, 0.9vw, 24px);
+  margin-bottom: clamp(12px, calc(var(--layout-vw) * 0.9), 24px);
 }
 .intervai-landing .subscription-card li:before {
   content: "✓";
@@ -3540,8 +3547,8 @@
 .intervai-landing .trial-card .button {
   width: 100%;
   margin-top: auto;
-  font-size: clamp(12px, 1vw, 23px);
-  padding: clamp(12px, 1vw, 25px) 15px;
+  font-size: clamp(12px, calc(var(--layout-vw) * 1), 23px);
+  padding: clamp(12px, calc(var(--layout-vw) * 1), 25px) 15px;
 }
 .intervai-landing .annual-card {
   background: linear-gradient(140deg, #fff, #f8f3ff);
@@ -3549,8 +3556,9 @@
   box-shadow: 0 10px 35px #7b3aff12;
 }
 .intervai-landing .annual-card .popular-badge {
-  font-size: clamp(10px, 0.8vw, 19px);
-  padding: clamp(5px, 0.5vw, 12px) clamp(15px, 1.3vw, 30px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 0.8), 19px);
+  padding: clamp(5px, calc(var(--layout-vw) * 0.5), 12px)
+    clamp(15px, calc(var(--layout-vw) * 1.3), 30px);
   top: -1em;
 }
 .intervai-landing .trial-card {
@@ -3558,7 +3566,7 @@
   border-color: #ede9f5;
 }
 .intervai-landing .trial-status {
-  font-size: clamp(8px, 0.65vw, 16px);
+  font-size: clamp(8px, calc(var(--layout-vw) * 0.65), 16px);
   font-weight: 750;
   letter-spacing: 1px;
   color: #b39365;
@@ -3566,7 +3574,7 @@
   align-self: start;
   border-radius: 99px;
   padding: 7px 10px;
-  margin-bottom: clamp(19px, 1.8vw, 43px);
+  margin-bottom: clamp(19px, calc(var(--layout-vw) * 1.8), 43px);
 }
 .intervai-landing .trial-status > span {
   color: #d7ac71;
@@ -3574,31 +3582,31 @@
   margin-right: 4px;
 }
 .intervai-landing .trial-subtitle {
-  font-size: clamp(12px, 0.96vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.96), 22px);
   color: #958b9f;
 }
 .intervai-landing .trial-notice {
   background: #f6f3fb;
   border: 1px solid #eeebf4;
   border-radius: 12px;
-  padding: clamp(18px, 1.8vw, 42px);
-  margin-block: clamp(24px, 2.3vw, 54px);
+  padding: clamp(18px, calc(var(--layout-vw) * 1.8), 42px);
+  margin-block: clamp(24px, calc(var(--layout-vw) * 2.3), 54px);
 }
 .intervai-landing .trial-notice > .icon {
-  width: clamp(27px, 2.2vw, 50px);
-  height: clamp(27px, 2.2vw, 50px);
+  width: clamp(27px, calc(var(--layout-vw) * 2.2), 50px);
+  height: clamp(27px, calc(var(--layout-vw) * 2.2), 50px);
   color: #b9abc9;
-  margin-bottom: clamp(17px, 1.2vw, 27px);
+  margin-bottom: clamp(17px, calc(var(--layout-vw) * 1.2), 27px);
 }
 .intervai-landing .trial-notice h4 {
   font-family: var(--heading);
-  font-size: clamp(14px, 1.1vw, 26px);
+  font-size: clamp(14px, calc(var(--layout-vw) * 1.1), 26px);
   margin: 0 0 12px;
   line-height: 1.4;
   color: #62546f;
 }
 .intervai-landing .trial-notice p {
-  font-size: clamp(12px, 0.94vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.94), 23px);
   color: #786d86;
   line-height: 1.8;
 }
@@ -3613,23 +3621,23 @@
   box-shadow: none;
 }
 .intervai-landing .pricing-note {
-  font-size: clamp(10px, 0.8vw, 19px);
-  margin-top: clamp(23px, 2vw, 45px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 0.8), 19px);
+  margin-top: clamp(23px, calc(var(--layout-vw) * 2), 45px);
 }
 .intervai-landing .testimonial-card {
-  padding: clamp(23px, 2vw, 50px);
-  min-height: clamp(230px, 19vw, 440px);
+  padding: clamp(23px, calc(var(--layout-vw) * 2), 50px);
+  min-height: clamp(230px, calc(var(--layout-vw) * 19), 440px);
 }
 .intervai-landing .testimonial-card blockquote {
-  font-size: clamp(13px, 1.02vw, 24px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1.02), 24px);
 }
 .intervai-landing .testimonial-person {
   flex-wrap: nowrap;
-  gap: clamp(10px, 0.85vw, 20px);
+  gap: clamp(10px, calc(var(--layout-vw) * 0.85), 20px);
 }
 .intervai-landing .testimonial-avatar {
-  width: clamp(38px, 3.2vw, 75px);
-  height: clamp(38px, 3.2vw, 75px);
+  width: clamp(38px, calc(var(--layout-vw) * 3.2), 75px);
+  height: clamp(38px, calc(var(--layout-vw) * 3.2), 75px);
   border-radius: 50%;
   flex: none;
   display: grid;
@@ -3637,7 +3645,7 @@
   font-family: var(--heading);
   font-weight: 750;
   color: #6b48ba;
-  font-size: clamp(12px, 1vw, 23px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 1), 23px);
   background: linear-gradient(140deg, #e8dbff, #e1f1ff);
 }
 .intervai-landing .avatar-maya {
@@ -3649,29 +3657,30 @@
   background: linear-gradient(140deg, #d4f6e9, #dfefff);
 }
 .intervai-landing .testimonial-person strong {
-  font-size: clamp(11px, 0.87vw, 20px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.87), 20px);
 }
 .intervai-landing .testimonial-person div > span {
-  font-size: clamp(9px, 0.65vw, 16px);
+  font-size: clamp(9px, calc(var(--layout-vw) * 0.65), 16px);
 }
 .intervai-landing .stars {
-  font-size: clamp(11px, 0.95vw, 23px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.95), 23px);
   margin-left: auto;
   letter-spacing: 0;
 }
 .intervai-landing .testimonials-section .testimonial-track {
-  gap: clamp(15px, 1.5vw, 34px);
+  gap: clamp(15px, calc(var(--layout-vw) * 1.5), 34px);
 }
 .intervai-landing .faq-layout {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 95px);
+  gap: clamp(28px, calc(var(--layout-vw) * 4), 95px);
 }
 .intervai-landing .faq-list summary {
-  font-size: clamp(12px, 0.96vw, 23px);
-  padding: clamp(13px, 1.2vw, 30px) clamp(17px, 1.5vw, 36px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.96), 23px);
+  padding: clamp(13px, calc(var(--layout-vw) * 1.2), 30px)
+    clamp(17px, calc(var(--layout-vw) * 1.5), 36px);
 }
 .intervai-landing .faq-list details > p {
-  font-size: clamp(12px, 0.9vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.9), 22px);
 }
 .intervai-landing .faq-visual {
   flex-wrap: nowrap;
@@ -3684,67 +3693,68 @@
   margin: 0;
 }
 .intervai-landing .help-card {
-  padding: clamp(17px, 1.7vw, 42px);
+  padding: clamp(17px, calc(var(--layout-vw) * 1.7), 42px);
   min-width: 0;
   width: 48%;
   margin: 0 0 0 -5%;
   flex: none;
 }
 .intervai-landing .help-card strong {
-  font-size: clamp(12px, 1vw, 24px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 1), 24px);
   white-space: normal;
 }
 .intervai-landing .help-card p {
-  font-size: clamp(11px, 0.91vw, 21px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.91), 21px);
 }
 .intervai-landing .help-card .button {
-  font-size: clamp(10px, 0.84vw, 20px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 0.84), 20px);
 }
 .intervai-landing .cta-layout {
-  padding-block: clamp(32px, 3vw, 72px);
+  padding-block: clamp(32px, calc(var(--layout-vw) * 3), 72px);
 }
 .intervai-landing .cta-layout h2 {
-  font-size: clamp(24px, 2vw, 48px);
+  font-size: clamp(24px, calc(var(--layout-vw) * 2), 48px);
 }
 .intervai-landing .cta-layout p {
-  font-size: clamp(13px, 1.04vw, 24px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1.04), 24px);
 }
 .intervai-landing .cta-layout > .button {
-  font-size: clamp(13px, 1.13vw, 25px);
-  padding: clamp(14px, 1.2vw, 28px) clamp(22px, 2vw, 47px);
+  font-size: clamp(13px, calc(var(--layout-vw) * 1.13), 25px);
+  padding: clamp(14px, calc(var(--layout-vw) * 1.2), 28px)
+    clamp(22px, calc(var(--layout-vw) * 2), 47px);
 }
 .intervai-landing .plane-illustration {
-  font-size: clamp(60px, 5.4vw, 125px);
+  font-size: clamp(60px, calc(var(--layout-vw) * 5.4), 125px);
 }
 .intervai-landing .cta-eyebrow {
-  font-size: clamp(8px, 0.7vw, 16px);
+  font-size: clamp(8px, calc(var(--layout-vw) * 0.7), 16px);
 }
 .intervai-landing .site-footer {
-  padding-top: clamp(30px, 2.8vw, 70px);
-  padding-bottom: clamp(18px, 1.5vw, 36px);
+  padding-top: clamp(30px, calc(var(--layout-vw) * 2.8), 70px);
+  padding-bottom: clamp(18px, calc(var(--layout-vw) * 1.5), 36px);
 }
 .intervai-landing .footer-grid {
-  gap: clamp(26px, 4vw, 90px);
-  padding-bottom: clamp(29px, 2.7vw, 65px);
+  gap: clamp(26px, calc(var(--layout-vw) * 4), 90px);
+  padding-bottom: clamp(29px, calc(var(--layout-vw) * 2.7), 65px);
 }
 .intervai-landing .footer-about .brand {
-  font-size: clamp(25px, 2vw, 48px);
+  font-size: clamp(25px, calc(var(--layout-vw) * 2), 48px);
 }
 .intervai-landing .footer-about > p {
-  font-size: clamp(12px, 0.92vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.92), 22px);
 }
 .intervai-landing .footer-column {
-  gap: clamp(8px, 0.6vw, 16px);
+  gap: clamp(8px, calc(var(--layout-vw) * 0.6), 16px);
 }
 .intervai-landing .footer-column h3 {
-  font-size: clamp(12px, 0.94vw, 22px);
+  font-size: clamp(12px, calc(var(--layout-vw) * 0.94), 22px);
 }
 .intervai-landing .footer-column > a,
 .intervai-landing .footer-column > button {
-  font-size: clamp(11px, 0.85vw, 20px);
+  font-size: clamp(11px, calc(var(--layout-vw) * 0.85), 20px);
 }
 .intervai-landing .footer-bottom {
-  font-size: clamp(10px, 0.8vw, 18px);
+  font-size: clamp(10px, calc(var(--layout-vw) * 0.8), 18px);
 }
 @media (max-width: 1100px) {
   .intervai-landing .desktop-nav {
