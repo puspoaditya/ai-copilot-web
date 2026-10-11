@@ -16,25 +16,26 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = "https://www.intervai.my.id";
+const PAGE_TITLE = "IntervAI — Interview Lebih Percaya Diri dengan AI";
+const PAGE_DESCRIPTION =
+  "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun.";
 
 export const metadata: Metadata = {
-  title: "IntervAI — Bantuan AI Real-time saat Interview",
-  description:
-    "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   metadataBase: new URL(BASE_URL),
   openGraph: {
-    title: "IntervAI — Bantuan AI Real-time saat Interview",
-    description:
-      "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: BASE_URL,
     siteName: "IntervAI",
+    locale: "id_ID",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IntervAI — Bantuan AI Real-time saat Interview",
-    description:
-      "Transkripsi real-time dan saran jawaban AI sesuai CV. Rp179.000/bulan atau Rp1.499.000/tahun. Trial gratis sementara dinonaktifkan.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
   },
 };
 
