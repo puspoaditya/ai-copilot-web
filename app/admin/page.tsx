@@ -195,6 +195,7 @@ export default function AdminPage() {
             <p className="text-white/40 text-sm mt-1">{stats?.total} total user terdaftar</p>
           </div>
           <div className="flex items-center gap-4">
+            <a href="/admin/affiliate" className="text-[#5b8dee] hover:text-white text-sm transition">Affiliate</a>
             <button onClick={refresh} className="text-white/40 hover:text-white text-sm transition">↻ Refresh</button>
             <button onClick={() => { setAuthed(false); setLicenses([]); }} className="text-white/30 hover:text-white text-sm transition">Logout</button>
           </div>

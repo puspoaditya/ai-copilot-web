@@ -1,0 +1,629 @@
+.affiliate-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 0 0, #eaf9ff, transparent 40%),
+    radial-gradient(ellipse at 100% 30%, #f0eaff, transparent 45%), #fcfcff;
+  color: #161339;
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.affiliate-page * {
+  box-sizing: border-box;
+}
+.affiliate-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.affiliate-page button,
+.affiliate-page input {
+  font-family: inherit;
+}
+.affiliate-page input {
+  font-size: inherit;
+}
+.affiliate-page button {
+  cursor: pointer;
+}
+.affiliate-page button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.affiliate-page h1,
+.affiliate-page h2,
+.affiliate-page h3,
+.affiliate-page p {
+  margin: 0;
+}
+.affiliate-page h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+  margin-bottom: 10px;
+}
+.affiliate-page h3 {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 16px 0 10px;
+}
+.aff-container {
+  width: min(1280px, 100%);
+  margin: auto;
+  padding-inline: 40px;
+}
+.aff-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 104px;
+  gap: 24px;
+}
+.aff-nav > div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.aff-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 30px;
+  letter-spacing: -1.2px;
+}
+.aff-brand > span:last-child {
+  color: #6538ff;
+}
+.aff-mark {
+  width: 37px;
+  height: 34px;
+  margin-right: 9px;
+}
+.aff-nav-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #827994;
+}
+.aff-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  min-height: 46px;
+  padding: 12px 20px;
+  background: linear-gradient(100deg, #8138ff, #5635ff);
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px #6335ff13;
+  text-align: center;
+  white-space: nowrap;
+}
+.aff-button.secondary {
+  background: #fff;
+  border-color: #e5def6;
+  box-shadow: none;
+  color: #6335ff !important;
+}
+.aff-button:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+.aff-button:focus-visible,
+.affiliate-page a:focus-visible,
+.aff-text-button:focus-visible {
+  outline: 3px solid #23b9e8;
+  outline-offset: 3px;
+}
+.aff-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding-block: 52px 65px;
+}
+.aff-eyebrow {
+  display: inline-block;
+  color: #7140f7;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.aff-hero h1 {
+  font-size: clamp(36px, 3.5vw, 48px);
+  line-height: 1.15;
+  letter-spacing: -2px;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+.aff-hero h1 > span {
+  background: linear-gradient(100deg, #883aff, #4f36ff, #00add2);
+  background-clip: text;
+  color: transparent;
+}
+.aff-lead {
+  font-size: 18px;
+  color: #746e87;
+  max-width: 520px;
+}
+.aff-examples {
+  display: flex;
+  gap: 35px;
+  margin-block: 30px 20px;
+}
+.aff-examples > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.aff-examples small {
+  font-size: 13px;
+  color: #766e88;
+}
+.aff-examples strong {
+  font-size: 29px;
+  letter-spacing: -1px;
+  color: #4e2fc8;
+}
+.aff-examples span {
+  font-size: 13px;
+  color: #80788e;
+}
+.aff-muted {
+  color: #867c98;
+  font-size: 14px;
+  margin-block: 10px !important;
+}
+.aff-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #eae5f5;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 9px 32px #38216104;
+}
+.aff-login {
+  padding: 36px;
+  max-width: 480px;
+  width: 100%;
+  justify-self: end;
+  box-shadow: 0 20px 65px #6335ff0b;
+}
+.aff-login > p {
+  font-size: 15px;
+  color: #80758f;
+}
+.aff-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #f0eaff;
+  color: #7d45ff;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+.affiliate-page form {
+  margin-top: 24px;
+}
+.affiliate-page label {
+  display: block;
+  font-size: 14px;
+  font-weight: 650;
+  margin: 16px 0 7px;
+}
+.affiliate-page input {
+  width: 100%;
+  border: 1px solid #ded6ee;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  min-height: 48px;
+  color: #221c43;
+  outline: none;
+}
+.affiliate-page input:focus {
+  border-color: #7b46ff;
+  box-shadow: 0 0 0 3px #7b46ff15;
+}
+.affiliate-page form > .aff-button {
+  width: 100%;
+  margin-top: 24px;
+}
+.affiliate-page .aff-otp {
+  font-size: 28px;
+  letter-spacing: 10px;
+  text-align: center;
+}
+.aff-text-button {
+  background: none;
+  border: none;
+  color: #6335ff;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 13px;
+}
+.aff-fine {
+  color: #968aa8 !important;
+  font-size: 12px !important;
+  margin-top: 18px !important;
+}
+.aff-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.aff-steps p {
+  font-size: 15px;
+  color: #847891;
+}
+.aff-step-number {
+  display: inline-block;
+  color: #7040ef;
+  background: #f2edff;
+  border-radius: 12px;
+  padding: 7px 13px;
+  font-size: 15px;
+  font-weight: 800;
+}
+.aff-terms {
+  margin-block: 54px;
+  padding: 32px;
+  background: #f4f2fb;
+  border-radius: 20px;
+}
+.aff-terms h2 {
+  font-size: 20px;
+}
+.aff-terms ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  color: #7b708c;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.aff-terms li + li {
+  margin-top: 8px;
+}
+.aff-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 26px;
+  border-top: 1px solid #e9e4f3;
+  font-size: 13px;
+  color: #93899f;
+}
+.aff-notice {
+  padding: 15px 18px;
+  border: 1px solid #dcf0e6;
+  border-radius: 12px;
+  background: #f0fff8;
+  color: #216d51;
+  margin: 16px 0 !important;
+  font-size: 14px;
+}
+.aff-notice.error {
+  background: #fff2f5;
+  border-color: #f6d5df;
+  color: #aa304c;
+}
+.aff-dashboard-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-block: 38px 30px;
+}
+.aff-dashboard-heading h1 {
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+.aff-dashboard-heading p {
+  color: #81758f;
+}
+.aff-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 26px;
+}
+.aff-metrics small {
+  display: block;
+  font-size: 13px;
+  color: #8a7c98;
+}
+.aff-metrics strong {
+  display: block;
+  font-size: 27px;
+  line-height: 1.3;
+  margin-top: 10px;
+  letter-spacing: -1px;
+}
+.aff-referral {
+  background: linear-gradient(110deg, #f3edff, #f0fbff);
+  margin-block: 26px;
+}
+.aff-referral .aff-eyebrow {
+  margin-bottom: 10px;
+}
+.aff-referral p {
+  color: #877593;
+  font-size: 14px;
+}
+.aff-link-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.aff-link-row input {
+  font-size: 14px;
+}
+.aff-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.aff-table-wrap {
+  overflow-x: auto;
+  margin-top: 22px;
+}
+.affiliate-page table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.affiliate-page th {
+  color: #998aaa;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 12px 10px;
+  border-bottom: 1px solid #eae3f0;
+}
+.affiliate-page td {
+  padding: 16px 10px;
+  border-bottom: 1px solid #f1edf5;
+}
+.affiliate-page td strong {
+  display: block;
+  font-weight: 650;
+}
+.affiliate-page td small {
+  display: block;
+  font-size: 11px;
+  color: #9b8da8;
+  margin-top: 5px;
+  max-width: 220px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.aff-status {
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  background: #f2edff;
+  color: #7651b5;
+}
+.aff-status.paid {
+  background: #e9fbf2;
+  color: #22825b;
+}
+.aff-status.void,
+.aff-status.rejected {
+  background: #fff0f4;
+  color: #b14b6c;
+}
+.aff-empty {
+  padding: 34px 10px;
+  color: #9788a5;
+  font-size: 14px;
+  text-align: center;
+  white-space: normal;
+}
+.aff-history {
+  margin-top: 26px;
+}
+.aff-loading {
+  text-align: center;
+  margin-block: 70px;
+}
+.aff-admin-payout {
+  padding-block: 22px;
+  border-bottom: 1px solid #eee6f5;
+}
+.aff-admin-payout h3 {
+  margin: 0;
+}
+.aff-admin-payout p {
+  color: #7a6c8b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.aff-admin-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.aff-admin-actions input {
+  flex: 1;
+  min-width: 170px;
+}
+.aff-admin-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.aff-admin-summary strong {
+  font-size: 24px;
+  color: #5b35c6;
+}
+.aff-admin-login {
+  max-width: 420px;
+  margin: 70px auto;
+}
+.aff-admin-list {
+  margin-top: 30px;
+}
+.aff-admin-list td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.aff-admin-list table {
+  min-width: 650px;
+}
+@media (max-width: 960px) {
+  .aff-container {
+    padding-inline: 24px;
+  }
+  .aff-hero {
+    gap: 32px;
+  }
+  .aff-login {
+    padding: 26px;
+  }
+  .aff-hero h1 {
+    font-size: 38px;
+  }
+  .aff-examples {
+    gap: 22px;
+  }
+  .aff-examples strong {
+    font-size: 25px;
+  }
+  .aff-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .aff-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .aff-steps {
+    gap: 12px;
+  }
+  .aff-steps .aff-card {
+    padding: 22px;
+  }
+}
+@media (max-width: 700px) {
+  .aff-nav {
+    min-height: 82px;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-block: 16px;
+  }
+  .aff-nav > div {
+    gap: 8px;
+  }
+  .aff-brand {
+    font-size: 25px;
+  }
+  .aff-nav-label {
+    display: none;
+  }
+  .aff-nav .aff-button {
+    font-size: 12px;
+    padding: 9px 12px;
+    min-height: 40px;
+  }
+  .aff-hero {
+    grid-template-columns: 1fr;
+    padding-block: 30px 35px;
+    gap: 34px;
+  }
+  .aff-hero h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+  }
+  .aff-lead {
+    font-size: 16px;
+  }
+  .aff-login {
+    max-width: none;
+    justify-self: stretch;
+  }
+  .aff-steps {
+    grid-template-columns: 1fr;
+  }
+  .aff-terms {
+    padding: 24px;
+    margin-block: 30px;
+  }
+  .aff-footer {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .aff-dashboard-heading {
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+  .aff-dashboard-heading h1 {
+    font-size: 28px;
+  }
+  .aff-dashboard-heading .aff-button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .aff-metrics {
+    gap: 12px;
+  }
+  .aff-metrics .aff-card {
+    padding: 20px 16px;
+  }
+  .aff-metrics strong {
+    font-size: 23px;
+  }
+  .aff-card {
+    padding: 24px;
+  }
+  .aff-link-row {
+    flex-direction: column;
+  }
+  .aff-referral h2 {
+    font-size: 23px;
+  }
+  .aff-admin-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .aff-admin-actions {
+    align-items: stretch;
+  }
+  .aff-admin-actions .aff-button {
+    flex: 1;
+  }
+}
+@media (max-width: 380px) {
+  .aff-container {
+    padding-inline: 16px;
+  }
+  .aff-hero h1 {
+    font-size: 34px;
+  }
+  .aff-examples {
+    gap: 20px;
+  }
+  .aff-examples strong {
+    font-size: 24px;
+  }
+  .aff-metrics strong {
+    font-size: 20px;
+  }
+  .aff-nav .aff-button {
+    padding-inline: 10px;
+  }
+  .aff-metrics small {
+    font-size: 12px;
+  }
+}
