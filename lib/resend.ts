@@ -62,7 +62,7 @@ export async function sendTrialEmail(email: string, licenseKey: string) {
 export async function sendLicenseEmail(email: string, licenseKey: string) {
   const downloadUrl = process.env.APP_DOWNLOAD_URL ?? '#';
 
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: 'IntervAI <hello@intervai.my.id>',
     to: email,
     subject: '🎉 License Key & Link Download IntervAI',
@@ -100,4 +100,5 @@ export async function sendLicenseEmail(email: string, licenseKey: string) {
       </div>
     `,
   });
+  if (error) throw new Error('License email delivery failed');
 }

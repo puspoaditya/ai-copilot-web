@@ -983,6 +983,7 @@ export default function Landing({ className }: { className: string }) {
           </div>
           <div className="footer-column">
             <h3>Perusahaan</h3>
+            <Link href="/affiliate">Affiliate · Komisi 30%</Link>
             <a href="#cara-kerja" rel="noopener">
               Tentang Kami ↗
             </a>
